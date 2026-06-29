@@ -74,6 +74,7 @@
 	.table td {
 		padding-left: var(--space-lg);
 		padding-right: var(--space-lg);
+		white-space: nowrap;
 	}
 
 	/* App shell breadcrumbs */

@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Gabriel Munthali LTD</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../../css/style.css">
+	<link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+
+<body>
+	<div class="app-shell">
+		<aside class="app-sidebar d-none d-lg-flex flex-column" aria-label="Sidebar">
+			<header class="app-sidebar-brand">
+				<a href="../../../" class="app-sidebar-brand-link">
+					<img src="../../../img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<nav class="app-sidebar-nav" aria-label="Sidebar navigation">
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="../../../" class="app-sidebar-nav-link">
+							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Home</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Management and Insights</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="#sidebar-nav-sub-applications" class="app-sidebar-nav-link app-sidebar-nav-parent"
+								role="button" aria-expanded="false" aria-controls="sidebar-nav-sub-applications"
+								data-bs-toggle="collapse">
+								<i data-lucide="file-stack" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Applications</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-applications" class="collapse app-sidebar-nav-sublist">
+								<li><a href="#" class="app-sidebar-nav-sublink">Submit KYC</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#sidebar-nav-sub-analytics" class="app-sidebar-nav-link app-sidebar-nav-parent"
+								role="button" aria-expanded="false" aria-controls="sidebar-nav-sub-analytics"
+								data-bs-toggle="collapse">
+								<i data-lucide="bar-chart-3" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Analytics</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-analytics" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../analytics/disbursements.html" class="app-sidebar-nav-sublink">Disbursements</a></li>
+								<li><a href="../analytics/collections.html" class="app-sidebar-nav-sublink">Collections</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../users/" class="app-sidebar-nav-link">
+					<i data-lucide="users" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Users</span>
+							</a>
+						</li>
+						<li>
+							<a href="../disputes/" class="app-sidebar-nav-link">
+								<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Disputes</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Core Business</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="./" class="app-sidebar-nav-link">
+								<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Merchants</span>
+							</a>
+						</li>
+						<li>
+							<a href="#sidebar-nav-sub-disbursements" class="app-sidebar-nav-link app-sidebar-nav-parent"
+								role="button" aria-expanded="false" aria-controls="sidebar-nav-sub-disbursements"
+								data-bs-toggle="collapse">
+								<i data-lucide="send" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Disbursements</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-disbursements" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../disbursements/batch.html" class="app-sidebar-nav-sublink">Batch Operations</a></li>
+								<li><a href="../disbursements/single.html" class="app-sidebar-nav-sublink">Single Transactions</a></li>
+								<li><a href="../disbursements/funds-transfer.html" class="app-sidebar-nav-sublink">Funds Transfer</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#sidebar-nav-sub-collections" class="app-sidebar-nav-link app-sidebar-nav-parent"
+								role="button" aria-expanded="false" aria-controls="sidebar-nav-sub-collections"
+								data-bs-toggle="collapse">
+								<i data-lucide="credit-card" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Collections</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-collections" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../collections/received.html" class="app-sidebar-nav-sublink">Received Payments</a></li>
+								<li><a href="../collections/rtp.html" class="app-sidebar-nav-sublink">Request to Pay</a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">System and Integration</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="#sidebar-nav-sub-developers" class="app-sidebar-nav-link app-sidebar-nav-parent"
+								role="button" aria-expanded="false" aria-controls="sidebar-nav-sub-developers"
+								data-bs-toggle="collapse">
+								<i data-lucide="code-2" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Developers</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-developers" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../apikeys/" class="app-sidebar-nav-sublink">API Keys</a></li>
+								<li><a href="../webhooks/" class="app-sidebar-nav-sublink">Webhooks</a></li>
+								<li><a href="../webhooks/notifications.html" class="app-sidebar-nav-sublink">Webhook Notifications</a></li>
+								<li><a href="https://docs.onekhusa.com/api-reference" class="app-sidebar-nav-sublink" target="_blank" rel="noopener noreferrer">API References</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../connectors/" class="app-sidebar-nav-link">
+								<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Connectors</span>
+							</a>
+						</li>
+						<li>
+							<a href="#sidebar-nav-sub-fake-data" class="app-sidebar-nav-link app-sidebar-nav-parent"
+								role="button" aria-expanded="false" aria-controls="sidebar-nav-sub-fake-data"
+								data-bs-toggle="collapse">
+								<i data-lucide="database" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Fake Data</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-fake-data" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../fakedata/accept-pay.html" class="app-sidebar-nav-sublink">Simulate Accept Pay</a></li>
+								<li><a href="../fakedata/accept-rtp.html" class="app-sidebar-nav-sublink">Simulate Accept Request-To-Pay</a></li>
+								<li><a href="../fakedata/sample-disbursement.html" class="app-sidebar-nav-sublink">Download Sample Disbursements</a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+			</nav>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">GM</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Gabriel Munthali</span>
+						<span class="app-sidebar-user-email">gabriel.munthali@angledimension.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasProfile"><i data-lucide="user-round"
+									aria-hidden="true"></i>Profile</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Change
+								password</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Log
+								out</a></li>
+					</ul>
+				</div>
+			</footer>
+		</aside>
+		<main class="app-main">
+			<nav class="app-main-nav" aria-label="Main">
+				<div class="app-main-nav-start">
+					<button type="button" class="app-main-nav-toggle d-lg-none" data-bs-toggle="offcanvas"
+						data-bs-target="#appSidebarMenu" aria-controls="appSidebarMenu" aria-label="Open sidebar">
+						<i data-lucide="menu" class="app-main-nav-toggle-icon" aria-hidden="true"></i>
+					</button>
+					<nav class="app-main-nav-breadcrumb" aria-label="Breadcrumb">
+						<ol class="app-main-nav-breadcrumb-list">
+							<li><a href="#">Dashboard</a></li>
+							<li><a href="./">Merchants</a></li>
+							<li><span aria-current="page">Gabriel Munthali LTD</span></li>
+						</ol>
+					</nav>
+				</div>
+				<div class="app-main-nav-end">
+					<div class="toggle-container app-main-nav-env d-none d-lg-flex" role="group"
+						aria-label="Environment">
+						<input type="radio" class="btn-check" name="main-nav-env" id="main-nav-env-sandbox"
+							autocomplete="off" checked>
+						<label class="switch-button" for="main-nav-env-sandbox">Sandbox</label>
+						<input type="radio" class="btn-check" name="main-nav-env" id="main-nav-env-live"
+							autocomplete="off">
+						<label class="switch-button" for="main-nav-env-live">Live</label>
+					</div>
+					<div class="dropdown app-main-nav-notifications-dropdown">
+						<button type="button" class="dropdown-toggle app-main-nav-icon-btn"
+							id="mainNavNotificationsMenu" data-bs-toggle="dropdown" aria-expanded="false"
+							aria-haspopup="true" aria-label="Notifications">
+							<span class="app-main-nav-notifications-icon-wrap" aria-hidden="true">
+								<i data-lucide="bell" class="app-main-nav-icon-btn-icon"></i>
+								<span class="app-main-nav-notifications-dot"></span>
+							</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end app-main-nav-notifications-menu"
+							aria-labelledby="mainNavNotificationsMenu">
+							<li class="app-main-nav-notifications-header-wrap">
+								<div class="app-main-nav-notifications-header-inner">
+									<h6 class="app-main-nav-notifications-header">Notifications</h6>
+									<button type="button" class="app-main-nav-notifications-mark-all-read">Mark all
+										read</button>
+								</div>
+							</li>
+							<li class="app-main-nav-notification-entry">
+								<button type="button" class="dropdown-item app-main-nav-notification-item">
+									<span class="app-main-nav-notification-title">Payout completed</span>
+									<span class="app-main-nav-notification-meta">2 minutes ago</span>
+									<span class="app-main-nav-notification-body">Your batch disbursement was processed
+										successfully.</span>
+								</button>
+							</li>
+							<li class="app-main-nav-notification-entry">
+								<button type="button" class="dropdown-item app-main-nav-notification-item">
+									<span class="app-main-nav-notification-title">KYC update required</span>
+									<span class="app-main-nav-notification-meta">1 hour ago</span>
+									<span class="app-main-nav-notification-body">Additional documents are needed to
+										finish verification.</span>
+								</button>
+							</li>
+							<li class="app-main-nav-notification-entry">
+								<button type="button" class="dropdown-item app-main-nav-notification-item">
+									<span class="app-main-nav-notification-title">New API key created</span>
+									<span class="app-main-nav-notification-meta">Yesterday</span>
+									<span class="app-main-nav-notification-body">A new production API key was added to
+										your workspace.</span>
+								</button>
+							</li>
+							<li>
+								<hr class="dropdown-divider app-main-nav-notifications-divider">
+							</li>
+							<li><a class="dropdown-item app-main-nav-notification-all" href="#">View all
+									notifications</a></li>
+						</ul>
+					</div>
+					<button type="button" class="app-main-nav-icon-btn" id="bd-theme"
+						aria-label="Switch to dark theme" aria-pressed="false">
+						<i data-lucide="sun" class="app-main-nav-icon-btn-icon theme-icon-active" aria-hidden="true"></i>
+						<span class="visually-hidden">Toggle theme</span>
+					</button>
+					<div class="dropdown app-main-nav-merchant-dropdown d-none d-lg-block">
+						<button type="button" class="dropdown-toggle app-main-nav-merchant" id="mainNavMerchantMenu"
+							data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true"
+							aria-label="Select merchant account">
+							<span class="app-main-nav-merchant-avatar" aria-hidden="true">
+								<i data-lucide="store" class="app-main-nav-merchant-icon"></i>
+							</span>
+							<span class="app-main-nav-merchant-meta">
+								<span class="app-main-nav-merchant-name-row">
+									<span class="app-main-nav-merchant-name">Gabriel Munthali LTD</span>
+									<span class="badge badge-sm badge-success"><i data-lucide="zap"
+											aria-hidden="true"></i> Active</span>
+								</span>
+								<span class="app-main-nav-merchant-account">KH-8849201</span>
+							</span>
+							<i data-lucide="chevrons-up-down" class="app-main-nav-merchant-chevron"
+								aria-hidden="true"></i>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end app-main-nav-merchant-menu"
+							aria-labelledby="mainNavMerchantMenu">
+							<li class="app-main-nav-merchant-header-wrap">
+								<div class="app-main-nav-merchant-header-inner">
+									<h6 class="app-main-nav-merchant-header">Merchant accounts</h6>
+									<a class="app-main-nav-merchant-view-more" href="./">View more</a>
+								</div>
+							</li>
+							<li>
+								<button type="button" class="dropdown-item app-main-nav-merchant-option"
+									aria-current="true">
+									<span class="app-main-nav-merchant-option-text">
+										<span class="app-main-nav-merchant-option-row">
+											<span class="app-main-nav-merchant-option-name">Gabriel Munthali LTD</span>
+											<span class="badge badge-sm badge-success"><i data-lucide="zap"
+													aria-hidden="true"></i> Active</span>
+										</span>
+										<span class="app-main-nav-merchant-option-account">KH-8849201</span>
+									</span>
+								</button>
+							</li>
+							<li>
+								<button type="button" class="dropdown-item app-main-nav-merchant-option">
+									<span class="app-main-nav-merchant-option-text">
+										<span class="app-main-nav-merchant-option-row">
+											<span class="app-main-nav-merchant-option-name">Riverside Imports</span>
+											<span class="badge badge-sm"><i data-lucide="zap-off"
+													aria-hidden="true"></i> Inactive</span>
+										</span>
+										<span class="app-main-nav-merchant-option-account">KH-2299400</span>
+									</span>
+								</button>
+							</li>
+							<li>
+								<button type="button" class="dropdown-item app-main-nav-merchant-option">
+									<span class="app-main-nav-merchant-option-text">
+										<span class="app-main-nav-merchant-option-row">
+											<span class="app-main-nav-merchant-option-name">Apex Holdings</span>
+											<span class="badge badge-sm"><i data-lucide="zap-off"
+													aria-hidden="true"></i> Inactive</span>
+										</span>
+										<span class="app-main-nav-merchant-option-account">KH-1100299</span>
+									</span>
+								</button>
+							</li>
+							<li>
+								<hr class="dropdown-divider app-main-nav-merchant-divider">
+							</li>
+							<li class="app-main-nav-merchant-footer-add-wrap">
+								<a class="dropdown-item app-main-nav-merchant-footer-link-add" href="#" data-bs-toggle="modal" data-bs-target="#modalNewMerchant">
+									<i data-lucide="plus" aria-hidden="true"></i>
+									Add merchant account
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div class="app-content">
+				<div class="app-content-inner container-fluid">
+					<div class="merchant-detail-page">
+						<div class="row merchant-detail-layout g-4 align-items-start">
+							<div class="col-12 col-lg-9 merchant-detail-main">
+								<div class="merchant-detail-intro">
+									<nav class="section-jump-nav" aria-label="Jump to section">
+										<ul class="section-jump-nav-list">
+											<li><a href="#merchant-section-balance" class="section-jump-link" data-merchant-detail-nav="merchant-section-balance">Balance</a></li>
+											<li><a href="#merchant-section-details" class="section-jump-link" data-merchant-detail-nav="merchant-section-details">Account details</a></li>
+											<li><a href="#merchant-section-settlement" class="section-jump-link" data-merchant-detail-nav="merchant-section-settlement">Settlement accounts</a></li>
+											<li><a href="#merchant-section-fees" class="section-jump-link" data-merchant-detail-nav="merchant-section-fees">Transaction fees</a></li>
+											<li><a href="#merchant-section-limits" class="section-jump-link" data-merchant-detail-nav="merchant-section-limits">Transaction limits</a></li>
+										</ul>
+									</nav>
+									<section id="merchant-section-balance" class="merchant-detail-balance rtp-amount-banner merchant-detail-anchor" aria-labelledby="merchant-section-balance-name">
+										<div class="merchant-detail-balance-head">
+											<h1 id="merchant-section-balance-name" class="merchant-detail-balance-name">Gabriel Munthali LTD</h1>
+										</div>
+										<span class="rtp-detail-label">Available balance</span>
+										<p class="rtp-detail-value">MWK 4,200,000.00</p>
+										<div class="merchant-detail-balance-actions">
+											<button type="button" class="button button-primary button-sm button-pill">
+												<i data-lucide="send" aria-hidden="true"></i>
+												Single disbursement
+											</button>
+											<button type="button" class="button button-outline button-sm button-pill">
+												<i data-lucide="banknote" aria-hidden="true"></i>
+												Request to Pay
+											</button>
+										</div>
+									</section>
+								</div>
+
+								<section id="merchant-section-details" class="detail-group merchant-detail-anchor" aria-labelledby="merchant-section-details-heading">
+									<div class="detail-group-head">
+										<div class="detail-group-head-text">
+											<h2 id="merchant-section-details-heading" class="card-title mb-0">Account details</h2>
+											<p class="detail-group-lede text-secondary small mb-0">Core settings and identifiers for this merchant account.</p>
+										</div>
+										<div class="btn-group" role="group" aria-label="Manage merchant account">
+											<button type="button" class="button button-primary button-sm">
+												<i data-lucide="settings-2" aria-hidden="true"></i> Manage account
+											</button>
+											<button type="button" id="merchantDetailManageMenu" class="button button-primary button-sm dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="More account actions">
+												<i data-lucide="chevron-down" aria-hidden="true"></i>
+											</button>
+											<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="merchantDetailManageMenu">
+												<li>
+													<a class="dropdown-item" href="#"><i data-lucide="pencil" aria-hidden="true"></i> Edit details</a>
+												</li>
+											</ul>
+										</div>
+									</div>
+									<dl class="description-list description-list-bordered mb-0">
+											<div class="description-list-row">
+												<dt><i data-lucide="zap" aria-hidden="true"></i> Account status</dt>
+												<dd><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></dd>
+											</div>
+											<div class="description-list-row">
+												<dt><i data-lucide="hash" aria-hidden="true"></i> Account number</dt>
+												<dd><code class="app-dashboard-code">73734964</code></dd>
+											</div>
+											<div class="description-list-row">
+												<dt><i data-lucide="coins" aria-hidden="true"></i> Transaction currency</dt>
+												<dd>MWK</dd>
+											</div>
+											<div class="description-list-row">
+												<dt><i data-lucide="shield" aria-hidden="true"></i> Authorization level</dt>
+												<dd>Initiator Only</dd>
+											</div>
+											<div class="description-list-row">
+												<dt><i data-lucide="wallet" aria-hidden="true"></i> Fees revenue</dt>
+												<dd>MWK0.00</dd>
+											</div>
+										</dl>
+								</section>
+
+								<section id="merchant-section-settlement" class="detail-group merchant-detail-anchor" aria-labelledby="merchant-section-settlement-heading">
+									<div class="detail-group-head">
+										<div class="detail-group-head-text">
+											<h2 id="merchant-section-settlement-heading" class="card-title mb-0">Settlement accounts</h2>
+											<p class="detail-group-lede text-secondary small mb-0">Bank accounts used for settling funds to your business.</p>
+										</div>
+										<button type="button" class="button button-primary button-sm" data-bs-toggle="modal"
+											data-bs-target="#modalAddSettlementAccount" aria-haspopup="dialog">
+											<i data-lucide="plus" aria-hidden="true"></i>
+											Add account
+										</button>
+									</div>
+									<div class="table-responsive">
+										<table class="table table-bordered mb-0">
+											<thead>
+												<tr>
+													<th scope="col">Bank</th>
+													<th scope="col"><i data-lucide="a-large-small" aria-hidden="true"></i> Account name</th>
+													<th scope="col">Account number</th>
+													<th scope="col"><i data-lucide="loader" aria-hidden="true"></i> Status</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>
+														<span class="label-with-avatar">
+															<span class="avatar avatar-sm">
+																<img src="../../../img/brand-logo/national-bank-brand-logo.svg" alt="National Bank of Malawi" width="32" height="32">
+															</span>
+															<span class="label-with-avatar-text">National Bank of Malawi</span>
+														</span>
+													</td>
+													<td>Gabriel Munthali LTD</td>
+													<td><code class="app-dashboard-code">MWK9928836210</code></td>
+													<td><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></td>
+												</tr>
+												<tr>
+													<td>
+														<span class="label-with-avatar">
+															<span class="avatar avatar-sm">
+																<img src="../../../img/brand-logo/fdh-bank-brand-logo.svg" alt="FDH Bank" width="32" height="32">
+															</span>
+															<span class="label-with-avatar-text">FDH Bank</span>
+														</span>
+													</td>
+													<td>Gabriel Munthali LTD</td>
+													<td><code class="app-dashboard-code">MWK7741029981</code></td>
+													<td><span class="badge badge-md"><i data-lucide="zap-off" aria-hidden="true"></i> Inactive</span></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</section>
+
+								<div class="merchant-detail-reference">
+									<div class="info-sections mb-0" role="region" aria-label="Account reference information">
+										<p class="detail-group-label">
+											<i data-lucide="info" aria-hidden="true"></i>
+											Reference information
+										</p>
+										<section id="merchant-section-fees" class="info-section mb-0 merchant-detail-anchor" aria-labelledby="merchant-section-fees-heading">
+											<h2 id="merchant-section-fees-heading" class="info-section-title">Transaction fees</h2>
+											<p class="text-secondary small mb-3 mb-lg-4">The table displays the transaction fees defined for your merchant account.</p>
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+													<thead>
+														<tr>
+															<th scope="col">Fee description</th>
+															<th scope="col">Convenience fee</th>
+															<th scope="col">Transaction fee</th>
+															<th scope="col">Merchant fee</th>
+															<th scope="col">Government levy</th>
+															<th scope="col">VAT %</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Account To Merchant</td>
+															<td>MWK0.00</td>
+															<td>1.00%</td>
+															<td>0.00%</td>
+															<td>0.00%</td>
+															<td>0.00%</td>
+														</tr>
+														<tr>
+															<td>Merchant To Account</td>
+															<td>MWK700.00</td>
+															<td>1.00%</td>
+															<td>0.00%</td>
+															<td>0.05%</td>
+															<td>17.50%</td>
+														</tr>
+														<tr>
+															<td>Merchant To Mobile Wallet</td>
+															<td>MWK200.00</td>
+															<td>1.00%</td>
+															<td>0.00%</td>
+															<td>0.05%</td>
+															<td>17.50%</td>
+														</tr>
+														<tr>
+															<td>Mobile Wallet To Merchant</td>
+															<td>MWK0.00</td>
+															<td>1.00%</td>
+															<td>0.00%</td>
+															<td>0.00%</td>
+															<td>0.00%</td>
+														</tr>
+														<tr>
+															<td>Revenue To Bank Account</td>
+															<td>MWK700.00</td>
+															<td>0.00%</td>
+															<td>0.00%</td>
+															<td>0.00%</td>
+															<td>0.00%</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</section>
+										<section id="merchant-section-limits" class="info-section mb-0 merchant-detail-anchor" aria-labelledby="merchant-section-limits-heading">
+											<h2 id="merchant-section-limits-heading" class="info-section-title">Transaction limits</h2>
+											<p class="text-secondary small mb-3 mb-lg-4">The table displays the transaction limits associated with your merchant account.</p>
+											<div class="table-responsive">
+												<table class="table table-bordered mb-0">
+													<thead>
+														<tr>
+															<th scope="col">Transaction type</th>
+															<th scope="col">Minimum amount</th>
+															<th scope="col">Maximum amount</th>
+															<th scope="col">Daily limit</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td>Merchant To Account</td>
+															<td>MWK100.00</td>
+															<td>MWK250,000.00</td>
+															<td>MWK300,000.00</td>
+														</tr>
+														<tr>
+															<td>Merchant To Mobile Wallet</td>
+															<td>MWK100.00</td>
+															<td>MWK75,000.00</td>
+															<td>MWK100,000.00</td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</section>
+									</div>
+								</div>
+							</div>
+
+							<div class="col-lg-3 d-none d-lg-block">
+								<aside class="merchant-detail-hint" aria-labelledby="merchant-detail-hint-title">
+									<p id="merchant-detail-hint-title" class="card-title mb-0">Account readiness</p>
+									<p class="merchant-detail-hint-lede text-secondary small">Quick checks before you disburse or collect on this account.</p>
+									<ul class="app-dashboard-checklist list-unstyled mb-0">
+										<li>
+											<span class="app-dashboard-checklist-icon text-success" aria-hidden="true"><i data-lucide="check-circle-2"></i></span>
+											<span class="app-dashboard-checklist-body">
+												<span class="app-dashboard-checklist-title">Settlement account</span>
+												<span class="app-dashboard-checklist-desc text-tertiary">At least one active bank account for payouts.</span>
+											</span>
+										</li>
+										<li>
+											<span class="app-dashboard-checklist-icon text-success" aria-hidden="true"><i data-lucide="check-circle-2"></i></span>
+											<span class="app-dashboard-checklist-body">
+												<span class="app-dashboard-checklist-title">Available balance</span>
+												<span class="app-dashboard-checklist-desc text-tertiary">Funds on hand cover your next disbursement.</span>
+											</span>
+										</li>
+										<li>
+											<span class="app-dashboard-checklist-icon text-warning" aria-hidden="true"><i data-lucide="alert-circle"></i></span>
+											<span class="app-dashboard-checklist-body">
+												<span class="app-dashboard-checklist-title">Webhooks</span>
+												<span class="app-dashboard-checklist-desc text-tertiary">Subscribe to payout and collection events you need to reconcile.</span>
+											</span>
+										</li>
+										<li>
+											<span class="app-dashboard-checklist-icon text-tertiary" aria-hidden="true"><i data-lucide="file-question"></i></span>
+											<span class="app-dashboard-checklist-body">
+												<span class="app-dashboard-checklist-title">Production KYC</span>
+												<span class="app-dashboard-checklist-desc text-tertiary">Complete compliance review before switching to live.</span>
+											</span>
+										</li>
+									</ul>
+								</aside>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<div class="offcanvas offcanvas-start app-sidebar-offcanvas" tabindex="-1" id="appSidebarMenu" aria-label="Sidebar">
+		<div class="offcanvas-header">
+			<header class="app-sidebar-brand app-sidebar-offcanvas-brand">
+				<a href="../../../" class="app-sidebar-brand-link">
+					<img src="../../../img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<button type="button" class="ms-auto flex-shrink-0" data-bs-dismiss="offcanvas" aria-label="Close"><i
+					data-lucide="x"></i></button>
+		</div>
+		<div class="offcanvas-body app-sidebar-offcanvas-body">
+			<div class="app-sidebar-offcanvas-scroll">
+				<div class="app-sidebar-offcanvas-context d-lg-none">
+					<section class="app-sidebar-offcanvas-workspace" aria-labelledby="offcanvas-workspace-heading">
+						<h2 class="app-sidebar-offcanvas-workspace-title">
+							<button type="button" class="app-sidebar-offcanvas-workspace-toggle"
+								id="offcanvas-workspace-heading" data-bs-toggle="collapse"
+								data-bs-target="#offcanvas-workspace-panel" aria-expanded="true"
+								aria-controls="offcanvas-workspace-panel">
+								<span>Workspace</span>
+								<i data-lucide="chevron-down" class="app-sidebar-offcanvas-workspace-chevron"
+									aria-hidden="true"></i>
+							</button>
+						</h2>
+						<div id="offcanvas-workspace-panel" class="collapse show app-sidebar-offcanvas-workspace-panel">
+							<div class="app-sidebar-offcanvas-field">
+								<span class="app-sidebar-offcanvas-field-label"
+									id="offcanvas-merchant-label">Merchant</span>
+								<div class="dropdown app-main-nav-merchant-dropdown app-sidebar-offcanvas-merchant">
+									<button type="button" class="dropdown-toggle app-main-nav-merchant"
+										id="offcanvasMainNavMerchantMenu" data-bs-toggle="dropdown"
+										data-bs-display="static" aria-expanded="false" aria-haspopup="true"
+										aria-label="Select merchant account">
+										<span class="app-main-nav-merchant-avatar" aria-hidden="true">
+											<i data-lucide="store" class="app-main-nav-merchant-icon"></i>
+										</span>
+										<span class="app-main-nav-merchant-meta">
+											<span class="app-main-nav-merchant-name-row">
+												<span class="app-main-nav-merchant-name">Gabriel Munthali LTD</span>
+												<span class="badge badge-sm badge-success"><i data-lucide="zap"
+														aria-hidden="true"></i> Active</span>
+											</span>
+											<span class="app-main-nav-merchant-account">KH-8849201</span>
+										</span>
+										<i data-lucide="chevrons-up-down" class="app-main-nav-merchant-chevron"
+											aria-hidden="true"></i>
+									</button>
+									<ul class="dropdown-menu app-main-nav-merchant-menu"
+										aria-labelledby="offcanvasMainNavMerchantMenu">
+										<li class="app-main-nav-merchant-header-wrap">
+											<div class="app-main-nav-merchant-header-inner">
+												<h6 class="app-main-nav-merchant-header">Merchant accounts</h6>
+												<a class="app-main-nav-merchant-view-more" href="./">View
+													more</a>
+											</div>
+										</li>
+										<li>
+											<button type="button" class="dropdown-item app-main-nav-merchant-option"
+												aria-current="true">
+												<span class="app-main-nav-merchant-option-text">
+													<span class="app-main-nav-merchant-option-row">
+														<span class="app-main-nav-merchant-option-name">Gabriel Munthali
+															LTD</span>
+														<span class="badge badge-sm badge-success"><i data-lucide="zap"
+																aria-hidden="true"></i> Active</span>
+													</span>
+													<span class="app-main-nav-merchant-option-account">KH-8849201</span>
+												</span>
+											</button>
+										</li>
+										<li>
+											<button type="button" class="dropdown-item app-main-nav-merchant-option">
+												<span class="app-main-nav-merchant-option-text">
+													<span class="app-main-nav-merchant-option-row">
+														<span class="app-main-nav-merchant-option-name">Riverside
+															Imports</span>
+														<span class="badge badge-sm"><i data-lucide="zap-off"
+																aria-hidden="true"></i> Inactive</span>
+													</span>
+													<span class="app-main-nav-merchant-option-account">KH-2299400</span>
+												</span>
+											</button>
+										</li>
+										<li>
+											<button type="button" class="dropdown-item app-main-nav-merchant-option">
+												<span class="app-main-nav-merchant-option-text">
+													<span class="app-main-nav-merchant-option-row">
+														<span class="app-main-nav-merchant-option-name">Apex
+															Holdings</span>
+														<span class="badge badge-sm"><i data-lucide="zap-off"
+																aria-hidden="true"></i> Inactive</span>
+													</span>
+													<span class="app-main-nav-merchant-option-account">KH-1100299</span>
+												</span>
+											</button>
+										</li>
+										<li>
+											<hr class="dropdown-divider app-main-nav-merchant-divider">
+										</li>
+										<li class="app-main-nav-merchant-footer-add-wrap">
+											<a class="dropdown-item app-main-nav-merchant-footer-link-add" href="#" data-bs-toggle="modal" data-bs-target="#modalNewMerchant">
+												<i data-lucide="plus" aria-hidden="true"></i>
+												Add merchant account
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="app-sidebar-offcanvas-field">
+								<span class="app-sidebar-offcanvas-field-label"
+									id="offcanvas-env-label">Environment</span>
+								<div class="toggle-container app-main-nav-env app-sidebar-offcanvas-env" role="group"
+									aria-labelledby="offcanvas-env-label">
+									<input type="radio" class="btn-check" name="main-nav-env-offcanvas"
+										id="offcanvas-main-nav-env-sandbox" autocomplete="off" checked>
+									<label class="switch-button" for="offcanvas-main-nav-env-sandbox">Sandbox</label>
+									<input type="radio" class="btn-check" name="main-nav-env-offcanvas"
+										id="offcanvas-main-nav-env-live" autocomplete="off">
+									<label class="switch-button" for="offcanvas-main-nav-env-live">Live</label>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>
+				<nav class="app-sidebar-nav app-sidebar-offcanvas-nav" aria-label="Sidebar navigation">
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="../../../" class="app-sidebar-nav-link">
+								<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Home</span>
+							</a>
+						</li>
+					</ul>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Management and Insights</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="#offcanvas-nav-sub-applications"
+									class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="false" aria-controls="offcanvas-nav-sub-applications"
+									data-bs-toggle="collapse">
+									<i data-lucide="file-stack" class="app-sidebar-nav-link-icon"
+										aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Applications</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron"
+										aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-applications" class="collapse app-sidebar-nav-sublist">
+									<li><a href="#" class="app-sidebar-nav-sublink">Submit KYC</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#offcanvas-nav-sub-analytics"
+									class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="false" aria-controls="offcanvas-nav-sub-analytics"
+									data-bs-toggle="collapse">
+									<i data-lucide="bar-chart-3" class="app-sidebar-nav-link-icon"
+										aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Analytics</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron"
+										aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-analytics" class="collapse app-sidebar-nav-sublist">
+									<li><a href="../analytics/disbursements.html" class="app-sidebar-nav-sublink">Disbursements</a></li>
+							<li><a href="../analytics/collections.html" class="app-sidebar-nav-sublink">Collections</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="../users/" class="app-sidebar-nav-link">
+					<i data-lucide="users" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Users</span>
+								</a>
+							</li>
+						<li>
+							<a href="../disputes/" class="app-sidebar-nav-link">
+								<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Disputes</span>
+							</a>
+						</li>
+						</ul>
+					</section>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Core Business</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="./" class="app-sidebar-nav-link">
+									<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Merchants</span>
+								</a>
+							</li>
+							<li>
+								<a href="#offcanvas-nav-sub-disbursements"
+									class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="false" aria-controls="offcanvas-nav-sub-disbursements"
+									data-bs-toggle="collapse">
+									<i data-lucide="send" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Disbursements</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron"
+										aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-disbursements" class="collapse app-sidebar-nav-sublist">
+									<li><a href="../disbursements/batch.html" class="app-sidebar-nav-sublink">Batch Operations</a></li>
+									<li><a href="../disbursements/single.html" class="app-sidebar-nav-sublink">Single Transactions</a></li>
+									<li><a href="../disbursements/funds-transfer.html" class="app-sidebar-nav-sublink">Funds Transfer</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="#offcanvas-nav-sub-collections"
+									class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="false" aria-controls="offcanvas-nav-sub-collections"
+									data-bs-toggle="collapse">
+									<i data-lucide="credit-card" class="app-sidebar-nav-link-icon"
+										aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Collections</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron"
+										aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-collections" class="collapse app-sidebar-nav-sublist">
+									<li><a href="../collections/received.html" class="app-sidebar-nav-sublink">Received Payments</a></li>
+									<li><a href="../collections/rtp.html" class="app-sidebar-nav-sublink">Request to Pay</a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">System and Integration</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="#offcanvas-nav-sub-developers"
+									class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="false" aria-controls="offcanvas-nav-sub-developers"
+									data-bs-toggle="collapse">
+									<i data-lucide="code-2" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Developers</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron"
+										aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-developers" class="collapse app-sidebar-nav-sublist">
+									<li><a href="../apikeys/" class="app-sidebar-nav-sublink">API Keys</a></li>
+									<li><a href="../webhooks/" class="app-sidebar-nav-sublink">Webhooks</a></li>
+									<li><a href="../webhooks/notifications.html" class="app-sidebar-nav-sublink">Webhook Notifications</a></li>
+									<li><a href="https://docs.onekhusa.com/api-reference" class="app-sidebar-nav-sublink" target="_blank" rel="noopener noreferrer">API References</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="../connectors/" class="app-sidebar-nav-link">
+									<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Connectors</span>
+								</a>
+							</li>
+							<li>
+								<a href="#offcanvas-nav-sub-fake-data"
+									class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="false" aria-controls="offcanvas-nav-sub-fake-data"
+									data-bs-toggle="collapse">
+									<i data-lucide="database" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Fake Data</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron"
+										aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-fake-data" class="collapse app-sidebar-nav-sublist">
+									<li><a href="../fakedata/accept-pay.html" class="app-sidebar-nav-sublink">Simulate Accept Pay</a></li>
+									<li><a href="../fakedata/accept-rtp.html" class="app-sidebar-nav-sublink">Simulate Accept Request-To-Pay</a></li>
+									<li><a href="../fakedata/sample-disbursement.html" class="app-sidebar-nav-sublink">Download Sample Disbursements</a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+				</nav>
+			</div>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">GM</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Gabriel Munthali</span>
+						<span class="app-sidebar-user-email">gabriel.munthali@angledimension.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasProfile"><i data-lucide="user-round"
+									aria-hidden="true"></i>Profile</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Change
+								password</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Log
+								out</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<div class="modal fade" id="modalNewMerchant" tabindex="-1" role="dialog"
+		aria-labelledby="modalNewMerchantLabel" aria-describedby="modalNewMerchantDescription" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-size-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-header-leading modal-header-leading--stacked">
+						<span class="modal-leading-icon" aria-hidden="true">
+							<span class="modal-leading-icon-main">
+								<i data-lucide="store"></i>
+							</span>
+							<span class="modal-leading-icon-badge">
+								<i data-lucide="plus"></i>
+							</span>
+						</span>
+						<h1 class="modal-title" id="modalNewMerchantLabel">Add new merchant</h1>
+					</div>
+				</div>
+				<div class="modal-body">
+					<p id="modalNewMerchantDescription" class="text-secondary">Specify details for the new merchant account.</p>
+					<div class="form-group">
+						<label for="new-merchant-name">Merchant name</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="store" aria-hidden="true"></i>
+							<input type="text" class="form-control" id="new-merchant-name" name="merchantName"
+								placeholder="Legal or trading name" autocomplete="organization">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="new-merchant-currency">Transaction currency</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="banknote" aria-hidden="true"></i>
+							<select class="form-control with-icon-right" id="new-merchant-currency" name="currency">
+								<option value="" disabled selected>Select currency</option>
+								<option value="MWK">MWK (Malawian kwacha)</option>
+								<option value="USD">USD (US dollar)</option>
+								<option value="ZAR">ZAR (South African rand)</option>
+							</select>
+							<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="new-merchant-auth-level">Authorization level</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="shield-check" aria-hidden="true"></i>
+							<select class="form-control with-icon-right" id="new-merchant-auth-level" name="authorizationLevel">
+								<option value="" disabled selected>Select level</option>
+								<option value="standard">Standard</option>
+								<option value="elevated">Elevated</option>
+								<option value="restricted">Restricted</option>
+							</select>
+							<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="button button-md" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="button button-primary button-md" data-bs-dismiss="modal">Create merchant</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modalAddSettlementAccount" tabindex="-1" role="dialog"
+		aria-labelledby="modalAddSettlementAccountLabel" aria-describedby="modalAddSettlementAccountDescription"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-size-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-header-leading modal-header-leading--stacked">
+						<span class="modal-leading-icon" aria-hidden="true">
+							<span class="modal-leading-icon-main">
+								<i data-lucide="landmark"></i>
+							</span>
+							<span class="modal-leading-icon-badge">
+								<i data-lucide="plus"></i>
+							</span>
+						</span>
+						<h1 class="modal-title" id="modalAddSettlementAccountLabel">Add settlement account</h1>
+					</div>
+				</div>
+				<div class="modal-body">
+					<p id="modalAddSettlementAccountDescription" class="text-secondary">Add a bank account for
+						settling funds to this merchant.</p>
+					<div class="form-group">
+						<label for="settlement-bank-name">Bank name</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="landmark" aria-hidden="true"></i>
+							<select class="form-control with-icon-right" id="settlement-bank-name" name="bankName">
+								<option value="" disabled selected>Select bank</option>
+								<option value="nbm">National Bank of Malawi</option>
+								<option value="fdh">FDH Bank</option>
+								<option value="first-capital">First Capital Bank</option>
+								<option value="standard">Standard Bank Malawi</option>
+								<option value="nbs">NBS Bank</option>
+							</select>
+							<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="settlement-account-name">Account name</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="user" aria-hidden="true"></i>
+							<input type="text" class="form-control" id="settlement-account-name" name="accountName"
+								placeholder="Name on the account" autocomplete="organization">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="settlement-account-number">Account number</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="hash" aria-hidden="true"></i>
+							<input type="text" class="form-control" id="settlement-account-number" name="accountNumber"
+								placeholder="Account number" inputmode="numeric" autocomplete="off">
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="button button-md" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="button button-primary button-md" data-bs-dismiss="modal">Add account</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="offcanvas offcanvas-end fade" id="offcanvasProfile" tabindex="-1" aria-labelledby="offcanvasProfileTitle">
+		<div class="offcanvas-header">
+			<h2 class="offcanvas-title" id="offcanvasProfileTitle">Account details</h2>
+			<button type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+				<i data-lucide="x" aria-hidden="true"></i>
+			</button>
+		</div>
+		<div class="offcanvas-body offcanvas-body--sections">
+			<section class="offcanvas-section">
+				<div class="drawer-account">
+					<span class="app-sidebar-user-avatar" aria-hidden="true">GM</span>
+					<span class="drawer-account-meta">
+						<span class="drawer-account-name">Gabriel Munthali</span>
+						<span class="drawer-account-detail">gabriel.munthali@angledimension.com</span>
+					</span>
+				</div>
+			</section>
+			<section class="offcanvas-section">
+				<h3 class="offcanvas-section-title">Profile information</h3>
+				<p class="offcanvas-section-lede">Your personal account details.</p>
+				<dl class="description-list mb-0">
+					<div class="description-list-row">
+						<dt><i data-lucide="case-sensitive" aria-hidden="true"></i> Short name</dt>
+						<dd>Gabriel</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="mail" aria-hidden="true"></i> Email address</dt>
+						<dd>gabriel.munthali@angledimension.com</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="phone" aria-hidden="true"></i> Phone number</dt>
+						<dd>+265 993 996 717</dd>
+					</div>
+				</dl>
+			</section>
+			<section class="offcanvas-section">
+				<h3 class="offcanvas-section-title">User role details</h3>
+				<p class="offcanvas-section-lede">Your access level in this portal.</p>
+				<dl class="description-list mb-0">
+					<div class="description-list-row">
+						<dt><i data-lucide="shield" aria-hidden="true"></i> Role</dt>
+						<dd>Administrator</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="zap" aria-hidden="true"></i> Status</dt>
+						<dd><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></dd>
+					</div>
+				</dl>
+			</section>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+	<script src="../../../js/theme-init.js"></script>
+	<script src="../../../js/main.js"></script>
+</body>
+
+</html>

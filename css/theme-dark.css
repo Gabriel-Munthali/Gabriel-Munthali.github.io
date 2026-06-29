@@ -1,0 +1,41 @@
+/* Dark theme (loaded via style.css; requires data-bs-theme="dark" on html) */
+
+html[data-bs-theme="dark"] {
+	--text-gray-50: #020617;
+	--text-gray-100: #0F172A;
+	--text-gray-200: #1E293B;
+	--text-gray-300: #334155;
+	--text-gray-400: #475569;
+	--text-gray-500: #64748B;
+	--text-gray-600: #94A3B8;
+	--text-gray-700: #CBD5E1;
+	--text-gray-800: #E2E8F0;
+	--text-gray-900: #F8FAFC;
+
+	--color-white: #0F172A;
+	--color-primary-light: #0B2A45;
+	--color-on-primary: #F8FAFC;
+	--color-on-primary-muted: color-mix(in srgb, var(--color-on-primary) 72%, transparent);
+	--banner-gradient-end: color-mix(in srgb, var(--color-primary) 50%, #020617);
+	--banner-button-fill: #F8FAFC;
+	--color-danger: #FFBFD1;
+	--bg-danger: #4A0016;
+	--color-warning: #FFF1BF;
+	--bg-warning: #3D3000;
+	--color-info: #DDCBFF;
+	--bg-info: #2A155C;
+	--color-success: #BFFFBF;
+	--bg-success: #002600;
+	--chart-fill-emphasis: color-mix(in srgb, var(--color-primary) 88%, var(--text-gray-900));
+	--chart-fill-mid: color-mix(in srgb, var(--color-primary) 58%, var(--text-gray-900));
+	--chart-fill-soft: color-mix(in srgb, var(--color-primary) 32%, var(--text-gray-900));
+}
+
+html[data-bs-theme="dark"] body {
+	background-color: var(--text-gray-50);
+}
+
+html[data-bs-theme="dark"] .table tbody tr:hover td,
+html[data-bs-theme="dark"] .description-list-row:hover {
+	background-color: var(--text-gray-200);
+}

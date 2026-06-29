@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Manage Disputes</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../../css/style.css">
+	<link rel="stylesheet" href="../../../css/responsive.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.css">
+</head>
+<body>
+	<div class="app-shell">
+		<aside class="app-sidebar d-none d-lg-flex flex-column" aria-label="Sidebar">
+			<header class="app-sidebar-brand">
+				<a href="../../../" class="app-sidebar-brand-link">
+					<img src="../../../img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<nav class="app-sidebar-nav" aria-label="Sidebar navigation">
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="../../../" class="app-sidebar-nav-link">
+							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Home</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Operations</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="../applications/" class="app-sidebar-nav-link">
+								<i data-lucide="file-stack" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="#sidebar-nav-sub-complaints" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="true" aria-controls="sidebar-nav-sub-complaints" data-bs-toggle="collapse">
+								<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Complaints</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-complaints" class="collapse show app-sidebar-nav-sublist">
+								<li><a href="./" class="app-sidebar-nav-sublink" aria-current="page">Disputes</a></li>
+								<li><a href="dispute-threshold.html" class="app-sidebar-nav-sublink">Dispute threshold</a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Platform</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="../organizations/" class="app-sidebar-nav-link">
+								<i data-lucide="building-2" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Organizations</span>
+							</a>
+						</li>
+						<li>
+							<a href="../merchants/" class="app-sidebar-nav-link">
+								<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Merchants</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Insights and Integration</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="#sidebar-nav-sub-analytics" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="sidebar-nav-sub-analytics" data-bs-toggle="collapse">
+								<i data-lucide="bar-chart-3" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Analytics</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-analytics" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../analytics/disbursements.html" class="app-sidebar-nav-sublink">Disbursements</a></li>
+								<li><a href="../analytics/refunds.html" class="app-sidebar-nav-sublink">Refunds</a></li>
+								<li><a href="../analytics/disputes.html" class="app-sidebar-nav-sublink">Disputes</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../connectors/" class="app-sidebar-nav-link">
+								<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Connectors</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</nav>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">GM</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Gabriel Munthali</span>
+						<span class="app-sidebar-user-email">gabriel.munthali@angledimension.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasProfile"><i data-lucide="user-round" aria-hidden="true"></i>Profile</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Change password</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Log out</a></li>
+					</ul>
+				</div>
+			</footer>
+		</aside>
+		<main class="app-main">
+			<nav class="app-main-nav" aria-label="Main">
+				<div class="app-main-nav-start">
+					<button type="button" class="app-main-nav-toggle d-lg-none" data-bs-toggle="offcanvas"
+						data-bs-target="#appSidebarMenu" aria-controls="appSidebarMenu" aria-label="Open sidebar">
+						<i data-lucide="menu" class="app-main-nav-toggle-icon" aria-hidden="true"></i>
+					</button>
+					<nav class="app-main-nav-breadcrumb" aria-label="Breadcrumb">
+						<ol class="app-main-nav-breadcrumb-list">
+							<li><a href="../index.html">Admin</a></li>
+							<li><span aria-current="page">Disputes</span></li>
+						</ol>
+					</nav>
+				</div>
+				<div class="app-main-nav-end">
+					<div class="dropdown app-main-nav-notifications-dropdown">
+						<button type="button" class="dropdown-toggle app-main-nav-icon-btn" id="mainNavNotificationsMenu"
+							data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Notifications">
+							<span class="app-main-nav-notifications-icon-wrap" aria-hidden="true">
+								<i data-lucide="bell" class="app-main-nav-icon-btn-icon"></i>
+								<span class="app-main-nav-notifications-dot"></span>
+							</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end app-main-nav-notifications-menu"
+							aria-labelledby="mainNavNotificationsMenu">
+							<li class="app-main-nav-notifications-header-wrap">
+								<div class="app-main-nav-notifications-header-inner">
+									<h6 class="app-main-nav-notifications-header">Notifications</h6>
+									<button type="button" class="app-main-nav-notifications-mark-all-read">Mark all read</button>
+								</div>
+							</li>
+							<li>
+								<hr class="dropdown-divider app-main-nav-notifications-divider">
+							</li>
+							<li><a class="dropdown-item app-main-nav-notification-all" href="#">View all notifications</a></li>
+						</ul>
+					</div>
+					<button type="button" class="app-main-nav-icon-btn" id="bd-theme"
+						aria-label="Switch to dark theme" aria-pressed="false">
+						<i data-lucide="sun" class="app-main-nav-icon-btn-icon theme-icon-active" aria-hidden="true"></i>
+						<span class="visually-hidden">Toggle theme</span>
+					</button>
+				</div>
+			</nav>
+			<div class="app-content">
+				<div class="app-content-inner container-fluid">
+					<section class="page-intro" aria-labelledby="disputes-intro-heading">
+						<div class="page-intro-inner">
+							<div class="page-intro-text">
+								<h1 id="disputes-intro-heading" class="page-intro-heading">Manage Disputes</h1>
+								<p class="page-intro-lede">Review customer payment disputes across merchants and track their status until resolution.</p>
+							</div>
+						</div>
+					</section>
+					<form class="table-toolbar" method="get" action="#" aria-label="Filter disputes">
+						<div class="table-toolbar-search">
+							<label for="disputes-toolbar-search" class="visually-hidden">Search disputes</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="search" aria-hidden="true"></i>
+								<input type="search" class="form-control" id="disputes-toolbar-search" name="q"
+									placeholder="Search disputes" autocomplete="off">
+							</div>
+						</div>
+						<div class="table-toolbar-filters">
+							<div class="table-toolbar-filter table-toolbar-filter-chip">
+								<label for="disputes-toolbar-reference" class="visually-hidden">Reference number</label>
+								<div class="form-group-input-wrapper">
+									<i data-lucide="hash" aria-hidden="true"></i>
+									<input type="text" class="form-control" id="disputes-toolbar-reference" name="reference"
+										placeholder="Reference number" autocomplete="off">
+								</div>
+							</div>
+							<div class="dropdown table-toolbar-filter table-toolbar-filter-chip">
+								<button type="button" class="dropdown-toggle" data-bs-toggle="dropdown"
+									aria-expanded="false" aria-label="Status">
+									<i data-lucide="loader" aria-hidden="true"></i>
+									Status
+									<i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">All statuses</a></li>
+									<li><a class="dropdown-item" href="#">Open</a></li>
+									<li><a class="dropdown-item" href="#">Under review</a></li>
+									<li><a class="dropdown-item" href="#">Resolved</a></li>
+									<li><a class="dropdown-item" href="#">Closed</a></li>
+									<li><a class="dropdown-item" href="#">Escalated</a></li>
+								</ul>
+							</div>
+							<div class="table-toolbar-filter table-toolbar-filter-chip">
+								<label for="disputes-toolbar-date-range" class="visually-hidden">Date range</label>
+								<div class="form-group-input-wrapper">
+									<i data-lucide="calendar-range" aria-hidden="true"></i>
+									<input type="text" class="form-control air-datepicker-field air-datepicker-range-field"
+										id="disputes-toolbar-date-range" name="date-range" placeholder="Select date range"
+										autocomplete="off" readonly data-range-start="2026-03-01" data-range-end="2026-03-12">
+									<i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
+								</div>
+							</div>
+						</div>
+					</form>
+					<div class="table-responsive">
+						<table class="table table-bordered mb-0">
+							<thead>
+								<tr>
+									<th scope="col">Dispute</th>
+									<th scope="col">Transaction ref number</th>
+									<th scope="col">Merchant</th>
+									<th scope="col">Beneficiary</th>
+									<th scope="col"><i data-lucide="calendar" aria-hidden="true"></i> Date opened</th>
+									<th scope="col"><i data-lucide="loader" aria-hidden="true"></i> Status</th>
+									<th scope="col"><i data-lucide="mouse-pointer-click" aria-hidden="true"></i> Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><code class="app-dashboard-code">DSP-2026-00412</code></td>
+									<td><code class="app-dashboard-code">2299400</code></td>
+									<td>Riverside Imports</td>
+									<td>Chisomo Banda</td>
+									<td>12 Mar 2026 09:14:08 AM</td>
+									<td><span class="badge badge-md badge-warning"><i data-lucide="clock" aria-hidden="true"></i> Open</span></td>
+									<td>
+										<a href="dispute.html" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</a>
+									</td>
+								</tr>
+								<tr>
+									<td><code class="app-dashboard-code">DSP-2026-00398</code></td>
+									<td><code class="app-dashboard-code">84729361</code></td>
+									<td>Gabriel Munthali LTD</td>
+									<td>Thandiwe Phiri</td>
+									<td>11 Mar 2026 04:22:15 PM</td>
+									<td><span class="badge badge-md badge-info"><i data-lucide="info" aria-hidden="true"></i> Under review</span></td>
+									<td>
+										<a href="dispute.html" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</a>
+									</td>
+								</tr>
+								<tr>
+									<td><code class="app-dashboard-code">DSP-2026-00385</code></td>
+									<td><code class="app-dashboard-code">73618492</code></td>
+									<td>Apex Holdings</td>
+									<td>James Mkandawire</td>
+									<td>10 Mar 2026 11:08:42 AM</td>
+									<td><span class="badge badge-md badge-success"><i data-lucide="check-circle-2" aria-hidden="true"></i> Resolved</span></td>
+									<td>
+										<a href="dispute.html" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</a>
+									</td>
+								</tr>
+								<tr>
+									<td><code class="app-dashboard-code">DSP-2026-00371</code></td>
+									<td><code class="app-dashboard-code">91537284</code></td>
+									<td>Lilongwe Fresh Foods</td>
+									<td>Ruth Kumwenda</td>
+									<td>9 Mar 2026 02:45:33 PM</td>
+									<td><span class="badge badge-md badge-secondary"><i data-lucide="archive" aria-hidden="true"></i> Closed</span></td>
+									<td>
+										<a href="dispute.html" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</a>
+									</td>
+								</tr>
+								<tr>
+									<td><code class="app-dashboard-code">DSP-2026-00356</code></td>
+									<td><code class="app-dashboard-code">62840173</code></td>
+									<td>Blantyre Tech Solutions</td>
+									<td>Patrick Kaluluma</td>
+									<td>8 Mar 2026 08:30:19 AM</td>
+									<td><span class="badge badge-md badge-danger"><i data-lucide="alert-triangle" aria-hidden="true"></i> Escalated</span></td>
+									<td>
+										<a href="dispute.html" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</a>
+									</td>
+								</tr>
+								<tr>
+									<td><code class="app-dashboard-code">DSP-2026-00342</code></td>
+									<td><code class="app-dashboard-code">50492817</code></td>
+									<td>Mzuzu Crafts Co.</td>
+									<td>Ellen Nyirenda</td>
+									<td>7 Mar 2026 10:17:55 AM</td>
+									<td><span class="badge badge-md badge-warning"><i data-lucide="clock" aria-hidden="true"></i> Open</span></td>
+									<td>
+										<a href="dispute.html" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</a>
+									</td>
+								</tr>
+								<tr>
+									<td><code class="app-dashboard-code">DSP-2026-00328</code></td>
+									<td><code class="app-dashboard-code">38174650</code></td>
+									<td>Southern Grain Traders</td>
+									<td>Grace Mwale</td>
+									<td>6 Mar 2026 03:52:08 PM</td>
+									<td><span class="badge badge-md badge-info"><i data-lucide="info" aria-hidden="true"></i> Under review</span></td>
+									<td>
+										<a href="dispute.html" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</a>
+									</td>
+								</tr>
+								<tr>
+									<td><code class="app-dashboard-code">DSP-2026-00314</code></td>
+									<td><code class="app-dashboard-code">79205364</code></td>
+									<td>Central Pharmacy Group</td>
+									<td>Joseph Banda</td>
+									<td>5 Mar 2026 09:41:27 AM</td>
+									<td><span class="badge badge-md badge-success"><i data-lucide="check-circle-2" aria-hidden="true"></i> Resolved</span></td>
+									<td>
+										<a href="dispute.html" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</a>
+									</td>
+								</tr>
+								<tr>
+									<td><code class="app-dashboard-code">DSP-2026-00299</code></td>
+									<td><code class="app-dashboard-code">46018293</code></td>
+									<td>Lakeview Logistics</td>
+									<td>Mercy Phiri</td>
+									<td>4 Mar 2026 01:15:44 PM</td>
+									<td><span class="badge badge-md badge-secondary"><i data-lucide="archive" aria-hidden="true"></i> Closed</span></td>
+									<td>
+										<a href="dispute.html" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</a>
+									</td>
+								</tr>
+								<tr>
+									<td><code class="app-dashboard-code">DSP-2026-00285</code></td>
+									<td><code class="app-dashboard-code">57382941</code></td>
+									<td>Highland Coffee Roasters</td>
+									<td>Peter Chirwa</td>
+									<td>3 Mar 2026 07:28:36 AM</td>
+									<td><span class="badge badge-md badge-danger"><i data-lucide="alert-triangle" aria-hidden="true"></i> Escalated</span></td>
+									<td>
+										<a href="dispute.html" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</a>
+									</td>
+								</tr>
+							</tbody>
+							<tfoot>
+								<tr>
+									<td colspan="7">
+										<div class="table-footer d-flex flex-wrap justify-content-between align-items-center gap-2">
+											<p class="table-footer-text mb-0">Showing 1 to 10 of 24</p>
+											<nav aria-label="Disputes table pagination">
+												<ul class="pagination mb-0">
+													<li class="page-item disabled">
+														<a class="page-link button button-xs" href="#" tabindex="-1"
+															aria-disabled="true"><i data-lucide="chevron-left" aria-hidden="true"></i>Prev</a>
+													</li>
+													<li class="page-item active">
+														<a class="page-link button button-xs" href="#" aria-current="page">1</a>
+													</li>
+													<li class="page-item">
+														<a class="page-link button button-xs" href="#">2</a>
+													</li>
+													<li class="page-item">
+														<a class="page-link button button-xs" href="#">3</a>
+													</li>
+													<li class="page-item">
+														<a class="page-link button button-xs" href="#">Next<i data-lucide="chevron-right"
+																aria-hidden="true"></i></a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</td>
+								</tr>
+							</tfoot>
+						</table>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<div class="offcanvas offcanvas-start app-sidebar-offcanvas" tabindex="-1" id="appSidebarMenu"
+		aria-label="Sidebar">
+		<div class="offcanvas-header">
+			<header class="app-sidebar-brand app-sidebar-offcanvas-brand">
+				<a href="../../../" class="app-sidebar-brand-link">
+					<img src="../../../img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<button type="button" class="ms-auto flex-shrink-0" data-bs-dismiss="offcanvas" aria-label="Close"><i
+					data-lucide="x"></i></button>
+		</div>
+		<div class="offcanvas-body app-sidebar-offcanvas-body">
+			<div class="app-sidebar-offcanvas-scroll">
+				<nav class="app-sidebar-nav app-sidebar-offcanvas-nav" aria-label="Sidebar navigation">
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="../../../" class="app-sidebar-nav-link">
+								<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Home</span>
+							</a>
+						</li>
+					</ul>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Operations</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="../applications/" class="app-sidebar-nav-link">
+									<i data-lucide="file-stack" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Applications</span>
+								</a>
+							</li>
+							<li>
+								<a href="#offcanvas-nav-sub-complaints" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="true" aria-controls="offcanvas-nav-sub-complaints" data-bs-toggle="collapse">
+									<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Complaints</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-complaints" class="collapse show app-sidebar-nav-sublist">
+									<li><a href="./" class="app-sidebar-nav-sublink" aria-current="page">Disputes</a></li>
+									<li><a href="dispute-threshold.html" class="app-sidebar-nav-sublink">Dispute threshold</a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Platform</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="../organizations/" class="app-sidebar-nav-link">
+									<i data-lucide="building-2" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Organizations</span>
+								</a>
+							</li>
+							<li>
+								<a href="../merchants/" class="app-sidebar-nav-link">
+									<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Merchants</span>
+								</a>
+							</li>
+						</ul>
+					</section>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Insights and Integration</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="#offcanvas-nav-sub-analytics" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="false" aria-controls="offcanvas-nav-sub-analytics" data-bs-toggle="collapse">
+									<i data-lucide="bar-chart-3" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Analytics</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-analytics" class="collapse app-sidebar-nav-sublist">
+									<li><a href="../analytics/disbursements.html" class="app-sidebar-nav-sublink">Disbursements</a></li>
+									<li><a href="../analytics/refunds.html" class="app-sidebar-nav-sublink">Refunds</a></li>
+									<li><a href="../analytics/disputes.html" class="app-sidebar-nav-sublink">Disputes</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="../connectors/" class="app-sidebar-nav-link">
+									<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Connectors</span>
+								</a>
+							</li>
+						</ul>
+					</section>
+				</nav>
+			</div>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">GM</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Gabriel Munthali</span>
+						<span class="app-sidebar-user-email">gabriel.munthali@angledimension.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasProfile"><i data-lucide="user-round" aria-hidden="true"></i>Profile</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Change password</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Log out</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<div class="offcanvas offcanvas-end fade" id="offcanvasProfile" tabindex="-1" aria-labelledby="offcanvasProfileTitle">
+		<div class="offcanvas-header">
+			<h2 class="offcanvas-title" id="offcanvasProfileTitle">Account details</h2>
+			<button type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+				<i data-lucide="x" aria-hidden="true"></i>
+			</button>
+		</div>
+		<div class="offcanvas-body offcanvas-body--sections">
+			<section class="offcanvas-section">
+				<div class="drawer-account">
+					<span class="app-sidebar-user-avatar" aria-hidden="true">GM</span>
+					<span class="drawer-account-meta">
+						<span class="drawer-account-name">Gabriel Munthali</span>
+						<span class="drawer-account-detail">gabriel.munthali@angledimension.com</span>
+					</span>
+				</div>
+			</section>
+			<section class="offcanvas-section">
+				<h3 class="offcanvas-section-title">Profile information</h3>
+				<p class="offcanvas-section-lede">Your personal account details.</p>
+				<dl class="description-list mb-0">
+					<div class="description-list-row">
+						<dt><i data-lucide="case-sensitive" aria-hidden="true"></i> Short name</dt>
+						<dd>Gabriel</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="mail" aria-hidden="true"></i> Email address</dt>
+						<dd>gabriel.munthali@angledimension.com</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="phone" aria-hidden="true"></i> Phone number</dt>
+						<dd>+265 993 996 717</dd>
+					</div>
+				</dl>
+			</section>
+			<section class="offcanvas-section">
+				<h3 class="offcanvas-section-title">User role details</h3>
+				<p class="offcanvas-section-lede">Your access level in this portal.</p>
+				<dl class="description-list mb-0">
+					<div class="description-list-row">
+						<dt><i data-lucide="shield" aria-hidden="true"></i> Role</dt>
+						<dd>Administrator</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="zap" aria-hidden="true"></i> Status</dt>
+						<dd><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></dd>
+					</div>
+				</dl>
+			</section>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.js"></script>
+	<script src="../../../js/theme-init.js"></script>
+	<script src="../../../js/main.js"></script>
+</body>
+</html>

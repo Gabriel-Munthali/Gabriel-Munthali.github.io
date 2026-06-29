@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin Dashboard</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" href="../../css/responsive.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.6/dist/driver.css">
+</head>
+<body>
+	<div class="app-shell">
+		<aside class="app-sidebar d-none d-lg-flex flex-column" aria-label="Sidebar">
+			<header class="app-sidebar-brand">
+				<a href="../../" class="app-sidebar-brand-link">
+					<img src="../../img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<nav class="app-sidebar-nav" aria-label="Sidebar navigation">
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="../../" class="app-sidebar-nav-link">
+							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Home</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Operations</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="./applications/" class="app-sidebar-nav-link">
+								<i data-lucide="file-stack" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="#sidebar-nav-sub-complaints" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="sidebar-nav-sub-complaints" data-bs-toggle="collapse">
+								<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Complaints</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-complaints" class="collapse app-sidebar-nav-sublist">
+								<li><a href="./complaints/" class="app-sidebar-nav-sublink">Disputes</a></li>
+								<li><a href="./complaints/dispute-threshold.html" class="app-sidebar-nav-sublink">Dispute threshold</a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Platform</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="./organizations/" class="app-sidebar-nav-link">
+								<i data-lucide="building-2" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Organizations</span>
+							</a>
+						</li>
+						<li>
+							<a href="./merchants/" class="app-sidebar-nav-link">
+								<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Merchants</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Insights and Integration</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="#sidebar-nav-sub-analytics" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="sidebar-nav-sub-analytics" data-bs-toggle="collapse">
+								<i data-lucide="bar-chart-3" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Analytics</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-analytics" class="collapse app-sidebar-nav-sublist">
+								<li><a href="./analytics/disbursements.html" class="app-sidebar-nav-sublink">Disbursements</a></li>
+								<li><a href="./analytics/refunds.html" class="app-sidebar-nav-sublink">Refunds</a></li>
+								<li><a href="./analytics/disputes.html" class="app-sidebar-nav-sublink">Disputes</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="./connectors/" class="app-sidebar-nav-link">
+								<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Connectors</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</nav>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">GM</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Gabriel Munthali</span>
+						<span class="app-sidebar-user-email">gabriel.munthali@angledimension.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasProfile"><i data-lucide="user-round" aria-hidden="true"></i>Profile</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Change password</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Log out</a></li>
+					</ul>
+				</div>
+			</footer>
+		</aside>
+		<main class="app-main">
+			<nav class="app-main-nav" aria-label="Main">
+				<div class="app-main-nav-start">
+					<button type="button" class="app-main-nav-toggle d-lg-none" data-bs-toggle="offcanvas"
+						data-bs-target="#appSidebarMenu" aria-controls="appSidebarMenu" aria-label="Open sidebar">
+						<i data-lucide="menu" class="app-main-nav-toggle-icon" aria-hidden="true"></i>
+					</button>
+					<nav class="app-main-nav-breadcrumb" aria-label="Breadcrumb">
+						<ol class="app-main-nav-breadcrumb-list">
+							<li><a href="./index.html">Admin</a></li>
+							<li><span aria-current="page">Overview</span></li>
+						</ol>
+					</nav>
+				</div>
+				<div class="app-main-nav-end">
+					<div class="dropdown app-main-nav-notifications-dropdown">
+						<button type="button" class="dropdown-toggle app-main-nav-icon-btn" id="mainNavNotificationsMenu"
+							data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Notifications">
+							<span class="app-main-nav-notifications-icon-wrap" aria-hidden="true">
+								<i data-lucide="bell" class="app-main-nav-icon-btn-icon"></i>
+								<span class="app-main-nav-notifications-dot"></span>
+							</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end app-main-nav-notifications-menu"
+							aria-labelledby="mainNavNotificationsMenu">
+							<li class="app-main-nav-notifications-header-wrap">
+								<div class="app-main-nav-notifications-header-inner">
+									<h6 class="app-main-nav-notifications-header">Notifications</h6>
+									<button type="button" class="app-main-nav-notifications-mark-all-read">Mark all read</button>
+								</div>
+							</li>
+							<li class="app-main-nav-notification-entry">
+								<button type="button" class="dropdown-item app-main-nav-notification-item">
+									<span class="app-main-nav-notification-title">New application submitted</span>
+									<span class="app-main-nav-notification-meta">5 minutes ago</span>
+									<span class="app-main-nav-notification-body">Riverside Imports submitted an onboarding application for review.</span>
+								</button>
+							</li>
+							<li class="app-main-nav-notification-entry">
+								<button type="button" class="dropdown-item app-main-nav-notification-item">
+									<span class="app-main-nav-notification-title">Dispute opened</span>
+									<span class="app-main-nav-notification-meta">1 hour ago</span>
+									<span class="app-main-nav-notification-body">A customer dispute was raised against transaction KH-2299400.</span>
+								</button>
+							</li>
+							<li class="app-main-nav-notification-entry">
+								<button type="button" class="dropdown-item app-main-nav-notification-item">
+									<span class="app-main-nav-notification-title">Connector status changed</span>
+									<span class="app-main-nav-notification-meta">Yesterday</span>
+									<span class="app-main-nav-notification-body">Mobile wallet connector was marked inactive for maintenance.</span>
+								</button>
+							</li>
+							<li>
+								<hr class="dropdown-divider app-main-nav-notifications-divider">
+							</li>
+							<li><a class="dropdown-item app-main-nav-notification-all" href="#">View all notifications</a></li>
+						</ul>
+					</div>
+					<button type="button" class="app-main-nav-icon-btn" id="bd-theme"
+						aria-label="Switch to dark theme" aria-pressed="false">
+						<i data-lucide="sun" class="app-main-nav-icon-btn-icon theme-icon-active" aria-hidden="true"></i>
+						<span class="visually-hidden">Toggle theme</span>
+					</button>
+				</div>
+			</nav>
+			<div class="app-content">
+				<div class="app-content-inner container-fluid">
+					<div class="admin-dashboard-page">
+						<p class="app-dashboard-greeting">Hello, Gabriel</p>
+						<div class="admin-dashboard-toolbar">
+							<nav class="section-jump-nav" aria-label="Dashboard views">
+								<ul class="section-jump-nav-list" role="tablist">
+									<li role="presentation">
+										<button type="button" role="tab" class="section-jump-link is-active"
+											id="admin-dashboard-tab-organizations" data-admin-dashboard-tab="organizations"
+											aria-controls="admin-dashboard-panel-organizations" aria-selected="true">Organization</button>
+									</li>
+									<li role="presentation">
+										<button type="button" role="tab" class="section-jump-link"
+											id="admin-dashboard-tab-applications" data-admin-dashboard-tab="applications"
+											aria-controls="admin-dashboard-panel-applications" aria-selected="false">Applications</button>
+									</li>
+									<li role="presentation">
+										<button type="button" role="tab" class="section-jump-link"
+											id="admin-dashboard-tab-disbursements" data-admin-dashboard-tab="disbursements"
+											aria-controls="admin-dashboard-panel-disbursements" aria-selected="false">Disbursements</button>
+									</li>
+								</ul>
+							</nav>
+							<button type="button" class="button button-outline button-sm button-pill flex-shrink-0"
+								id="adminDashboardRefresh">
+								<i data-lucide="refresh-cw" aria-hidden="true"></i>
+								Refresh
+							</button>
+						</div>
+						<div class="admin-dashboard-panels">
+							<section id="admin-dashboard-panel-organizations" class="admin-dashboard-panel" role="tabpanel"
+								data-admin-dashboard-panel="organizations" aria-labelledby="admin-dashboard-tab-organizations">
+								<div class="row row-cols-1 row-cols-md-3 g-2 g-md-3 app-dashboard-stats-row">
+									<div class="col">
+										<div class="app-dashboard-stat component-card mb-0">
+											<div class="app-dashboard-stat-head">
+												<div class="app-dashboard-stat-label text-secondary">Total active</div>
+												<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary" aria-hidden="true"><i data-lucide="building-2"></i></span>
+											</div>
+											<div class="app-dashboard-stat-value">47</div>
+											<div class="app-dashboard-stat-meta text-tertiary">Onboarded and operating</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="app-dashboard-stat component-card mb-0">
+											<div class="app-dashboard-stat-head">
+												<div class="app-dashboard-stat-label text-secondary">Total suspended</div>
+												<span class="app-dashboard-stat-icon app-dashboard-stat-icon-warning" aria-hidden="true"><i data-lucide="pause-circle"></i></span>
+											</div>
+											<div class="app-dashboard-stat-value">3</div>
+											<div class="app-dashboard-stat-meta text-tertiary">Access temporarily restricted</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="app-dashboard-stat component-card mb-0">
+											<div class="app-dashboard-stat-head">
+												<div class="app-dashboard-stat-label text-secondary">Total blacklisted</div>
+												<span class="app-dashboard-stat-icon app-dashboard-stat-icon-danger" aria-hidden="true"><i data-lucide="ban"></i></span>
+											</div>
+											<div class="app-dashboard-stat-value">1</div>
+											<div class="app-dashboard-stat-meta text-tertiary">Permanently blocked</div>
+										</div>
+									</div>
+								</div>
+								<div class="admin-dashboard-summary">
+									<section class="chart-panel component-card mb-0" aria-labelledby="admin-orgs-summary-heading">
+										<div class="chart-panel-head">
+											<h2 id="admin-orgs-summary-heading" class="chart-panel-heading">Organizations summary</h2>
+											<p class="chart-panel-lede text-secondary">This summary reflects registered organizations for the current month.</p>
+										</div>
+										<div class="summary-portfolio-metric">
+											<div class="summary-portfolio-label summary-portfolio-label-emphasis">Total number of registered organizations</div>
+											<div class="summary-portfolio-value">51</div>
+										</div>
+										<div class="summary-portfolio-divider" role="presentation"></div>
+										<p class="summary-portfolio-helper text-tertiary">This summary shows the whole portfolio of organizations to date.</p>
+										<div class="chart-panel-body">
+											<div class="chart-canvas-wrap">
+												<canvas id="adminOrgsStatusChart" data-chart="admin-status"
+													aria-label="Organization status breakdown: 47 active, 3 suspended, 1 blacklisted"></canvas>
+											</div>
+										</div>
+									</section>
+									<section class="summary-portfolio component-card mb-0" aria-labelledby="admin-merchants-portfolio-heading">
+										<div class="summary-portfolio-head">
+											<h2 id="admin-merchants-portfolio-heading" class="chart-panel-heading">Merchant portfolio</h2>
+											<p class="chart-panel-lede text-secondary">Status counts and registration activity for merchants on the platform.</p>
+										</div>
+										<div class="summary-portfolio-body">
+											<div class="summary-portfolio-metric">
+												<div class="summary-portfolio-label summary-portfolio-label-emphasis">Merchants registered this month</div>
+												<div class="summary-portfolio-value">24</div>
+											</div>
+											<div class="summary-portfolio-divider" role="presentation"></div>
+											<p class="summary-portfolio-helper text-tertiary">This summary shows the whole portfolio of merchants.</p>
+											<div class="summary-portfolio-block">
+												<div class="summary-portfolio-row">
+													<span class="summary-portfolio-icon summary-portfolio-icon-primary" aria-hidden="true">
+														<i data-lucide="store"></i>
+													</span>
+													<span class="summary-portfolio-row-label">Total active merchants</span>
+												</div>
+												<div class="summary-portfolio-value">312</div>
+											</div>
+											<div class="summary-portfolio-divider" role="presentation"></div>
+											<div class="row summary-portfolio-split g-0">
+												<div class="col-6 summary-portfolio-split-col">
+													<div class="summary-portfolio-block">
+														<div class="summary-portfolio-row">
+															<span class="summary-portfolio-icon summary-portfolio-icon-warning" aria-hidden="true">
+																<i data-lucide="zap-off"></i>
+															</span>
+															<span class="summary-portfolio-row-label">Suspended merchants</span>
+														</div>
+														<div class="summary-portfolio-value">14</div>
+													</div>
+												</div>
+												<div class="col-6 summary-portfolio-split-col summary-portfolio-split-col-divided">
+													<div class="summary-portfolio-block">
+														<div class="summary-portfolio-row">
+															<span class="summary-portfolio-icon summary-portfolio-icon-danger" aria-hidden="true">
+																<i data-lucide="ban"></i>
+															</span>
+															<span class="summary-portfolio-row-label">Blacklisted merchants</span>
+														</div>
+														<div class="summary-portfolio-value">2</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</section>
+							<section id="admin-dashboard-panel-applications" class="admin-dashboard-panel" role="tabpanel"
+								data-admin-dashboard-panel="applications" aria-labelledby="admin-dashboard-tab-applications" hidden>
+								<div class="row row-cols-1 row-cols-md-3 g-2 g-md-3 app-dashboard-stats-row">
+									<div class="col">
+										<div class="app-dashboard-stat component-card mb-0">
+											<div class="app-dashboard-stat-head">
+												<div class="app-dashboard-stat-label text-secondary">Total reviewed applications</div>
+												<span class="app-dashboard-stat-icon app-dashboard-stat-icon-info" aria-hidden="true"><i data-lucide="clipboard-check"></i></span>
+											</div>
+											<div class="app-dashboard-stat-value">3,020</div>
+											<div class="app-dashboard-stat-meta text-tertiary">Applications reviewed.</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="app-dashboard-stat component-card mb-0">
+											<div class="app-dashboard-stat-head">
+												<div class="app-dashboard-stat-label text-secondary">Total approved applications</div>
+												<span class="app-dashboard-stat-icon app-dashboard-stat-icon-success" aria-hidden="true"><i data-lucide="check-circle-2"></i></span>
+											</div>
+											<div class="app-dashboard-stat-value">1,000</div>
+											<div class="app-dashboard-stat-meta text-tertiary">Applications approved.</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="app-dashboard-stat component-card mb-0">
+											<div class="app-dashboard-stat-head">
+												<div class="app-dashboard-stat-label text-secondary">Total rejected applications</div>
+												<span class="app-dashboard-stat-icon app-dashboard-stat-icon-danger" aria-hidden="true"><i data-lucide="x-circle"></i></span>
+											</div>
+											<div class="app-dashboard-stat-value">316</div>
+											<div class="app-dashboard-stat-meta text-tertiary">Applications rejected.</div>
+										</div>
+									</div>
+								</div>
+								<div class="admin-dashboard-summary">
+									<section class="chart-panel component-card mb-0" aria-labelledby="admin-apps-summary-heading">
+										<div class="chart-panel-head">
+											<h2 id="admin-apps-summary-heading" class="chart-panel-heading">Applications summary</h2>
+											<p class="chart-panel-lede text-secondary">This summary reflects received applications to-date by status.</p>
+										</div>
+										<div class="summary-portfolio-metric">
+											<div class="summary-portfolio-label summary-portfolio-label-emphasis">Total number of received applications</div>
+											<div class="summary-portfolio-value">4,336</div>
+										</div>
+										<div class="summary-portfolio-divider" role="presentation"></div>
+										<p class="summary-portfolio-helper text-tertiary">This summary shows the whole portfolio of applications to date.</p>
+										<div class="chart-panel-body">
+											<div class="chart-canvas-wrap">
+												<canvas id="adminApplicationsStatusChart" data-chart="admin-status"
+													aria-label="Application status breakdown: 3,020 reviewed, 1,000 approved, 316 rejected"></canvas>
+											</div>
+										</div>
+									</section>
+									<section class="summary-portfolio component-card mb-0" aria-labelledby="admin-apps-other-heading">
+										<div class="summary-portfolio-head">
+											<h2 id="admin-apps-other-heading" class="chart-panel-heading">Other summaries</h2>
+											<p class="chart-panel-lede text-secondary">This section shows the summaries to date</p>
+										</div>
+										<div class="summary-portfolio-body">
+											<div class="summary-portfolio-block">
+												<div class="summary-portfolio-row">
+													<span class="summary-portfolio-icon summary-portfolio-icon-success" aria-hidden="true">
+														<i data-lucide="file-signature"></i>
+													</span>
+													<span class="summary-portfolio-row-label">Total number of signed merchant agreements</span>
+												</div>
+												<div class="summary-portfolio-value">250</div>
+											</div>
+											<div class="summary-portfolio-divider" role="presentation"></div>
+											<div class="summary-portfolio-block">
+												<div class="summary-portfolio-row">
+													<span class="summary-portfolio-icon summary-portfolio-icon-warning" aria-hidden="true">
+														<i data-lucide="file-pen"></i>
+													</span>
+													<span class="summary-portfolio-row-label">Total number of applications with requested changes</span>
+												</div>
+												<div class="summary-portfolio-value">150</div>
+											</div>
+										</div>
+									</section>
+								</div>
+							</section>
+							<section id="admin-dashboard-panel-disbursements" class="admin-dashboard-panel" role="tabpanel"
+								data-admin-dashboard-panel="disbursements" aria-labelledby="admin-dashboard-tab-disbursements" hidden>
+								<div class="row row-cols-1 row-cols-md-3 g-2 g-md-3 app-dashboard-stats-row">
+									<div class="col">
+										<div class="app-dashboard-stat component-card mb-0">
+											<div class="app-dashboard-stat-head">
+												<div class="app-dashboard-stat-label text-secondary">Total number of disbursements</div>
+												<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary" aria-hidden="true"><i data-lucide="layers"></i></span>
+											</div>
+											<div class="app-dashboard-stat-value">23,020</div>
+											<div class="app-dashboard-stat-meta text-tertiary">For the current month</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="app-dashboard-stat component-card mb-0">
+											<div class="app-dashboard-stat-head">
+												<div class="app-dashboard-stat-label text-secondary">Total transactions processed</div>
+												<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary" aria-hidden="true"><i data-lucide="send"></i></span>
+											</div>
+											<div class="app-dashboard-stat-value">16,000</div>
+											<div class="app-dashboard-stat-meta text-tertiary">For the current month</div>
+										</div>
+									</div>
+									<div class="col">
+										<div class="app-dashboard-stat component-card mb-0">
+											<div class="app-dashboard-stat-head">
+												<div class="app-dashboard-stat-label text-secondary">Total transactions processed</div>
+												<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary" aria-hidden="true"><i data-lucide="activity"></i></span>
+											</div>
+											<div class="app-dashboard-stat-value">23,020</div>
+											<div class="app-dashboard-stat-meta text-tertiary">To this date</div>
+										</div>
+									</div>
+								</div>
+								<section class="chart-panel component-card mb-0" aria-labelledby="admin-disbursements-summary-heading">
+									<div class="chart-panel-head">
+										<h2 id="admin-disbursements-summary-heading" class="chart-panel-heading">Disbursement summary</h2>
+										<p class="chart-panel-lede text-secondary">This section shows total amount disbursed to-date</p>
+									</div>
+									<div class="summary-portfolio-metric">
+										<div class="summary-portfolio-label summary-portfolio-label-emphasis">Total amount of disbursements</div>
+										<div class="summary-portfolio-value">MWK 800,336,020</div>
+									</div>
+									<div class="chart-panel-body">
+										<div class="chart-canvas-wrap">
+											<canvas id="adminDisbursementsChart" data-chart="admin-status"
+												aria-label="Disbursement metrics: 23,020 disbursements this month, 16,000 transactions this month, 23,020 transactions to date"></canvas>
+										</div>
+									</div>
+								</section>
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<div class="offcanvas offcanvas-start app-sidebar-offcanvas" tabindex="-1" id="appSidebarMenu"
+		aria-label="Sidebar">
+		<div class="offcanvas-header">
+			<header class="app-sidebar-brand app-sidebar-offcanvas-brand">
+				<a href="../../" class="app-sidebar-brand-link">
+					<img src="../../img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<button type="button" class="ms-auto flex-shrink-0" data-bs-dismiss="offcanvas" aria-label="Close"><i
+					data-lucide="x"></i></button>
+		</div>
+		<div class="offcanvas-body app-sidebar-offcanvas-body">
+			<div class="app-sidebar-offcanvas-scroll">
+				<nav class="app-sidebar-nav app-sidebar-offcanvas-nav" aria-label="Sidebar navigation">
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="../../" class="app-sidebar-nav-link">
+								<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Home</span>
+							</a>
+						</li>
+					</ul>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Operations</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="./applications/" class="app-sidebar-nav-link">
+									<i data-lucide="file-stack" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Applications</span>
+								</a>
+							</li>
+							<li>
+								<a href="#offcanvas-nav-sub-complaints" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="false" aria-controls="offcanvas-nav-sub-complaints" data-bs-toggle="collapse">
+									<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Complaints</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-complaints" class="collapse app-sidebar-nav-sublist">
+									<li><a href="./complaints/" class="app-sidebar-nav-sublink">Disputes</a></li>
+									<li><a href="./complaints/dispute-threshold.html" class="app-sidebar-nav-sublink">Dispute threshold</a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Platform</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="./organizations/" class="app-sidebar-nav-link">
+									<i data-lucide="building-2" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Organizations</span>
+								</a>
+							</li>
+							<li>
+								<a href="./merchants/" class="app-sidebar-nav-link">
+									<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Merchants</span>
+								</a>
+							</li>
+						</ul>
+					</section>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Insights and Integration</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="#offcanvas-nav-sub-analytics" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="false" aria-controls="offcanvas-nav-sub-analytics" data-bs-toggle="collapse">
+									<i data-lucide="bar-chart-3" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Analytics</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-analytics" class="collapse app-sidebar-nav-sublist">
+									<li><a href="./analytics/disbursements.html" class="app-sidebar-nav-sublink">Disbursements</a></li>
+									<li><a href="./analytics/refunds.html" class="app-sidebar-nav-sublink">Refunds</a></li>
+									<li><a href="./analytics/disputes.html" class="app-sidebar-nav-sublink">Disputes</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="./connectors/" class="app-sidebar-nav-link">
+									<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Connectors</span>
+								</a>
+							</li>
+						</ul>
+					</section>
+				</nav>
+			</div>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">GM</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Gabriel Munthali</span>
+						<span class="app-sidebar-user-email">gabriel.munthali@angledimension.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasProfile"><i data-lucide="user-round" aria-hidden="true"></i>Profile</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Change password</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Log out</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</div>
+	<div class="offcanvas offcanvas-end fade" id="offcanvasProfile" tabindex="-1" aria-labelledby="offcanvasProfileTitle">
+		<div class="offcanvas-header">
+			<h2 class="offcanvas-title" id="offcanvasProfileTitle">Account details</h2>
+			<button type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+				<i data-lucide="x" aria-hidden="true"></i>
+			</button>
+		</div>
+		<div class="offcanvas-body offcanvas-body--sections">
+			<section class="offcanvas-section">
+				<div class="drawer-account">
+					<span class="app-sidebar-user-avatar" aria-hidden="true">GM</span>
+					<span class="drawer-account-meta">
+						<span class="drawer-account-name">Gabriel Munthali</span>
+						<span class="drawer-account-detail">gabriel.munthali@angledimension.com</span>
+					</span>
+				</div>
+			</section>
+			<section class="offcanvas-section">
+				<h3 class="offcanvas-section-title">Profile information</h3>
+				<p class="offcanvas-section-lede">Your personal account details.</p>
+				<dl class="description-list mb-0">
+					<div class="description-list-row">
+						<dt><i data-lucide="case-sensitive" aria-hidden="true"></i> Short name</dt>
+						<dd>Gabriel</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="mail" aria-hidden="true"></i> Email address</dt>
+						<dd>gabriel.munthali@angledimension.com</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="phone" aria-hidden="true"></i> Phone number</dt>
+						<dd>+265 993 996 717</dd>
+					</div>
+				</dl>
+			</section>
+			<section class="offcanvas-section">
+				<h3 class="offcanvas-section-title">User role details</h3>
+				<p class="offcanvas-section-lede">Your access level in this portal.</p>
+				<dl class="description-list mb-0">
+					<div class="description-list-row">
+						<dt><i data-lucide="shield" aria-hidden="true"></i> Role</dt>
+						<dd>Administrator</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="zap" aria-hidden="true"></i> Status</dt>
+						<dd><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></dd>
+					</div>
+				</dl>
+			</section>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js"></script>
+	<script src="../../js/theme-init.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.6/dist/driver.js.iife.js"></script>
+	<script src="../../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+@media (max-width: 992px) {
+	.auth-section .col-md-6:last-child {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+	}
+
+	.auth-form-wrapper {
+		width: 100%;
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media (max-width: 576px) {
+	.auth-form-wrapper {
+		width: 100%;
+	}
+}
+
+/* Stepper */
+@media (max-width: 576px) {
+	.step-item span {
+		display: none;
+	}
+}
+
+/* Floating nav */
+@media (max-width: 576px) {
+	.floating-nav {
+		padding: var(--space-sm);
+		max-width: calc(100vw - 2 * var(--space-md));
+	}
+
+	.floating-nav-action:not(:last-child) {
+		padding-right: var(--space-sm);
+		margin-right: var(--space-sm);
+	}
+
+	.floating-nav-label {
+		display: none;
+	}
+}
+
+/* min-width: 992px */
+@media (min-width: 992px) {
+	/* Table toolbar */
+	.table-toolbar-filters {
+		margin-left: auto;
+	}
+}
+
+/* max-width: 991.98px */
+@media (max-width: 991.98px) {
+	/* Table toolbar */
+	.table-toolbar-search {
+		flex: 1 1 100%;
+		max-width: 100%;
+	}
+
+	.table-toolbar-filters {
+		flex: 1 1 100%;
+		flex-wrap: nowrap;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+	}
+
+	.table-toolbar-filters::-webkit-scrollbar {
+		display: none;
+	}
+
+	/* Tables */
+	.table thead th,
+	.table td {
+		padding-left: var(--space-lg);
+		padding-right: var(--space-lg);
+	}
+
+	/* App shell breadcrumbs */
+	.app-main-nav-breadcrumb-list li:not(:has([aria-current="page"])) {
+		display: none;
+	}
+
+	.app-main-nav-breadcrumb-list li:has([aria-current="page"])::before {
+		content: none;
+	}
+
+	/* Dispute thresholds */
+	.threshold-meta {
+		margin-bottom: var(--space-lg);
+	}
+}
+
+/* max-width: 767.98px */
+@media (max-width: 767.98px) {
+	/* Event timeline */
+	.event-timeline {
+		margin-left: var(--space-sm);
+		--event-timeline-content-inset: var(--space-md);
+	}
+
+	.event-timeline-day-head {
+		flex-wrap: wrap;
+	}
+
+	.event-timeline-item {
+		grid-template-columns: 1fr;
+		gap: var(--space-xs);
+	}
+
+	.event-timeline-time {
+		padding-top: 0;
+	}
+
+	/* Merchant detail */
+	.merchant-detail-balance.rtp-amount-banner {
+		padding: var(--space-lg);
+	}
+
+	.merchant-detail-reference {
+		padding: var(--space-lg);
+	}
+
+	/* Admin dashboard */
+	.admin-dashboard-summary {
+		grid-template-columns: 1fr;
+	}
+
+	/* Entity card */
+	.entity-card-action-icon {
+		display: inline-flex;
+	}
+
+	.entity-card-action-label {
+		display: none;
+	}
+}
+
+/* max-width: 575.98px */
+@media (max-width: 575.98px) {
+	/* Alerts */
+	.alert.alert-dismissible {
+		padding: var(--space-xs) var(--space-7xl) var(--space-xs) 0;
+	}
+
+	.alert.alert-dismissible .button-close {
+		flex: 0 0 var(--space-7xl);
+	}
+
+	.alert-content {
+		padding-inline: var(--space-sm);
+	}
+
+	/* Toasts */
+	.toast-container {
+		left: 0;
+		align-items: stretch;
+	}
+
+	.toast {
+		max-width: none;
+	}
+
+	/* Description lists */
+	.description-list-row {
+		flex-direction: column;
+		align-items: stretch;
+		gap: var(--space-xs);
+	}
+
+	.description-list-row dd {
+		text-align: left;
+	}
+
+	/* Sample disbursement */
+	.sample-disbursement-card {
+		padding: var(--space-xl);
+	}
+
+	.sample-disbursement-format-row {
+		grid-template-columns: 1fr;
+	}
+
+	.sample-disbursement-format-card {
+		min-height: 0;
+	}
+
+	/* Dispute thresholds */
+	.threshold-list {
+		gap: var(--space-xl);
+	}
+
+	.threshold-meta-desc {
+		max-width: none;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	/* Stepper */
+	.step-item.current::before {
+		animation: none;
+	}
+
+	/* Section jump nav */
+	.section-jump-nav .section-jump-link {
+		animation: none;
+	}
+}

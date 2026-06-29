@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Components</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/responsive.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.6/dist/driver.css">
+</head>
+
+<body>
+    <div class="container-fluid p-3 has-floating-nav">
+        <div class="row g-3">
+            <div class="col-lg-5 col-md-12">
+                <div class="component-card">
+                    <h4 class="card-title">Buttons</h4>
+                    <div class="d-flex gap-3 flex-wrap align-items-center mb-5">
+                        <button class="button button-xs">Button xs</button>
+                        <button class="button button-sm">Button sm</button>
+                        <button class="button button-md">Button md</button>
+                        <button class="button button-lg">Button lg</button>
+                    </div>
+                    <div class="d-flex gap-3 flex-wrap align-items-center mb-5">
+                        <button class="button button-primary button-sm">Primary</button>
+                        <button class="button button-secondary button-sm">Secondary</button>
+						<button class="button button-success button-sm "><i data-lucide="check-circle-2"></i>
+                            Success</button>
+						<button class="button button-danger button-sm"><i data-lucide="alert-triangle"></i>
+                            Danger</button>
+						<button class="button button-warning button-sm"><i data-lucide="alert-circle"></i>
+                            Warning</button>
+						<button class="button button-info button-sm"> <i data-lucide="info"></i> Information</button>
+                        <button class="button button-sm button-primary button-loading">Processing <i data-lucide="loader-circle"></i></button>
+                    </div>
+                    <div class="d-flex gap-3 flex-wrap align-items-center">
+                        <div class="btn-group" aria-label="Button group" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button class="button button-sm">Button Group</button>
+							<button class="button button-sm"><i data-lucide="chevron-down"></i></button>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#"> <i data-lucide="zap"></i> Activate</a></li>
+                                <li><a class="dropdown-item" href="#"> <i data-lucide="zap-off"></i> Deactivate</a></li>
+                                <li><a class="dropdown-item text-danger" href="#"> <i data-lucide="trash"></i> Delete</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6">
+                <div class="component-card">
+                    <h4 class="card-title">Badges</h4>
+                    <div class="d-flex gap-3 flex-wrap align-items-center mb-5">
+                        <span class="badge badge-sm">Processing sm</span>
+                        <span class="badge badge-md">Processing md</span>
+                        <span class="badge badge-lg">Processing lg</span>
+                    </div>
+                    <div class="d-flex gap-3 flex-wrap align-items-center">
+						<span class="badge badge-md badge-primary"><i data-lucide="bell"></i> Primary</span>
+						<span class="badge badge-md badge-danger"><i data-lucide="alert-triangle"></i>Danger</span>
+						<span class="badge badge-md badge-warning"><i data-lucide="alert-circle"></i>Warning</span>
+						<span class="badge badge-md badge-info"><i data-lucide="info"></i>Information</span>
+						<span class="badge badge-md badge-success"><i data-lucide="check-circle-2"></i>Success</span>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+                <div class="component-card">
+                    <h4 class="card-title">Modals</h4>
+                    <div class="d-flex gap-3 flex-wrap align-items-center">
+                        <button type="button" class="button button-sm" data-bs-toggle="modal" data-bs-target="#modalToggleSm">Small
+                            modal</button>
+                        <button type="button" class="button button-sm" data-bs-toggle="modal" data-bs-target="#modalToggleMd">Medium
+                            modal</button>
+                        <button type="button" class="button button-sm" data-bs-toggle="modal" data-bs-target="#modalToggleW">Wide
+                            modal</button>
+                        <button type="button" class="button button-sm" data-bs-toggle="offcanvas" data-bs-target="#offcanvasToggle">Offcanvas</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-9 col-md-12">
+                <div class="component-card">
+                    <h4 class="card-title">Alerts</h4>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="alert alert-success alert-dismissible" role="alert">
+                            <button type="button" class="button-close" data-bs-dismiss="alert" aria-label="Close">
+                                <i data-lucide="x" aria-hidden="true"></i>
+                            </button>
+                            <div class="alert-content">
+                                <p>Switched to <mark>Merchant account</mark></p>
+                            </div>
+                        </div>
+                        <div class="alert alert-info alert-dismissible" role="alert">
+                            <button type="button" class="button-close" data-bs-dismiss="alert" aria-label="Close">
+                                <i data-lucide="x" aria-hidden="true"></i>
+                            </button>
+                            <div class="alert-content">
+                                <p>API key added to <mark>Angle Dimension</mark></p>
+                            </div>
+                        </div>
+                        <div class="alert alert-warning alert-dismissible" role="alert">
+                            <button type="button" class="button-close" data-bs-dismiss="alert" aria-label="Close">
+                                <i data-lucide="x" aria-hidden="true"></i>
+                            </button>
+                            <div class="alert-content">
+                                <p class="alert-message">
+                                    <i data-lucide="alert-circle" class="alert-icon" aria-hidden="true"></i>
+                                    <span>More documents needed for verification.</span>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="alert alert-danger alert-dismissible" role="alert">
+                            <button type="button" class="button-close" data-bs-dismiss="alert" aria-label="Close">
+                                <i data-lucide="x" aria-hidden="true"></i>
+                            </button>
+                            <div class="alert-content">
+                                <p>Switch failed. <a href="#">Try again</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-12">
+                <div class="component-card">
+                    <h4 class="card-title">Toasts</h4>
+                    <p class="text-tertiary small mb-3">Top-right. Auto-dismisses in 3s.</p>
+                    <div class="d-flex flex-column gap-3">
+                        <button type="button" class="button button-success button-sm" data-bs-toggle="toast"
+                            data-bs-target="#toast-demo-success">Success</button>
+                        <button type="button" class="button button-info button-sm" data-bs-toggle="toast"
+                            data-bs-target="#toast-demo-info">Info</button>
+                        <button type="button" class="button button-warning button-sm" data-bs-toggle="toast"
+                            data-bs-target="#toast-demo-warning">Warning</button>
+                        <button type="button" class="button button-danger button-sm" data-bs-toggle="toast"
+                            data-bs-target="#toast-demo-danger">Danger</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="component-card">
+                    <h4 class="card-title">Stepper</h4>
+                    <div class="base-stepper">
+                        <div class="step-progress-bar" aria-label="Progress">
+                            <div class="step-item current" data-step="1">
+                                <div class="step-check">
+                                    <i data-lucide="check" aria-hidden="true"></i>
+                                </div>
+                                <span>Step 1</span>
+                            </div>
+                            <div class="step-item" data-step="2">
+                                <div class="step-check">
+                                    <i data-lucide="check" aria-hidden="true"></i>
+                                </div>
+                                <span>Step 2</span>
+                            </div>
+                            <div class="step-item" data-step="3">
+                                <div class="step-check">
+                                    <i data-lucide="check" aria-hidden="true"></i>
+                                </div>
+                                <span>Step 3</span>
+                            </div>
+                        </div>
+                        <div class="base-stepper-panels">
+                            <div class="base-stepper-panel" data-step="1">
+                                <p class="text-secondary mb-0">Content for step 1.</p>
+                            </div>
+                            <div class="base-stepper-panel" data-step="2" hidden>
+                                <p class="text-secondary mb-0">Content for step 2.</p>
+                            </div>
+                            <div class="base-stepper-panel" data-step="3" hidden>
+                                <p class="text-secondary mb-0">Content for step 3.</p>
+                            </div>
+                        </div>
+                        <div class="step-button-wrapper d-flex gap-3">
+                            <button type="button" class="button button-md base-stepper-prev" hidden>
+                                <i data-lucide="move-left" aria-hidden="true"></i> Back
+                            </button>
+                            <button type="button" class="button button-primary button-md base-stepper-next">
+                                Next <i data-lucide="move-right" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="component-card">
+                    <h4 class="card-title">Floating nav</h4>
+                    <p class="text-tertiary small mb-3">Fixed bottom bar for page actions. Add or remove <code>.floating-nav-action</code> slots. Apply <code>.has-floating-nav</code> on the scroll parent so content clears the bar.</p>
+                    <div class="floating-nav-demo-content d-flex flex-column gap-3 min-vh-25">
+                        <p class="text-secondary mb-0">Scroll to the bottom of this page to see clearance between content and the live floating nav below.</p>
+                        <p class="text-secondary mb-0">Each action sits in a <code>.floating-nav-action</code> wrapper. Width grows with the number of buttons you add.</p>
+                        <p class="text-secondary mb-0">On narrow screens, labels with <code>.floating-nav-label</code> hide so icon-only actions fit.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="component-card">
+                    <h4 class="card-title">Forms</h4>
+                    <form action="">
+                        <div class="form-group">
+                            <label for="email">Email</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="mail"></i>
+								<input type="email" class="form-control" id="email" placeholder="Enter your email">
+							</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="lock"></i>
+								<input type="password" class="form-control" id="password"
+									placeholder="Enter your password">
+							</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Role</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="user"></i>
+								<select class="form-control" id="role">
+                                    <option value="admin">Admin</option>
+                                    <option value="editor">Editor</option>
+                                    <option value="writer">Writer</option>
+                                </select>
+								<i data-lucide="chevron-down" class="icon-right"></i>
+                            </div>
+                        </div>
+						<div class="form-group">
+							<label for="date">Date</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="calendar"></i>
+								<input type="text" class="form-control air-datepicker-field" id="date" placeholder="Select a date"
+									autocomplete="off" readonly>
+							</div>
+						</div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea class="form-control" id="message" placeholder="Enter your message"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="file">File</label>
+                            <input type="file" class="form-control" id="file">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="checkbox">
+                            <label class="form-check-label" for="checkbox">Checkbox</label>
+                        </div>
+                        <div class="d-flex gap-3">
+                            <button type="submit" class="button button-primary button-sm">Submit <i data-lucide="clipboard-check"></i></button>
+                            <button type="reset" class="button  button-sm">Reset <i data-lucide="x"></i></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <div class="component-card">
+                    <h4 class="card-title">Description lists</h4>
+                    <p class="text-tertiary small mb-2">Borderless</p>
+                    <dl class="description-list mb-4">
+                        <div class="description-list-row">
+                            <dt>Merchant</dt>
+                            <dd>Angle Dimension Ltd</dd>
+                        </div>
+                        <div class="description-list-row">
+                            <dt>Amount</dt>
+                            <dd>MWK 8,375,000.00</dd>
+                        </div>
+                        <div class="description-list-row">
+                            <dt>Reference</dt>
+                            <dd>1020XDFS76GS777MERCHANTRECONCILIATIONREF</dd>
+                        </div>
+                        <div class="description-list-row">
+                            <dt>Contact</dt>
+                            <dd>payments.notifications@angledimension.example</dd>
+                        </div>
+                    </dl>
+                    <p class="text-tertiary small mb-2">Bordered</p>
+                    <dl class="description-list description-list-bordered mb-0">
+                        <div class="description-list-row">
+                            <dt>Merchant</dt>
+                            <dd>Angle Dimension Ltd</dd>
+                        </div>
+                        <div class="description-list-row">
+                            <dt>Amount</dt>
+                            <dd>MWK 8,375,000.00</dd>
+                        </div>
+                        <div class="description-list-row">
+                            <dt>Reference</dt>
+                            <dd>1020XDFS76GS777MERCHANTRECONCILIATIONREF</dd>
+                        </div>
+                        <div class="description-list-row">
+                            <dt>Contact</dt>
+                            <dd>payments.notifications@angledimension.example</dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="component-card">
+                    <h4 class="card-title">Tables</h4>
+                    <form class="table-toolbar" method="get" action="#" aria-label="Filter table">
+                        <div class="table-toolbar-search">
+                            <label for="table-toolbar-search" class="visually-hidden">Search users</label>
+                            <div class="form-group-input-wrapper">
+                                <i data-lucide="search" aria-hidden="true"></i>
+                                <input type="search" class="form-control" id="table-toolbar-search" name="q"
+                                    placeholder="Search users" autocomplete="off">
+                            </div>
+                        </div>
+                        <div class="table-toolbar-filters">
+                            <div class="dropdown table-toolbar-filter">
+                                <button type="button" class="button button-outline button-sm dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false" aria-label="Time period">
+                                    <i data-lucide="calendar" aria-hidden="true"></i>
+                                    Last 7 days
+                                    <i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Last 7 days</a></li>
+                                    <li><a class="dropdown-item" href="#">Last 30 days</a></li>
+                                    <li><a class="dropdown-item" href="#">Last 90 days</a></li>
+                                    <li><a class="dropdown-item" href="#">Custom range</a></li>
+                                </ul>
+                            </div>
+                            <div class="table-toolbar-filter table-toolbar-filter-chip">
+                                <label for="table-toolbar-date-range" class="visually-hidden">Date range</label>
+                                <div class="form-group-input-wrapper">
+                                    <i data-lucide="calendar-range" aria-hidden="true"></i>
+                                    <input type="text" class="form-control air-datepicker-field air-datepicker-range-field"
+                                        id="table-toolbar-date-range" name="date-range" placeholder="Select date range"
+                                        autocomplete="off" readonly data-range-start="2025-06-07" data-range-end="2025-06-13">
+                                    <i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
+                                </div>
+                            </div>
+                            <div class="dropdown table-toolbar-filter">
+                                <button type="button" class="button button-outline button-sm dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false" aria-label="Status">
+                                    <i data-lucide="loader" aria-hidden="true"></i>
+                                    Status
+                                    <i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Success</a></li>
+                                    <li><a class="dropdown-item" href="#">Pending</a></li>
+                                    <li><a class="dropdown-item" href="#">In review</a></li>
+                                    <li><a class="dropdown-item" href="#">Denied</a></li>
+                                    <li><a class="dropdown-item" href="#">Inactive</a></li>
+                                </ul>
+                            </div>
+                            <div class="dropdown table-toolbar-filter">
+                                <button type="button" class="button button-outline button-sm dropdown-toggle"
+                                    data-bs-toggle="dropdown" aria-expanded="false" aria-label="Role">
+                                    <i data-lucide="user-round-cog" aria-hidden="true"></i>
+                                    Role
+                                    <i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">Admin</a></li>
+                                    <li><a class="dropdown-item" href="#">Editor</a></li>
+                                    <li><a class="dropdown-item" href="#">Writer</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="table-responsive">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th><i data-lucide="a-large-small" aria-hidden="true"></i> Name</th>
+                                    <th><i data-lucide="mail" aria-hidden="true"></i> Email</th>
+                                    <th><i data-lucide="user-round-cog" aria-hidden="true"></i> Role</th>
+                                    <th><i data-lucide="loader" aria-hidden="true"></i> Status</th>
+                                    <th><i data-lucide="calendar" aria-hidden="true"></i> Date</th>
+                                    <th><i data-lucide="mouse-pointer-click" aria-hidden="true"></i> Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>John Doe</td>
+                                    <td>john.doe@example.com</td>
+                                    <td>Admin</td>
+                                    <td>
+                                        <span class="badge badge-md badge-success"><i data-lucide="check-circle-2"></i>Success</span>
+                                    </td>
+                                    <td>2026-03-16</td>
+                                    <td>
+                                        <div class="btn-group" role="group" aria-label="Actions" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <button class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
+                                            <button class="button button-sm button-primary"><i data-lucide="chevron-down"></i></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i data-lucide="zap"></i> Activate</a></li>
+                                                <li><a class="dropdown-item" href="#"><i data-lucide="zap-off"></i> Deactivate</a></li>
+                                                <li><a class="dropdown-item text-danger" href="#"><i data-lucide="trash"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Jane Smith</td>
+                                    <td>jane.smith@example.com</td>
+                                    <td>Editor</td>
+                                    <td>
+                                        <span class="badge badge-md badge-warning"><i data-lucide="clock"></i>Pending</span>
+                                    </td>
+                                    <td>2026-03-17</td>
+                                    <td>
+                                        <div class="btn-group" role="group" aria-label="Actions" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <button class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
+                                            <button class="button button-sm button-primary"><i data-lucide="chevron-down"></i></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i data-lucide="zap"></i> Activate</a></li>
+                                                <li><a class="dropdown-item" href="#"><i data-lucide="zap-off"></i> Deactivate</a></li>
+                                                <li><a class="dropdown-item text-danger" href="#"><i data-lucide="trash"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Alex Johnson</td>
+                                    <td>alex.johnson@example.com</td>
+                                    <td>Writer</td>
+                                    <td>
+                                        <span class="badge badge-md badge-info"><i data-lucide="info"></i>In Review</span>
+                                    </td>
+                                    <td>2026-03-18</td>
+                                    <td>
+                                        <div class="btn-group" role="group" aria-label="Actions" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <button class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
+                                            <button class="button button-sm button-primary"><i data-lucide="chevron-down"></i></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i data-lucide="zap"></i> Activate</a></li>
+                                                <li><a class="dropdown-item" href="#"><i data-lucide="zap-off"></i> Deactivate</a></li>
+                                                <li><a class="dropdown-item text-danger" href="#"><i data-lucide="trash"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Emily Brown</td>
+                                    <td>emily.brown@example.com</td>
+                                    <td>Admin</td>
+                                    <td>
+                                        <span class="badge badge-md badge-danger"><i data-lucide="alert-triangle"></i>Denied</span>
+                                    </td>
+                                    <td>2026-03-19</td>
+                                    <td>
+                                        <div class="btn-group" role="group" aria-label="Actions" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <button class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
+                                            <button class="button button-sm button-primary"><i data-lucide="chevron-down"></i></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"><i data-lucide="zap"></i> Activate</a></li>
+                                                <li><a class="dropdown-item" href="#"><i data-lucide="zap-off"></i> Deactivate</a></li>
+                                                <li><a class="dropdown-item text-danger" href="#"><i data-lucide="trash"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Michael Lee</td>
+                                    <td>michael.lee@example.com</td>
+                                    <td>Editor</td>
+                                    <td>
+                                        <span class="badge badge-md badge-secondary"><i data-lucide="hourglass"></i>Inactive</span>
+                                    </td>
+                                    <td>2026-03-20</td>
+                                    <td>
+                                        <div class="btn-group" aria-label="Button group" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <button class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
+                                            <button class="button button-sm button-primary"><i data-lucide="chevron-down"></i></button>
+                                            <ul class="dropdown-menu">
+                                                <li><a class="dropdown-item" href="#"> <i data-lucide="zap"></i> Activate</a></li>
+                                                <li><a class="dropdown-item" href="#"> <i data-lucide="zap-off"></i> Deactivate</a></li>
+                                                <li><a class="dropdown-item text-danger" href="#"> <i data-lucide="trash"></i> Delete</a></li>
+                                            </ul>
+                                        </div>
+                                    </td>
+                                </tr>
+                               
+                            </tbody>
+							<tfoot>
+								<tr>
+									<td colspan="6">
+										<div class="table-footer d-flex justify-content-between align-items-center">
+											<p class="table-footer-text mb-0">5 of 100</p>
+											<nav aria-label="Table pagination">
+												<ul class="pagination mb-0">
+													<li class="page-item disabled">
+														<a class="page-link button button-xs" href="#" tabindex="-1"
+															aria-disabled="true"><i data-lucide="chevron-left"></i>Prev</a>
+													</li>
+													<li class="page-item active">
+														<a class="page-link button button-xs" href="#">1</a>
+													</li>
+													<li class="page-item">
+														<a class="page-link button button-xs" href="#">2</a>
+													</li>
+													<li class="page-item">
+														<a class="page-link button button-xs" href="#">3</a>
+													</li>
+													<li class="page-item">
+														<a class="page-link button button-xs" href="#">Next<i data-lucide="chevron-right"></i></a>
+													</li>
+												</ul>
+											</nav>
+										</div>
+									</td>
+								</tr>
+							</tfoot>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<div class="modal fade" id="modalToggleSm" aria-hidden="true" aria-labelledby="modalToggleSmLabel" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered modal-size-sm">
+				<div class="modal-content">
+					<div class="modal-header">
+                        <span class="modal-success-icon"><i data-lucide="check"></i></span>
+						<h1 class="modal-title" id="modalToggleSmLabel">Small modal</h1>
+					</div>
+					<div class="modal-body text-secondary">
+                        <p>
+                            This is a small modal.
+                        </p>
+					</div>
+					<div class="modal-footer">
+						<button class="button button-primary button-md" data-bs-dismiss="modal">Finish</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalToggleMd" aria-hidden="true" aria-labelledby="modalToggleMdLabel" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title" id="modalToggleMdLabel">Medium modal</h1>
+						
+					</div>
+					<div class="modal-body">
+						This is a medium modal.
+					</div>
+					<div class="modal-footer">
+						<button class="button button-primary button-md" data-bs-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="modal fade" id="modalToggleW" aria-hidden="true" aria-labelledby="modalToggleWLabel" tabindex="-1">
+			<div class="modal-dialog modal-dialog-centered modal-xl">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title" id="modalToggleWLabel">Wide modal</h1>
+						
+					</div>
+					<div class="modal-body">
+						This is a wide modal.
+					</div>
+					<div class="modal-footer">
+						<button class="button button-primary button-md" data-bs-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="offcanvas offcanvas-end fade" id="offcanvasToggle" aria-labelledby="offcanvasToggleLabel" tabindex="-1">
+			<div class="offcanvas-header">
+				<h1 class="offcanvas-title" id="offcanvasToggleLabel">Offcanvas title</h1>
+				<button type="button" class="" data-bs-dismiss="offcanvas" aria-label="Close"><i data-lucide="x"></i></button>
+			</div>
+			<div class="offcanvas-body">
+				<form>
+					<div class="form-group">
+						<label for="offcanvasInput">Name</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="user"></i>
+							<input type="text" class="form-control" id="offcanvasInput" placeholder="Enter your name">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="offcanvasSelect">Choose an option</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="list-checks"></i>
+							<select class="form-control" id="offcanvasSelect">
+								<option selected disabled>Select an option</option>
+								<option value="option1">Option 1</option>
+								<option value="option2">Option 2</option>
+								<option value="option3">Option 3</option>
+							</select>
+							<i data-lucide="chevron-down" class="icon-right"></i>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="offcanvasTextarea">Your message</label>
+						<textarea class="form-control" id="offcanvasTextarea" placeholder="Type your message" rows="5"></textarea>
+					</div>
+                    
+				</form>
+			</div>
+			<div class="offcanvas-footer d-flex justify-content-end align-items-center gap-2">
+				<div class="d-flex gap-2">
+					<button type="button" class="button button-sm" data-bs-dismiss="offcanvas">Cancel <i data-lucide="x"></i></button>
+					<button type="submit" class="button button-primary button-sm">Apply changes <i data-lucide="clipboard-check"></i></button>
+				</div>
+			</div>
+		</div>
+
+	<div class="toast-container" aria-live="polite" aria-atomic="true">
+		<div id="toast-demo-success" class="toast toast-success hide" role="alert" aria-live="assertive"
+			aria-atomic="true" data-bs-autohide="true" data-bs-delay="3000">
+			<div class="toast-body">
+				<i data-lucide="check-circle-2" class="toast-icon" aria-hidden="true"></i>
+				<span class="toast-message">Switched to <mark>Merchant account</mark></span>
+				<button type="button" class="button-close" data-bs-dismiss="toast" aria-label="Close">
+					<i data-lucide="x" aria-hidden="true"></i>
+				</button>
+			</div>
+		</div>
+		<div id="toast-demo-info" class="toast toast-info hide" role="alert" aria-live="assertive" aria-atomic="true"
+			data-bs-autohide="true" data-bs-delay="3000">
+			<div class="toast-body">
+				<i data-lucide="info" class="toast-icon" aria-hidden="true"></i>
+				<span class="toast-message">API key added to <mark>Angle Dimension</mark></span>
+				<button type="button" class="button-close" data-bs-dismiss="toast" aria-label="Close">
+					<i data-lucide="x" aria-hidden="true"></i>
+				</button>
+			</div>
+		</div>
+		<div id="toast-demo-warning" class="toast toast-warning hide" role="alert" aria-live="assertive"
+			aria-atomic="true" data-bs-autohide="true" data-bs-delay="3000">
+			<div class="toast-body">
+				<i data-lucide="alert-circle" class="toast-icon" aria-hidden="true"></i>
+				<span class="toast-message">More documents needed for verification.</span>
+				<button type="button" class="button-close" data-bs-dismiss="toast" aria-label="Close">
+					<i data-lucide="x" aria-hidden="true"></i>
+				</button>
+			</div>
+		</div>
+		<div id="toast-demo-danger" class="toast toast-danger hide" role="alert" aria-live="assertive" aria-atomic="true"
+			data-bs-autohide="true" data-bs-delay="3000">
+			<div class="toast-body">
+				<i data-lucide="alert-triangle" class="toast-icon" aria-hidden="true"></i>
+				<span class="toast-message">Switch failed. <a href="#">Try again</a></span>
+				<button type="button" class="button-close" data-bs-dismiss="toast" aria-label="Close">
+					<i data-lucide="x" aria-hidden="true"></i>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<nav class="floating-nav" aria-label="Page actions">
+		<div class="floating-nav-action">
+			<button type="button" class="button button-sm text-danger">
+				<i data-lucide="circle-slash" aria-hidden="true"></i>
+				<span class="floating-nav-label">Close case</span>
+			</button>
+		</div>
+		<div class="floating-nav-action">
+			<button type="button" class="button button-sm text-primary">
+				<i data-lucide="plus-circle" aria-hidden="true"></i>
+				<span class="floating-nav-label">Add event</span>
+			</button>
+		</div>
+		<div class="floating-nav-action">
+			<button type="button" class="button button-sm button-primary">
+				<i data-lucide="check" aria-hidden="true"></i>
+				<span class="floating-nav-label">Approve</span>
+			</button>
+		</div>
+	</nav>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.js"></script>
+	<script src="/js/theme-init.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.6/dist/driver.js.iife.js"></script>
+	<script src="/js/main.js"></script>
+
+</body>
+
+</html>

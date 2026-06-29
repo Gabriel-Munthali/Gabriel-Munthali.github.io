@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dispute thresholds</title>
+
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../../css/style.css">
+	<link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body>
+	<div class="app-shell">
+		<aside class="app-sidebar d-none d-lg-flex flex-column" aria-label="Sidebar">
+			<header class="app-sidebar-brand">
+				<a href="../../../" class="app-sidebar-brand-link">
+					<img src="../../../img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<nav class="app-sidebar-nav" aria-label="Sidebar navigation">
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="../../../" class="app-sidebar-nav-link">
+							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Home</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Operations</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="../applications/" class="app-sidebar-nav-link">
+								<i data-lucide="file-stack" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Applications</span>
+							</a>
+						</li>
+						<li>
+							<a href="#sidebar-nav-sub-complaints" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="true" aria-controls="sidebar-nav-sub-complaints" data-bs-toggle="collapse">
+								<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Complaints</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-complaints" class="collapse show app-sidebar-nav-sublist">
+								<li><a href="./" class="app-sidebar-nav-sublink">Disputes</a></li>
+								<li><a href="dispute-threshold.html" class="app-sidebar-nav-sublink" aria-current="page">Dispute threshold</a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Platform</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="../organizations/" class="app-sidebar-nav-link">
+								<i data-lucide="building-2" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Organizations</span>
+							</a>
+						</li>
+						<li>
+							<a href="../merchants/" class="app-sidebar-nav-link">
+								<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Merchants</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Insights and Integration</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="#sidebar-nav-sub-analytics" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="sidebar-nav-sub-analytics" data-bs-toggle="collapse">
+								<i data-lucide="bar-chart-3" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Analytics</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-analytics" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../analytics/disbursements.html" class="app-sidebar-nav-sublink">Disbursements</a></li>
+								<li><a href="../analytics/refunds.html" class="app-sidebar-nav-sublink">Refunds</a></li>
+								<li><a href="../analytics/disputes.html" class="app-sidebar-nav-sublink">Disputes</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../connectors/" class="app-sidebar-nav-link">
+								<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Connectors</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</nav>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">GM</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Gabriel Munthali</span>
+						<span class="app-sidebar-user-email">gabriel.munthali@angledimension.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasProfile"><i data-lucide="user-round" aria-hidden="true"></i>Profile</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Change password</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Log out</a></li>
+					</ul>
+				</div>
+			</footer>
+		</aside>
+		<main class="app-main">
+			<nav class="app-main-nav" aria-label="Main">
+				<div class="app-main-nav-start">
+					<button type="button" class="app-main-nav-toggle d-lg-none" data-bs-toggle="offcanvas"
+						data-bs-target="#appSidebarMenu" aria-controls="appSidebarMenu" aria-label="Open sidebar">
+						<i data-lucide="menu" class="app-main-nav-toggle-icon" aria-hidden="true"></i>
+					</button>
+					<nav class="app-main-nav-breadcrumb" aria-label="Breadcrumb">
+						<ol class="app-main-nav-breadcrumb-list">
+							<li><a href="../index.html">Admin</a></li>
+							<li><span aria-current="page">Dispute thresholds</span></li>
+						</ol>
+					</nav>
+				</div>
+				<div class="app-main-nav-end">
+					<div class="dropdown app-main-nav-notifications-dropdown">
+						<button type="button" class="dropdown-toggle app-main-nav-icon-btn" id="mainNavNotificationsMenu"
+							data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Notifications">
+							<span class="app-main-nav-notifications-icon-wrap" aria-hidden="true">
+								<i data-lucide="bell" class="app-main-nav-icon-btn-icon"></i>
+								<span class="app-main-nav-notifications-dot"></span>
+							</span>
+						</button>
+						<ul class="dropdown-menu dropdown-menu-end app-main-nav-notifications-menu"
+							aria-labelledby="mainNavNotificationsMenu">
+							<li class="app-main-nav-notifications-header-wrap">
+								<div class="app-main-nav-notifications-header-inner">
+									<h6 class="app-main-nav-notifications-header">Notifications</h6>
+									<button type="button" class="app-main-nav-notifications-mark-all-read">Mark all read</button>
+								</div>
+							</li>
+							<li>
+								<hr class="dropdown-divider app-main-nav-notifications-divider">
+							</li>
+							<li><a class="dropdown-item app-main-nav-notification-all" href="#">View all notifications</a></li>
+						</ul>
+					</div>
+					<button type="button" class="app-main-nav-icon-btn" id="bd-theme"
+						aria-label="Switch to dark theme" aria-pressed="false">
+						<i data-lucide="sun" class="app-main-nav-icon-btn-icon theme-icon-active" aria-hidden="true"></i>
+						<span class="visually-hidden">Toggle theme</span>
+					</button>
+				</div>
+			</nav>
+			<div class="app-content">
+				<div class="app-content-inner container-fluid">
+					<section class="page-intro" aria-labelledby="dispute-threshold-intro-heading">
+						<div class="page-intro-inner">
+							<div class="page-intro-text">
+								<h1 id="dispute-threshold-intro-heading" class="page-intro-heading">Dispute thresholds</h1>
+								<p class="page-intro-lede">Set dispute-rate bands that trigger monitoring, suspension, or termination actions for merchants.</p>
+							</div>
+						</div>
+					</section>
+
+					<div class="component-card">
+						<div class="threshold-list">
+							<div class="threshold-row row">
+								<div class="col-12 col-lg-6 threshold-meta">
+									<div class="threshold-meta-head">
+										<span class="threshold-severity-icon threshold-severity-icon--normal" aria-hidden="true">
+											<i data-lucide="minus"></i>
+										</span>
+										<h2 class="threshold-meta-title">Normal threshold</h2>
+									</div>
+									<p class="threshold-meta-desc">Merchants in this band have a dispute rate within acceptable limits. No extra
+										action is required.</p>
+								</div>
+								<div class="col-12 col-lg-6">
+									<div class="component-card threshold-metrics">
+										<div class="threshold-percentages">
+											<div class="threshold-percentage">
+												<span class="threshold-percentage-label">Minimum percentage:</span>
+												<span class="threshold-percentage-value">&gt;0%</span>
+											</div>
+											<div class="threshold-percentage">
+												<span class="threshold-percentage-label">Maximum percentage:</span>
+												<span class="threshold-percentage-value">&lt;=0.2%</span>
+											</div>
+										</div>
+										<div class="threshold-action">
+											<button type="button" class="button button-sm button-primary" data-bs-toggle="modal"
+												data-bs-target="#modalEditThreshold">
+												<i data-lucide="pencil" aria-hidden="true"></i> Edit threshold
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							<div class="threshold-row row">
+								<div class="col-12 col-lg-6 threshold-meta">
+									<div class="threshold-meta-head">
+										<span class="threshold-severity-icon threshold-severity-icon--warning" aria-hidden="true">
+											<i data-lucide="triangle-alert"></i>
+										</span>
+										<h2 class="threshold-meta-title">Warning threshold</h2>
+									</div>
+									<p class="threshold-meta-desc">Merchants entering this band should be monitored. Consider outreach before
+										dispute volume grows.</p>
+								</div>
+								<div class="col-12 col-lg-6">
+									<div class="component-card threshold-metrics">
+										<div class="threshold-percentages">
+											<div class="threshold-percentage">
+												<span class="threshold-percentage-label">Minimum percentage:</span>
+												<span class="threshold-percentage-value">&gt;0.2%</span>
+											</div>
+											<div class="threshold-percentage">
+												<span class="threshold-percentage-label">Maximum percentage:</span>
+												<span class="threshold-percentage-value">&lt;=0.5%</span>
+											</div>
+										</div>
+										<div class="threshold-action">
+											<button type="button" class="button button-sm button-primary" data-bs-toggle="modal"
+												data-bs-target="#modalEditThreshold">
+												<i data-lucide="pencil" aria-hidden="true"></i> Edit threshold
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							<div class="threshold-row row">
+								<div class="col-12 col-lg-6 threshold-meta">
+									<div class="threshold-meta-head">
+										<span class="threshold-severity-icon threshold-severity-icon--danger" aria-hidden="true">
+											<i data-lucide="ban"></i>
+										</span>
+										<h2 class="threshold-meta-title">Suspension threshold</h2>
+									</div>
+									<p class="threshold-meta-desc">Merchants in this band may be suspended from processing until dispute rates
+										improve.</p>
+								</div>
+								<div class="col-12 col-lg-6">
+									<div class="component-card threshold-metrics">
+										<div class="threshold-percentages">
+											<div class="threshold-percentage">
+												<span class="threshold-percentage-label">Minimum percentage:</span>
+												<span class="threshold-percentage-value">&gt;0.5%</span>
+											</div>
+											<div class="threshold-percentage">
+												<span class="threshold-percentage-label">Maximum percentage:</span>
+												<span class="threshold-percentage-value">&lt;=0.9%</span>
+											</div>
+										</div>
+										<div class="threshold-action">
+											<button type="button" class="button button-sm button-primary" data-bs-toggle="modal"
+												data-bs-target="#modalEditThreshold">
+												<i data-lucide="pencil" aria-hidden="true"></i> Edit threshold
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						
+							<div class="threshold-row row">
+								<div class="col-12 col-lg-6 threshold-meta">
+									<div class="threshold-meta-head">
+										<span class="threshold-severity-icon threshold-severity-icon--danger" aria-hidden="true">
+											<i data-lucide="x"></i>
+										</span>
+										<h2 class="threshold-meta-title">Termination threshold</h2>
+									</div>
+									<p class="threshold-meta-desc">Merchants above this band are at risk of account termination due to sustained
+										high dispute rates.</p>
+								</div>
+								<div class="col-12 col-lg-6">
+									<div class="component-card threshold-metrics">
+										<div class="threshold-percentages">
+											<div class="threshold-percentage">
+												<span class="threshold-percentage-label">Minimum percentage:</span>
+												<span class="threshold-percentage-value">&gt;0.9%</span>
+											</div>
+											<div class="threshold-percentage">
+												<span class="threshold-percentage-label">Maximum percentage:</span>
+												<span class="threshold-percentage-value">&gt;0.9%</span>
+											</div>
+										</div>
+										<div class="threshold-action">
+											<button type="button" class="button button-sm button-primary" data-bs-toggle="modal"
+												data-bs-target="#modalEditThreshold">
+												<i data-lucide="pencil" aria-hidden="true"></i> Edit threshold
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<div class="offcanvas offcanvas-start app-sidebar-offcanvas" tabindex="-1" id="appSidebarMenu"
+		aria-label="Sidebar">
+		<div class="offcanvas-header">
+			<header class="app-sidebar-brand app-sidebar-offcanvas-brand">
+				<a href="../../../" class="app-sidebar-brand-link">
+					<img src="../../../img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<button type="button" class="ms-auto flex-shrink-0" data-bs-dismiss="offcanvas" aria-label="Close"><i
+					data-lucide="x"></i></button>
+		</div>
+		<div class="offcanvas-body app-sidebar-offcanvas-body">
+			<div class="app-sidebar-offcanvas-scroll">
+				<nav class="app-sidebar-nav app-sidebar-offcanvas-nav" aria-label="Sidebar navigation">
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="../../../" class="app-sidebar-nav-link">
+								<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Home</span>
+							</a>
+						</li>
+					</ul>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Operations</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="../applications/" class="app-sidebar-nav-link">
+									<i data-lucide="file-stack" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Applications</span>
+								</a>
+							</li>
+							<li>
+								<a href="#offcanvas-nav-sub-complaints" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="true" aria-controls="offcanvas-nav-sub-complaints" data-bs-toggle="collapse">
+									<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Complaints</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-complaints" class="collapse show app-sidebar-nav-sublist">
+									<li><a href="./" class="app-sidebar-nav-sublink">Disputes</a></li>
+									<li><a href="dispute-threshold.html" class="app-sidebar-nav-sublink" aria-current="page">Dispute threshold</a></li>
+								</ul>
+							</li>
+						</ul>
+					</section>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Platform</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="../organizations/" class="app-sidebar-nav-link">
+									<i data-lucide="building-2" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Organizations</span>
+								</a>
+							</li>
+							<li>
+								<a href="../merchants/" class="app-sidebar-nav-link">
+									<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Merchants</span>
+								</a>
+							</li>
+						</ul>
+					</section>
+					<section class="app-sidebar-nav-section">
+						<h2 class="app-sidebar-nav-section-title">Insights and Integration</h2>
+						<ul class="app-sidebar-nav-list">
+							<li>
+								<a href="#offcanvas-nav-sub-analytics" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="false" aria-controls="offcanvas-nav-sub-analytics" data-bs-toggle="collapse">
+									<i data-lucide="bar-chart-3" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Analytics</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+								</a>
+								<ul id="offcanvas-nav-sub-analytics" class="collapse app-sidebar-nav-sublist">
+									<li><a href="../analytics/disbursements.html" class="app-sidebar-nav-sublink">Disbursements</a></li>
+									<li><a href="../analytics/refunds.html" class="app-sidebar-nav-sublink">Refunds</a></li>
+									<li><a href="../analytics/disputes.html" class="app-sidebar-nav-sublink">Disputes</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="../connectors/" class="app-sidebar-nav-link">
+									<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+									<span class="app-sidebar-nav-link-label">Connectors</span>
+								</a>
+							</li>
+						</ul>
+					</section>
+				</nav>
+			</div>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">GM</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Gabriel Munthali</span>
+						<span class="app-sidebar-user-email">gabriel.munthali@angledimension.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#" data-bs-toggle="offcanvas" data-bs-target="#offcanvasProfile"><i data-lucide="user-round" aria-hidden="true"></i>Profile</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Change password</a></li>
+						<li>
+							<hr class="dropdown-divider">
+						</li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Log out</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modalEditThreshold" tabindex="-1" role="dialog"
+		aria-labelledby="modalEditThresholdLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-size-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-header-leading modal-header-leading--stacked">
+						<span class="modal-leading-icon" aria-hidden="true">
+							<span class="modal-leading-icon-main">
+								<i data-lucide="sliders-horizontal"></i>
+							</span>
+						</span>
+						<h1 class="modal-title" id="modalEditThresholdLabel">Edit threshold</h1>
+					</div>
+				</div>
+				<div class="modal-body">
+					<p class="text-secondary">Set the minimum and maximum dispute-rate percentage for this threshold band.</p>
+					<div class="form-group">
+						<label for="edit-threshold-min">Minimum percentage</label>
+						<input type="text" class="form-control" id="edit-threshold-min" name="minPercentage"
+							placeholder="Minimum percentage here" autocomplete="off" inputmode="decimal">
+					</div>
+					<div class="form-group">
+						<label for="edit-threshold-max">Maximum percentage</label>
+						<input type="text" class="form-control" id="edit-threshold-max" name="maxPercentage"
+							placeholder="Maximum percentage here" autocomplete="off" inputmode="decimal">
+					</div>
+					<div class="form-group mb-0">
+						<label for="edit-threshold-description">Description</label>
+						<textarea class="form-control" id="edit-threshold-description" name="description" rows="3"
+							placeholder="Enter a description..."></textarea>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="button button-md" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="button button-primary button-md">Save</button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="offcanvas offcanvas-end fade" id="offcanvasProfile" tabindex="-1" aria-labelledby="offcanvasProfileTitle">
+		<div class="offcanvas-header">
+			<h2 class="offcanvas-title" id="offcanvasProfileTitle">Account details</h2>
+			<button type="button" data-bs-dismiss="offcanvas" aria-label="Close">
+				<i data-lucide="x" aria-hidden="true"></i>
+			</button>
+		</div>
+		<div class="offcanvas-body offcanvas-body--sections">
+			<section class="offcanvas-section">
+				<div class="drawer-account">
+					<span class="app-sidebar-user-avatar" aria-hidden="true">GM</span>
+					<span class="drawer-account-meta">
+						<span class="drawer-account-name">Gabriel Munthali</span>
+						<span class="drawer-account-detail">gabriel.munthali@angledimension.com</span>
+					</span>
+				</div>
+			</section>
+			<section class="offcanvas-section">
+				<h3 class="offcanvas-section-title">Profile information</h3>
+				<p class="offcanvas-section-lede">Your personal account details.</p>
+				<dl class="description-list mb-0">
+					<div class="description-list-row">
+						<dt><i data-lucide="case-sensitive" aria-hidden="true"></i> Short name</dt>
+						<dd>Gabriel</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="mail" aria-hidden="true"></i> Email address</dt>
+						<dd>gabriel.munthali@angledimension.com</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="phone" aria-hidden="true"></i> Phone number</dt>
+						<dd>+265 993 996 717</dd>
+					</div>
+				</dl>
+			</section>
+			<section class="offcanvas-section">
+				<h3 class="offcanvas-section-title">User role details</h3>
+				<p class="offcanvas-section-lede">Your access level in this portal.</p>
+				<dl class="description-list mb-0">
+					<div class="description-list-row">
+						<dt><i data-lucide="shield" aria-hidden="true"></i> Role</dt>
+						<dd>Administrator</dd>
+					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="zap" aria-hidden="true"></i> Status</dt>
+						<dd><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></dd>
+					</div>
+				</dl>
+			</section>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+	<script src="../../../js/theme-init.js"></script>
+	<script src="../../../js/main.js"></script>
+</body>
+</html>

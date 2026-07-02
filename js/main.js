@@ -323,6 +323,206 @@ function initFundsTransfer() {
 	syncFundsTransferBeneficiaryFields(null);
 }
 
+function initDisbursementSuccessRouting() {
+	var forms = document.querySelectorAll(
+		'#offcanvas-single-add-form, #offcanvas-funds-transfer-form, #offcanvas-batch-add-form'
+	);
+	if (!forms.length) {
+		return;
+	}
+
+	function getFieldValue(form, selectors) {
+		for (var i = 0; i < selectors.length; i += 1) {
+			var field = form.querySelector(selectors[i]);
+			if (!field || field.disabled) {
+				continue;
+			}
+			if (field.tagName === 'SELECT') {
+				return field.options[field.selectedIndex] ? field.options[field.selectedIndex].text.trim() : '';
+			}
+			var value = field.value ? field.value.trim() : '';
+			if (value) {
+				return value;
+			}
+		}
+		return '';
+	}
+
+	forms.forEach(function (form) {
+		form.addEventListener('submit', function (event) {
+			event.preventDefault();
+
+			var operation = form.getAttribute('data-send-success-operation') || 'Disbursement';
+			var back = form.getAttribute('data-send-success-back') || './single.html';
+			var beneficiary = getFieldValue(form, [
+				'#offcanvas-single-beneficiary-name',
+				'#fundsTransferExternalBeneficiaryName',
+				'#fundsTransferOnekhusaBeneficiaryName',
+				'#fundsTransferOrgBeneficiaryName'
+			]) || 'Batch payout';
+			var amount = getFieldValue(form, [
+				'#offcanvas-single-amount',
+				'#fundsTransferAmount'
+			]) || 'N/A';
+			var reference = getFieldValue(form, [
+				'#offcanvas-single-transaction-reference',
+				'#fundsTransferTransactionRef',
+				'#offcanvas-single-source-reference',
+				'#fundsTransferSourceRef'
+			]);
+			if (!reference) {
+				reference = 'REF-' + String(Date.now());
+			}
+
+			var params = new URLSearchParams();
+			params.set('operation', operation);
+			params.set('beneficiary', beneficiary);
+			params.set('amount', amount);
+			params.set('reference', reference);
+			params.set('timestamp', new Date().toLocaleString());
+			params.set('back', back);
+
+			window.location.href = './send-success.html?' + params.toString();
+		});
+	});
+}
+
+function initSendSuccessPage() {
+	var successRoot = document.getElementById('sendSuccessPage');
+	if (!successRoot) {
+		return;
+	}
+
+	var params = new URLSearchParams(window.location.search);
+	var fieldValues = {
+		operation: params.get('operation') || 'Disbursement',
+		beneficiary: params.get('beneficiary') || '-',
+		amount: params.get('amount') || '-',
+		reference: params.get('reference') || '-',
+		timestamp: params.get('timestamp') || '-'
+	};
+	Object.keys(fieldValues).forEach(function (field) {
+		document.querySelectorAll('[data-send-success-field="' + field + '"]').forEach(function (target) {
+			target.textContent = fieldValues[field];
+		});
+	});
+
+	var backHref = params.get('back');
+	var backLink = document.querySelector('[data-send-success-back]');
+	if (backHref && backLink) {
+		backLink.setAttribute('href', backHref);
+	}
+
+	var subjectInput = document.getElementById('open-dispute-subject');
+	if (subjectInput && fieldValues.reference !== '-') {
+		subjectInput.value = 'Transaction issue for ' + fieldValues.reference;
+	}
+	var commentInput = document.getElementById('open-dispute-comment');
+	if (commentInput) {
+		commentInput.value = 'Operation: ' + fieldValues.operation + '. Beneficiary: ' + fieldValues.beneficiary + '. Amount: ' + fieldValues.amount + '.';
+	}
+}
+
+function initDisputesIndexFlow() {
+	var linkOffcanvasEl = document.getElementById('offcanvasLinkDisputeTransaction');
+	if (!linkOffcanvasEl) {
+		return;
+	}
+
+	var disputeOffcanvasEl = document.getElementById('offcanvasOpenDispute');
+	var linkOffcanvas = bootstrap.Offcanvas.getOrCreateInstance(linkOffcanvasEl);
+	var disputeOffcanvas = disputeOffcanvasEl
+		? bootstrap.Offcanvas.getOrCreateInstance(disputeOffcanvasEl)
+		: null;
+
+	document.querySelectorAll('[data-dispute-report-trigger]').forEach(function (trigger) {
+		trigger.addEventListener('click', function (event) {
+			event.preventDefault();
+			linkOffcanvas.show();
+		});
+	});
+
+	var continueBtn = document.getElementById('disputeLinkTransactionContinue');
+	var refInput = document.getElementById('dispute-link-reference');
+	var linkedSection = document.getElementById('offcanvas-dispute-linked-transaction');
+	var linkedRef = document.getElementById('open-dispute-linked-reference');
+	var subjectInput = document.getElementById('open-dispute-subject');
+	var commentInput = document.getElementById('open-dispute-comment');
+
+	function prefillDisputeFromReference(reference) {
+		if (linkedRef) {
+			linkedRef.textContent = reference;
+		}
+		if (linkedSection) {
+			linkedSection.hidden = false;
+		}
+		if (subjectInput) {
+			subjectInput.value = 'Transaction issue for ' + reference;
+		}
+		if (commentInput) {
+			commentInput.value = 'Transaction reference: ' + reference + '.';
+		}
+	}
+
+	function resetDisputeForm() {
+		if (linkedSection) {
+			linkedSection.hidden = true;
+		}
+		if (refInput) {
+			refInput.value = '';
+		}
+		if (subjectInput) {
+			subjectInput.value = '';
+		}
+		if (commentInput) {
+			commentInput.value = '';
+		}
+	}
+
+	if (continueBtn) {
+		continueBtn.addEventListener('click', function () {
+			var reference = refInput ? refInput.value.trim() : '';
+			if (!reference) {
+				if (refInput) {
+					refInput.focus();
+				}
+				return;
+			}
+
+			prefillDisputeFromReference(reference);
+			linkOffcanvasEl.addEventListener('hidden.bs.offcanvas', function openDisputeOffcanvas() {
+				linkOffcanvasEl.removeEventListener('hidden.bs.offcanvas', openDisputeOffcanvas);
+				if (disputeOffcanvas) {
+					disputeOffcanvas.show();
+				}
+				if (typeof lucide !== 'undefined') {
+					lucide.createIcons();
+				}
+			});
+			linkOffcanvas.hide();
+		});
+	}
+
+	document.querySelectorAll('[data-dispute-change-transaction]').forEach(function (trigger) {
+		trigger.addEventListener('click', function () {
+			if (disputeOffcanvas) {
+				disputeOffcanvas.hide();
+			}
+			disputeOffcanvasEl.addEventListener('hidden.bs.offcanvas', function reopenLinkOffcanvas() {
+				disputeOffcanvasEl.removeEventListener('hidden.bs.offcanvas', reopenLinkOffcanvas);
+				linkOffcanvas.show();
+				if (refInput) {
+					refInput.focus();
+				}
+			});
+		});
+	});
+
+	if (disputeOffcanvasEl) {
+		disputeOffcanvasEl.addEventListener('hidden.bs.offcanvas', resetDisputeForm);
+	}
+}
+
 function initMerchantDetailContentsNav() {
 	var navLinks = document.querySelectorAll('[data-merchant-detail-nav]');
 	if (!navLinks.length) {
@@ -1264,6 +1464,9 @@ $(function () {
 	initMainNavNotifications();
 	initMainNavEnvSync();
 	initFundsTransfer();
+	initDisbursementSuccessRouting();
+	initSendSuccessPage();
+	initDisputesIndexFlow();
 	initMerchantDetailContentsNav();
 	initAdminDashboardNav();
 	initApplicationDetailTabs();

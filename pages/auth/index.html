@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Auth</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+	<div class="app-shell">
+		<aside class="app-sidebar d-none d-lg-flex flex-column" aria-label="Sidebar">
+			<header class="app-sidebar-brand">
+				<a href="../../" class="app-sidebar-brand-link">
+					<img src="../../img/khusa-logos/onekhusa-logo.svg" alt="OneKhusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<nav class="app-sidebar-nav" aria-label="Sidebar navigation">
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="../../" class="app-sidebar-nav-link">
+							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Home</span>
+						</a>
+					</li>
+					<li>
+						<a href="./" class="app-sidebar-nav-link" aria-current="page">
+							<i data-lucide="log-in" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Auth</span>
+						</a>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+		<main class="app-main">
+			<nav class="app-main-nav" aria-label="Main">
+				<div class="app-main-nav-start">
+					<button type="button" class="app-main-nav-toggle d-lg-none" data-bs-toggle="offcanvas"
+						data-bs-target="#appSidebarMenu" aria-controls="appSidebarMenu" aria-label="Open sidebar">
+						<i data-lucide="menu" class="app-main-nav-toggle-icon" aria-hidden="true"></i>
+					</button>
+					<nav class="app-main-nav-breadcrumb" aria-label="Breadcrumb">
+						<ol class="app-main-nav-breadcrumb-list">
+							<li><a href="../../">Home</a></li>
+							<li><span aria-current="page">Auth</span></li>
+						</ol>
+					</nav>
+				</div>
+			</nav>
+			<div class="app-content">
+				<div class="app-content-inner container-fluid">
+					<header class="page-intro">
+						<h1 class="page-intro-heading">Auth flows</h1>
+						<p class="page-intro-lede">Walk through sign up, sign in, password recovery, and account recovery screens for OneKhusa Payment Gateway.</p>
+					</header>
+					<div class="row row-cols-1 row-cols-md-2 g-3">
+						<div class="col">
+							<a href="registration/signup.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
+								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="user-plus"></i></span>
+								<h2 class="card-title">Registration</h2>
+								<p class="text-secondary mb-0">Sign up, verify email, set a password, and confirm account creation.</p>
+							</a>
+						</div>
+						<div class="col">
+							<a href="login/login.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
+								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="log-in"></i></span>
+								<h2 class="card-title">Login</h2>
+								<p class="text-secondary mb-0">Sign in with email and password to access your merchant sandbox.</p>
+							</a>
+						</div>
+						<div class="col">
+							<a href="password-reset/request.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
+								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="key-round"></i></span>
+								<h2 class="card-title">Password reset</h2>
+								<p class="text-secondary mb-0">Request a code, verify identity, and choose a new password.</p>
+							</a>
+						</div>
+						<div class="col">
+							<a href="account-locked/locked.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
+								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="lock"></i></span>
+								<h2 class="card-title">Account locked</h2>
+								<p class="text-secondary mb-0">What visitors see after too many failed sign-in attempts.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<div class="offcanvas offcanvas-start app-sidebar-offcanvas" tabindex="-1" id="appSidebarMenu"
+		aria-label="Sidebar">
+		<div class="offcanvas-header app-sidebar-offcanvas-header">
+			<a href="../../" class="app-sidebar-brand-link">
+				<img src="../../img/khusa-logos/onekhusa-logo.svg" alt="OneKhusa" class="app-sidebar-brand-logo"
+					width="120" height="28">
+			</a>
+			<button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+		</div>
+		<nav class="app-sidebar-nav app-sidebar-offcanvas-nav" aria-label="Sidebar navigation">
+			<ul class="app-sidebar-nav-list">
+				<li>
+					<a href="../../" class="app-sidebar-nav-link">
+						<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+						<span class="app-sidebar-nav-link-label">Home</span>
+					</a>
+				</li>
+				<li>
+					<a href="./" class="app-sidebar-nav-link" aria-current="page">
+						<i data-lucide="log-in" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+						<span class="app-sidebar-nav-link-label">Auth</span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+	<script src="../../js/theme-init.js"></script>
+	<script src="../../js/main.js"></script>
+</body>
+</html>

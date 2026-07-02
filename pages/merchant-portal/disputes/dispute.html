@@ -61,10 +61,16 @@
 							</a>
 						</li>
 						<li>
-							<a href="index.html" class="app-sidebar-nav-link" aria-current="page">
+							<a href="#sidebar-nav-sub-disputes" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="true" aria-controls="sidebar-nav-sub-disputes" data-bs-toggle="collapse">
 								<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 								<span class="app-sidebar-nav-link-label">Disputes</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
 							</a>
+							<ul id="sidebar-nav-sub-disputes" class="collapse show app-sidebar-nav-sublist">
+								<li><a href="index.html" class="app-sidebar-nav-sublink">Getting started</a></li>
+								<li><a href="disputes.html" class="app-sidebar-nav-sublink" aria-current="page">All disputes</a></li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -177,7 +183,7 @@
 					<nav class="app-main-nav-breadcrumb" aria-label="Breadcrumb">
 						<ol class="app-main-nav-breadcrumb-list">
 							<li><a href="../index.html">Dashboard</a></li>
-							<li><a href="index.html">Disputes</a></li>
+							<li><a href="disputes.html">Disputes</a></li>
 							<li><span aria-current="page">DSP-2026-00412</span></li>
 						</ol>
 					</nav>
@@ -787,10 +793,16 @@
 								</a>
 							</li>
 							<li>
-								<a href="index.html" class="app-sidebar-nav-link" aria-current="page">
+								<a href="#offcanvas-nav-sub-disputes" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+									aria-expanded="true" aria-controls="offcanvas-nav-sub-disputes" data-bs-toggle="collapse">
 									<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 									<span class="app-sidebar-nav-link-label">Disputes</span>
+									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
 								</a>
+								<ul id="offcanvas-nav-sub-disputes" class="collapse show app-sidebar-nav-sublist">
+									<li><a href="index.html" class="app-sidebar-nav-sublink">Getting started</a></li>
+									<li><a href="disputes.html" class="app-sidebar-nav-sublink" aria-current="page">All disputes</a></li>
+								</ul>
 							</li>
 						</ul>
 					</section>

@@ -62,10 +62,16 @@
 							</a>
 						</li>
 						<li>
-							<a href="../disputes/" class="app-sidebar-nav-link">
+							<a href="#sidebar-nav-sub-disputes" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="sidebar-nav-sub-disputes" data-bs-toggle="collapse">
 								<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 								<span class="app-sidebar-nav-link-label">Disputes</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
 							</a>
+							<ul id="sidebar-nav-sub-disputes" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../disputes/index.html" class="app-sidebar-nav-sublink">Getting started</a></li>
+								<li><a href="../disputes/disputes.html" class="app-sidebar-nav-sublink">All disputes</a></li>
+							</ul>
 						</li>
 					</ul>
 				</section>
@@ -494,7 +500,8 @@
 		</div>
 		<div class="offcanvas-body offcanvas-body--sections">
 			<form id="offcanvas-single-add-form" class="offcanvas-single-add-form" action="#" method="post"
-				aria-label="Add single disbursement">
+				aria-label="Add single disbursement" data-send-success-operation="Single transaction"
+				data-send-success-back="./single.html">
 				<section class="offcanvas-section" aria-labelledby="offcanvas-single-merchant-heading">
 					<h3 class="offcanvas-section-title" id="offcanvas-single-merchant-heading">Merchant</h3>
 					<p class="offcanvas-section-lede">Merchant account to use for funds transfer</p>
@@ -746,10 +753,16 @@
 							</a>
 						</li>
 						<li>
-							<a href="../disputes/" class="app-sidebar-nav-link">
+							<a href="#offcanvas-nav-sub-disputes" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="offcanvas-nav-sub-disputes" data-bs-toggle="collapse">
 								<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 								<span class="app-sidebar-nav-link-label">Disputes</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
 							</a>
+							<ul id="offcanvas-nav-sub-disputes" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../disputes/index.html" class="app-sidebar-nav-sublink">Getting started</a></li>
+								<li><a href="../disputes/disputes.html" class="app-sidebar-nav-sublink">All disputes</a></li>
+							</ul>
 						</li>
 					</ul>
 				</section>

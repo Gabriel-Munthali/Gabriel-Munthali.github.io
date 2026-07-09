@@ -12,63 +12,64 @@
 <body>
 	<section class="auth-section">
 		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-6 d-lg-block d-none">
-					<div class="auth-image-wrapper">
-						<img src="../../../img/auth-illustrations/pin-lock-illustration.svg" alt="">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="auth-form-wrapper">
-						<img class="auth-brand-image" src="../../../img/khusa-logos/onekhusa-logo.svg" alt="OneKhusa">
-						<form action="../../../pages/merchant-portal/">
-							<h1 class="user-account-title">Sign in to your account</h1>
-							<p class="user-account-description">Enter your email and password to access the OneKhusa Payment Gateway.</p>
-							<div class="form-group">
-								<label for="email">Email address</label>
-								<div class="form-group-input-wrapper">
-									<i data-lucide="mail"></i>
-									<input type="email" class="form-control" id="email" placeholder="Enter your email address">
-								</div>
+			<header class="auth-header">
+				<a href="../" class="auth-brand-link">
+					<img class="auth-brand-image" src="../../../img/khusa-logos/onekhusa-logo.svg" alt="OneKhusa">
+				</a>
+			</header>
+			<main class="auth-main">
+				<div class="auth-form-wrapper">
+					<form action="../../../pages/merchant-portal/">
+						<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3 user-account-title-icon" aria-hidden="true"><i data-lucide="log-in"></i></span>
+						<h1 class="user-account-title">Sign in to your account</h1>
+						<p class="user-account-description">Enter your email and password to access the OneKhusa Payment Gateway.</p>
+						<div class="form-group">
+							<label for="email">Email address</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="mail"></i>
+								<input type="email" class="form-control" id="email" placeholder="Enter your email address">
 							</div>
-							<div class="form-group">
-								<label for="password">Password</label>
-								<div class="form-group-input-wrapper">
-									<i data-lucide="lock"></i>
-									<input type="password" class="form-control" id="password" placeholder="Enter your password" autocomplete="current-password">
-								</div>
+						</div>
+						<div class="form-group">
+							<label for="password">Password</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="lock"></i>
+								<input type="password" class="form-control" id="password" placeholder="Enter your password" autocomplete="current-password">
 							</div>
-							<div class="form-group">
-								<div class="cf-turnstile-mock" aria-hidden="true">
-									<div class="cf-turnstile-mock-body">
-										<span class="cf-turnstile-mock-checkbox"></span>
-										<span class="cf-turnstile-mock-text">Verify you are human</span>
+						</div>
+						<div class="form-group">
+							<div class="cf-turnstile-mock" aria-hidden="true">
+								<div class="cf-turnstile-mock-body">
+									<span class="cf-turnstile-mock-checkbox"></span>
+									<span class="cf-turnstile-mock-text">Verify you are human</span>
+								</div>
+								<div class="cf-turnstile-mock-branding">
+									<div class="cf-turnstile-mock-logo-row">
+										<svg class="cf-turnstile-mock-logo" viewBox="0 0 65 65" aria-hidden="true" focusable="false">
+											<path fill="#F38020" d="M56.5 28.8c-.7-5.8-5.5-10.3-11.5-10.3-1.2 0-2.3.2-3.4.5C40.2 12.5 33.5 8.5 25.8 8.5c-9.8 0-17.8 7.5-18.6 17.1C3.4 27.1 0 31.9 0 37.3c0 7.2 5.8 13 13 13h43.5c7.2 0 13-5.8 13-13 0-6.5-4.8-11.8-11-12.5z"/>
+										</svg>
+										<span class="cf-turnstile-mock-brand-name">CLOUDFLARE</span>
 									</div>
-									<div class="cf-turnstile-mock-branding">
-										<div class="cf-turnstile-mock-logo-row">
-											<svg class="cf-turnstile-mock-logo" viewBox="0 0 65 65" aria-hidden="true" focusable="false">
-												<path fill="#F38020" d="M56.5 28.8c-.7-5.8-5.5-10.3-11.5-10.3-1.2 0-2.3.2-3.4.5C40.2 12.5 33.5 8.5 25.8 8.5c-9.8 0-17.8 7.5-18.6 17.1C3.4 27.1 0 31.9 0 37.3c0 7.2 5.8 13 13 13h43.5c7.2 0 13-5.8 13-13 0-6.5-4.8-11.8-11-12.5z"/>
-											</svg>
-											<span class="cf-turnstile-mock-brand-name">CLOUDFLARE</span>
-										</div>
-										<span class="cf-turnstile-mock-links">Privacy · Terms</span>
-									</div>
+									<span class="cf-turnstile-mock-links">Privacy · Terms</span>
 								</div>
 							</div>
-							<div class="form-group">
-								<button type="submit" class="button button-primary button-md w-100 mb-3">Sign in</button>
-								<a href="../" class="button button-md w-100"><i data-lucide="move-left"></i> Back</a>
-							</div>
-							<div class="auth-form-info text-center">
-								<a href="../password-reset/request.html">Forgot password?</a>
-							</div>
-							<div class="auth-form-info text-center">
-								New here? <a href="../registration/signup.html">Create an account</a>
-							</div>
-						</form>
-					</div>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="button button-primary button-md w-100 mb-3">Sign in</button>
+							<a href="../" class="button button-outline button-md w-100"><i data-lucide="move-left"></i> Back</a>
+						</div>
+						<div class="auth-form-info text-center">
+							<a href="../password-reset/request.html">Forgot password?</a>
+						</div>
+						<div class="auth-form-info text-center">
+							New here? <a href="../registration/signup.html">Create an account</a>
+						</div>
+					</form>
 				</div>
-			</div>
+			</main>
+			<footer class="auth-footer">
+				<p class="auth-footer-text">By continuing, you agree to our terms and privacy policy.</p>
+			</footer>
 		</div>
 	</section>
 

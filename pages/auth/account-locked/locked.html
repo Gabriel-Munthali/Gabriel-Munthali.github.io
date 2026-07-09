@@ -12,26 +12,27 @@
 <body>
 	<section class="auth-section">
 		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-6 d-lg-block d-none">
-					<div class="auth-image-wrapper">
-						<img src="../../../img/auth-illustrations/account-locked-illustration.svg" alt="">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="auth-form-wrapper">
-						<img class="auth-brand-image" src="../../../img/khusa-logos/onekhusa-logo.svg" alt="OneKhusa">
-						<div>
+			<header class="auth-header">
+				<a href="../" class="auth-brand-link">
+					<img class="auth-brand-image" src="../../../img/khusa-logos/onekhusa-logo.svg" alt="OneKhusa">
+				</a>
+			</header>
+			<main class="auth-main">
+				<div class="auth-form-wrapper">
+					<div>
+							<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3 user-account-title-icon" aria-hidden="true"><i data-lucide="lock"></i></span>
 							<h1 class="user-account-title">Your account is locked</h1>
 							<p class="user-account-description">Too many failed sign-in attempts. For your security, access is temporarily blocked. Try again later or contact support if you need help right away.</p>
 							<div class="form-group">
 								<a href="../login/login.html" class="button button-primary button-md w-100 mb-3">Back to sign in</a>
-								<a href="../" class="button button-md w-100"><i data-lucide="move-left"></i> Back</a>
+								<a href="../" class="button button-outline button-md w-100"><i data-lucide="move-left"></i> Back</a>
 							</div>
-						</div>
 					</div>
 				</div>
-			</div>
+			</main>
+			<footer class="auth-footer">
+				<p class="auth-footer-text">By continuing, you agree to our terms and privacy policy.</p>
+			</footer>
 		</div>
 	</section>
 

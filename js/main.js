@@ -1318,7 +1318,7 @@ function getPitchTourSteps() {
 				}
 			},
 			{
-				element: function () { return document.querySelectorAll('.component-card')[7]; },
+				element: function () { return document.querySelectorAll('.component-card')[8]; },
 				popover: {
 					title: pitchTourStepTitle(5, 'Forms and inputs'),
 					description: 'Inputs, selects, and validation share one look and spacing on every screen.',
@@ -1327,7 +1327,7 @@ function getPitchTourSteps() {
 				}
 			},
 			{
-				element: function () { return document.querySelectorAll('.component-card')[9]; },
+				element: function () { return document.querySelectorAll('.component-card')[10]; },
 				popover: {
 					title: pitchTourStepTitle(6, 'Tables for data'),
 					description: 'Records and lists use one responsive table pattern across the product. Each pattern is defined once and reused everywhere.',

@@ -13,30 +13,31 @@
 <body>
 	<section class="auth-section">
 		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-6 d-lg-block d-none">
-					<div class="auth-image-wrapper">
-						<img src="../../../img/auth-illustrations/padlock-envelope-illustration.svg" alt="">
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="auth-form-wrapper">
-						<img class="auth-brand-image" src="../../../img/khusa-logos/onekhusa-logo.svg" alt="OneKhusa">
-						<form action="verify.html">
+			<header class="auth-header">
+				<a href="../" class="auth-brand-link">
+					<img class="auth-brand-image" src="../../../img/khusa-logos/onekhusa-logo.svg" alt="OneKhusa">
+				</a>
+			</header>
+			<main class="auth-main">
+				<div class="auth-form-wrapper">
+					<form action="verify.html">
+							<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3 user-account-title-icon" aria-hidden="true"><i data-lucide="user-plus"></i></span>
 							<h1 class="user-account-title">Create your account</h1>
 							<p class="user-account-description">Enter your details to register on OneKhusa Payment Gateway.</p>
-							<div class="form-group">
-								<label for="firstName">First name</label>
-								<div class="form-group-input-wrapper">
-									<i data-lucide="user"></i>
-									<input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+							<div class="form-group-row">
+								<div class="form-group form-group-row-item">
+									<label for="firstName">First name</label>
+									<div class="form-group-input-wrapper">
+										<i data-lucide="user"></i>
+										<input type="text" class="form-control" id="firstName" placeholder="Enter your first name">
+									</div>
 								</div>
-							</div>
-							<div class="form-group">
-								<label for="lastName">Last name</label>
-								<div class="form-group-input-wrapper">
-									<i data-lucide="user"></i>
-									<input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+								<div class="form-group form-group-row-item">
+									<label for="lastName">Last name</label>
+									<div class="form-group-input-wrapper">
+										<i data-lucide="user"></i>
+										<input type="text" class="form-control" id="lastName" placeholder="Enter your last name">
+									</div>
 								</div>
 							</div>
 							<div class="form-group">
@@ -76,15 +77,17 @@
 							</div>
 							<div class="form-group">
 								<button type="submit" class="button button-primary button-md w-100 mb-3">Next</button>
-								<a href="../" class="button button-md w-100"><i data-lucide="move-left"></i> Back</a>
+								<a href="../" class="button button-outline button-md w-100"><i data-lucide="move-left"></i> Back</a>
 							</div>
 							<div class="auth-form-info text-center">
 								Already have an account? <a href="../login/login.html">Sign in</a>
 							</div>
-						</form>
-					</div>
+					</form>
 				</div>
-			</div>
+			</main>
+			<footer class="auth-footer">
+				<p class="auth-footer-text">By continuing, you agree to our terms and privacy policy.</p>
+			</footer>
 		</div>
 	</section>
 

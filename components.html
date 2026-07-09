@@ -9,8 +9,8 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="/css/responsive.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.6/dist/driver.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.css">
 </head>
 
 <body>
@@ -136,6 +136,57 @@
                             data-bs-target="#toast-demo-warning">Warning</button>
                         <button type="button" class="button button-danger button-sm" data-bs-toggle="toast"
                             data-bs-target="#toast-demo-danger">Danger</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="component-card">
+                    <h4 class="card-title">Callout banners</h4>
+                    <p class="text-tertiary small mb-3">Full-width notices for feature onboarding and contextual information. Dismissible banners remember your choice per id.</p>
+                    <div class="d-flex flex-column gap-3">
+                        <div class="callout-banner callout-banner-info" role="region" aria-label="Platform update">
+                            <div class="callout-banner-inner">
+                                <i data-lucide="info" class="callout-banner-icon" aria-hidden="true"></i>
+                                <p class="callout-banner-text">
+                                    <strong>Scheduled maintenance:</strong> Payout processing may be delayed on Sunday between 2:00 and 4:00 AM CAT.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="callout-banner callout-banner-primary" id="calloutBannerWebhooks" data-callout-banner-id="webhooks-onboarding" role="region" aria-label="Webhooks onboarding">
+                            <div class="callout-banner-inner">
+                                <i data-lucide="webhook" class="callout-banner-icon" aria-hidden="true"></i>
+                                <p class="callout-banner-text">
+                                    <strong>Webhooks:</strong> Get notified when payouts settle.
+                                    <a href="#">Learn more</a>
+                                </p>
+                            </div>
+                            <button type="button" class="callout-banner-close" aria-label="Dismiss webhooks notice">
+                                <i data-lucide="circle-x" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="callout-banner callout-banner-primary" id="calloutBannerRtp" data-callout-banner-id="rtp-onboarding" role="region" aria-label="Request to Pay onboarding">
+                            <div class="callout-banner-inner">
+                                <i data-lucide="banknote" class="callout-banner-icon" aria-hidden="true"></i>
+                                <p class="callout-banner-text">
+                                    <strong>Request to Pay:</strong> Send payment requests directly to your customers.
+                                </p>
+                                <a href="#" class="button button-sm button-primary callout-banner-action">Set up Request to Pay</a>
+                            </div>
+                            <button type="button" class="callout-banner-close" aria-label="Dismiss Request to Pay notice">
+                                <i data-lucide="circle-x" aria-hidden="true"></i>
+                            </button>
+                        </div>
+                        <div class="callout-banner callout-banner-warning" id="calloutBannerSecurity" data-callout-banner-id="security-notice" role="region" aria-label="Security notice">
+                            <div class="callout-banner-inner">
+                                <i data-lucide="alert-triangle" class="callout-banner-icon" aria-hidden="true"></i>
+                                <p class="callout-banner-text">
+                                    <strong>Stay safe:</strong> Never share your OneKhusa PIN or codes with others. We will never ask you for this information.
+                                </p>
+                            </div>
+                            <button type="button" class="callout-banner-close" aria-label="Dismiss security notice">
+                                <i data-lucide="circle-x" aria-hidden="true"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

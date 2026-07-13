@@ -4392,8 +4392,8 @@ span.modal-icon--warning {
 
 .auth-form-wrapper {
 	width: min(100%, 34rem);
-	padding: 0;
-	border: 0;
+	padding: var(--space-2xl);
+	border: 1px solid var(--text-gray-200);
 	border-radius: var(--br-lg);
 	background-color: var(--color-white);
 	box-shadow: none;

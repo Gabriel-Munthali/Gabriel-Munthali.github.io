@@ -1,7 +1,8 @@
 @media (max-width: 992px) {
 	.auth-form-wrapper {
 		width: 100%;
-		padding: var(--space-xl);
+		padding: 0;
+		border: 0;
 	}
 }
 
@@ -12,11 +13,6 @@
 
 	.auth-main {
 		padding: var(--space-lg) 0;
-	}
-
-	.auth-form-wrapper {
-		padding: var(--space-lg);
-		border-radius: var(--br-md);
 	}
 
 	.user-account-title-icon {

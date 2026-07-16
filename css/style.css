@@ -945,8 +945,12 @@ a button {
 
 .step-button-wrapper:has([data-stepper-skip]) {
 	align-items: center;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 	justify-content: space-between;
+}
+
+.step-button-wrapper:has([data-stepper-skip]) > [data-stepper-skip]:not([hidden]) {
+	flex-shrink: 0;
 }
 
 .step-button-wrapper:has([data-stepper-skip][hidden]) {
@@ -956,10 +960,9 @@ a button {
 .base-stepper-step-nav {
 	display: flex;
 	gap: var(--space-md);
-	margin-left: auto;
-	flex: 1 1 auto;
+	flex: 0 0 auto;
 	justify-content: flex-end;
-	min-width: min(100%, 14rem);
+	min-width: 0;
 }
 
 .step-button-wrapper:has([data-stepper-skip]):has(.base-stepper-prev:not([hidden])) .base-stepper-step-nav .button {

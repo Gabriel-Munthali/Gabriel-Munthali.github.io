@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Merchant Dashboard</title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/responsive.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.6/dist/driver.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.3.6/dist/driver.css"
+		integrity="sha384-eyrYgcjChmzD338JTHFZssgJHOqqOZbajet8yZpCw8ESroLDi28BarMEKCImNGHC" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" href="../../css/responsive.css">
 </head>
 <body>
 	<div class="app-shell">
@@ -732,6 +733,265 @@
 
 
 
+	<div class="modal fade" id="modalSandboxWelcome" tabindex="-1" role="dialog"
+		aria-labelledby="modalSandboxWelcomeLabel" aria-describedby="modalSandboxWelcomeDescription" aria-hidden="true"
+		data-bs-backdrop="static" data-bs-keyboard="false">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-size-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-header-leading modal-header-leading--stacked">
+						<span class="modal-leading-icon" aria-hidden="true">
+							<span class="modal-leading-icon-main">
+								<i data-lucide="rocket"></i>
+							</span>
+						</span>
+						<h1 class="modal-title" id="modalSandboxWelcomeLabel">Welcome to your sandbox</h1>
+					</div>
+				</div>
+				<div class="modal-body">
+					<div id="sandbox-welcome-stepper" class="base-stepper sandbox-welcome-stepper" data-stepper-bs-dismiss="modal">
+						<div class="step-progress-bar" aria-label="Sandbox setup progress">
+							<div class="step-item current" data-step="1">
+								<div class="step-check">
+									<i data-lucide="check" aria-hidden="true"></i>
+								</div>
+								<span>Welcome</span>
+							</div>
+							<div class="step-item" data-step="2">
+								<div class="step-check">
+									<i data-lucide="check" aria-hidden="true"></i>
+								</div>
+								<span>Settlement</span>
+							</div>
+							<div class="step-item" data-step="3">
+								<div class="step-check">
+									<i data-lucide="check" aria-hidden="true"></i>
+								</div>
+								<span>Team</span>
+							</div>
+							<div class="step-item" data-step="4">
+								<div class="step-check">
+									<i data-lucide="check" aria-hidden="true"></i>
+								</div>
+								<span>API key</span>
+							</div>
+							<div class="step-item" data-step="5">
+								<div class="step-check">
+									<i data-lucide="check" aria-hidden="true"></i>
+								</div>
+								<span>Ready</span>
+							</div>
+						</div>
+						<div class="base-stepper-panels">
+							<div class="base-stepper-panel" data-step="1">
+								<h2 class="sandbox-welcome-panel-heading">Your merchant sandbox is ready</h2>
+								<p id="modalSandboxWelcomeDescription" class="text-secondary sandbox-welcome-panel-lede">
+									Complete a few basics so you can test disbursements and collections safely. This takes a few minutes and stays in sandbox only.
+								</p>
+								<ul class="sandbox-welcome-setup-list list-unstyled mb-0">
+									<li>
+										<span class="sandbox-welcome-setup-icon" aria-hidden="true"><i data-lucide="landmark"></i></span>
+										<span>
+											<span class="sandbox-welcome-setup-title">Settlement account</span>
+											<span class="text-tertiary small">Required for disbursements and collections.</span>
+										</span>
+									</li>
+									<li>
+										<span class="sandbox-welcome-setup-icon" aria-hidden="true"><i data-lucide="users"></i></span>
+										<span>
+											<span class="sandbox-welcome-setup-title">Team access</span>
+											<span class="text-tertiary small">Add someone who can initiate and approve payments.</span>
+										</span>
+									</li>
+									<li>
+										<span class="sandbox-welcome-setup-icon" aria-hidden="true"><i data-lucide="key-round"></i></span>
+										<span>
+											<span class="sandbox-welcome-setup-title">API key pair</span>
+											<span class="text-tertiary small">Credentials for sandbox API authentication.</span>
+										</span>
+									</li>
+								</ul>
+							</div>
+							<div class="base-stepper-panel" data-step="2" hidden>
+								<h2 class="sandbox-welcome-panel-heading">Add a settlement account</h2>
+								<p class="text-secondary sandbox-welcome-panel-lede">
+									Link a bank account for settling funds. This is required before you can run disbursement or collection transactions in sandbox.
+								</p>
+								<form id="sandbox-welcome-settlement-form" class="sandbox-welcome-form" action="#" method="post" aria-label="Add settlement account">
+									<div class="form-group">
+										<label for="sandbox-welcome-bank-name">Bank name</label>
+										<div class="form-group-input-wrapper">
+											<i data-lucide="landmark" aria-hidden="true"></i>
+											<select class="form-control with-icon-right" id="sandbox-welcome-bank-name" name="bankName">
+												<option value="" disabled selected>Select bank</option>
+												<option value="nbm">National Bank of Malawi</option>
+												<option value="fdh">FDH Bank</option>
+												<option value="first-capital">First Capital Bank</option>
+												<option value="standard">Standard Bank Malawi</option>
+												<option value="nbs">NBS Bank</option>
+											</select>
+											<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="sandbox-welcome-account-name">Account name</label>
+										<div class="form-group-input-wrapper">
+											<i data-lucide="user" aria-hidden="true"></i>
+											<input type="text" class="form-control" id="sandbox-welcome-account-name" name="accountName"
+												placeholder="Name on the account" autocomplete="organization">
+										</div>
+									</div>
+									<div class="form-group mb-0">
+										<label for="sandbox-welcome-account-number">Account number</label>
+										<div class="form-group-input-wrapper">
+											<i data-lucide="hash" aria-hidden="true"></i>
+											<input type="text" class="form-control" id="sandbox-welcome-account-number" name="accountNumber"
+												placeholder="Account number" inputmode="numeric" autocomplete="off">
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="base-stepper-panel" data-step="3" hidden>
+								<h2 class="sandbox-welcome-panel-heading">Add a user to initiate and approve</h2>
+								<p class="text-secondary sandbox-welcome-panel-lede">
+									Invite a teammate who can initiate payments and approve them, or choose a profile that covers both (such as Finance Officer or Merchant Administrator).
+								</p>
+								<form id="sandbox-welcome-user-form" class="sandbox-welcome-form" action="#" method="post" aria-label="Add team user">
+									<div class="form-group-row">
+										<div class="form-group form-group-row-item">
+											<label for="sandbox-welcome-user-first-name">First Name</label>
+											<div class="form-group-input-wrapper">
+												<i data-lucide="user" aria-hidden="true"></i>
+												<input type="text" class="form-control" id="sandbox-welcome-user-first-name" name="firstName"
+													placeholder="Enter first name" autocomplete="given-name">
+											</div>
+										</div>
+										<div class="form-group form-group-row-item">
+											<label for="sandbox-welcome-user-last-name">Last Name</label>
+											<div class="form-group-input-wrapper">
+												<i data-lucide="user" aria-hidden="true"></i>
+												<input type="text" class="form-control" id="sandbox-welcome-user-last-name" name="lastName"
+													placeholder="Enter last name" autocomplete="family-name">
+											</div>
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="sandbox-welcome-user-phone">Phone Number</label>
+										<div class="form-group-input-wrapper">
+											<i data-lucide="phone" aria-hidden="true"></i>
+											<input type="tel" class="form-control" id="sandbox-welcome-user-phone" name="phone"
+												placeholder="Enter phone number" autocomplete="tel">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="sandbox-welcome-user-email">Email Address</label>
+										<div class="form-group-input-wrapper">
+											<i data-lucide="mail" aria-hidden="true"></i>
+											<input type="email" class="form-control" id="sandbox-welcome-user-email" name="email"
+												placeholder="you@company.com" autocomplete="email">
+										</div>
+									</div>
+									<div class="form-group mb-0">
+										<label for="sandbox-welcome-user-profile">User Profile</label>
+										<div class="form-group-input-wrapper">
+											<i data-lucide="shield" aria-hidden="true"></i>
+											<select class="form-control with-icon-right" id="sandbox-welcome-user-profile" name="userProfile">
+												<option value="" disabled selected>Select user profile</option>
+												<option value="merchant-administrator">Merchant Administrator</option>
+												<option value="finance-officer">Finance Officer</option>
+												<option value="viewer">Viewer</option>
+											</select>
+											<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+										</div>
+									</div>
+								</form>
+							</div>
+							<div class="base-stepper-panel" data-step="4" hidden>
+								<h2 class="sandbox-welcome-panel-heading">Create your API key</h2>
+								<p class="text-secondary sandbox-welcome-panel-lede">
+									Use this sandbox API key pair for OAuth token requests. Store the secret now; you will not see it again after you leave this step.
+								</p>
+								<div class="sandbox-welcome-form">
+								<div class="form-group">
+									<label for="sandbox-welcome-api-key">API Key</label>
+									<div class="form-group-input-wrapper">
+										<input type="text" class="form-control with-copy-action" id="sandbox-welcome-api-key" name="apiKey"
+											value="sk_test_9f2a7c1e4b8d6e0a" readonly disabled>
+										<button type="button" class="button button-copy" aria-label="Copy API key">
+											<i data-lucide="copy" aria-hidden="true"></i>
+											Copy
+										</button>
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="sandbox-welcome-api-secret">API Secret</label>
+									<div class="form-group-input-wrapper">
+										<input type="text" class="form-control with-copy-action" id="sandbox-welcome-api-secret" name="apiSecret"
+											value="1bWx+BN/QSKmxE|4Ey9beFLfH6XY8myGSgrm7EbHBns=" readonly disabled>
+										<button type="button" class="button button-copy" aria-label="Copy API secret">
+											<i data-lucide="copy" aria-hidden="true"></i>
+											Copy
+										</button>
+									</div>
+								</div>
+								<div class="alert alert-warning d-flex align-items-start gap-3 modal-alert mb-0" role="alert">
+									<i data-lucide="alert-triangle" aria-hidden="true"></i>
+									<p class="mb-0">
+										You will not be able to access your secret once you continue. Store it somewhere secure and do not share it.
+									</p>
+								</div>
+								</div>
+							</div>
+							<div class="base-stepper-panel" data-step="5" hidden>
+								<h2 class="sandbox-welcome-panel-heading">You are ready to test</h2>
+								<p class="text-secondary sandbox-welcome-panel-lede">
+									Your basic sandbox setup is complete. Load test funds when you want to try disbursements, and add webhooks if your system needs real-time events.
+								</p>
+								<ul class="sandbox-welcome-next-list list-unstyled mb-0">
+									<li>
+										<a href="fakedata/accept-pay.html" class="sandbox-welcome-next-link">
+											<span class="sandbox-welcome-next-icon" aria-hidden="true"><i data-lucide="flask-conical"></i></span>
+											<span>
+												<span class="sandbox-welcome-next-title">Top up with Fake Data</span>
+												<span class="text-tertiary small">Simulate a payment to add sandbox funds before testing payouts.</span>
+											</span>
+											<i data-lucide="chevron-right" class="sandbox-welcome-next-chevron" aria-hidden="true"></i>
+										</a>
+									</li>
+									<li>
+										<a href="webhooks/" class="sandbox-welcome-next-link">
+											<span class="sandbox-welcome-next-icon" aria-hidden="true"><i data-lucide="webhook"></i></span>
+											<span>
+												<span class="sandbox-welcome-next-title">Configure webhooks (optional)</span>
+												<span class="text-tertiary small">Subscribe to payout and collection events.</span>
+											</span>
+											<i data-lucide="chevron-right" class="sandbox-welcome-next-chevron" aria-hidden="true"></i>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+						<div class="step-button-wrapper">
+							<button type="button" class="button button-md" data-stepper-skip data-bs-dismiss="modal">
+								<i data-lucide="skip-forward" aria-hidden="true"></i> Skip for now
+							</button>
+							<div class="base-stepper-step-nav">
+								<button type="button" class="button button-md base-stepper-prev" hidden>
+									<i data-lucide="arrow-left" aria-hidden="true"></i> Back
+								</button>
+								<button type="button" class="button button-primary button-md base-stepper-next"
+									data-next-label="Next" data-start-label="Get started" data-finish-label="Go to dashboard"
+									data-next-arrow="arrow-right">
+									Get started <i data-lucide="arrow-right" aria-hidden="true"></i>
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
 	<div class="modal fade" id="modalNewMerchant" tabindex="-1" role="dialog"
 		aria-labelledby="modalNewMerchantLabel" aria-describedby="modalNewMerchantDescription" aria-hidden="true">
 		<div class="modal-dialog modal-dialog-centered modal-size-md">
@@ -845,17 +1105,19 @@
 		</div>
 	</div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
-        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.6/dist/driver.js.iife.js"></script>
-    <script src="../../js/theme-init.js"></script>
-    <script src="../../js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"
+		integrity="sha384-YS1lRbKthC7/Oeyl8nPDTO0vZvejeFLnQJuye5QwYDdJD/2toIxMci9LbHst3SGQ" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/driver.js@1.3.6/dist/driver.js.iife.js"
+		integrity="sha384-n0+N1F84TRb1beKh+tkD92wsVYiC9StnuPt7veT8Izt/qjUKUwNJEKy8Zhjb9tnk" crossorigin="anonymous"></script>
+	<script src="../../js/theme-init.js" integrity="sha384-apkhzRJ7rCuOfggh3tz1PZMVxTqNgw2o5QSTwQX/oskibAlal4F4fqpf0wcu+g2T" crossorigin="anonymous"></script>
+	<script src="../../js/main.js" integrity="sha384-TvPpaMSwBJZBJN+PDUxE/cJPFbqR8Kv3mN0Q79sVc7JR7pQnWESqs82gqoyQ2kxy" crossorigin="anonymous"></script>
 </body>
 </html>

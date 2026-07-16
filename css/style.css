@@ -943,6 +943,30 @@ a button {
     justify-content: flex-end;
 }
 
+.step-button-wrapper:has([data-stepper-skip]) {
+	align-items: center;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.step-button-wrapper:has([data-stepper-skip][hidden]) {
+	justify-content: flex-end;
+}
+
+.base-stepper-step-nav {
+	display: flex;
+	gap: var(--space-md);
+	margin-left: auto;
+	flex: 1 1 auto;
+	justify-content: flex-end;
+	min-width: min(100%, 14rem);
+}
+
+.step-button-wrapper:has([data-stepper-skip]):has(.base-stepper-prev:not([hidden])) .base-stepper-step-nav .button {
+	flex: 1 1 0;
+	min-width: 0;
+}
+
 /* Floating nav */
 .has-floating-nav {
 	padding-bottom: calc(var(--space-8xl) + var(--space-2xl) + var(--space-2xl) + var(--space-lg));
@@ -4636,6 +4660,104 @@ span.modal-icon--warning {
 
 /* Merchant Portal */
 
+/* Sandbox welcome modal */
+.sandbox-welcome-stepper{
+    margin-top: var(--space-sm);
+}
+.sandbox-welcome-panel-heading {
+	margin: 0 0 var(--space-sm);
+	font-size: var(--fz-md);
+	font-weight: var(--fw-lg);
+	color: var(--text-gray-900);
+}
+
+.sandbox-welcome-panel-lede {
+	margin-bottom: var(--space-xl) !important;
+}
+
+.sandbox-welcome-form {
+	max-width: 100%;
+}
+
+.sandbox-welcome-setup-list li {
+	display: flex;
+	gap: var(--space-md);
+	align-items: flex-start;
+}
+
+.sandbox-welcome-next-list li {
+	display: block;
+}
+
+.sandbox-welcome-setup-list li + li,
+.sandbox-welcome-next-list li + li {
+	margin-top: var(--space-md);
+	padding-top: var(--space-md);
+	border-top: 1px solid var(--text-gray-200);
+}
+
+.sandbox-welcome-setup-icon,
+.sandbox-welcome-next-icon {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--space-3xl);
+	height: var(--space-3xl);
+	border-radius: var(--br-sm);
+	background-color: var(--text-gray-100);
+	color: var(--color-primary);
+}
+
+.sandbox-welcome-setup-icon .lucide,
+.sandbox-welcome-next-icon .lucide {
+	width: 1.125rem;
+	height: 1.125rem;
+}
+
+.sandbox-welcome-setup-title,
+.sandbox-welcome-next-title {
+	display: block;
+	font-weight: var(--fw-md);
+	color: var(--text-gray-900);
+}
+
+.sandbox-welcome-setup-list .text-tertiary,
+.sandbox-welcome-next-link .text-tertiary {
+	display: block;
+}
+
+.sandbox-welcome-next-link {
+	display: flex;
+	align-items: center;
+	gap: var(--space-md);
+	width: 100%;
+	padding: var(--space-sm);
+	border-radius: var(--br-md);
+	color: inherit;
+	text-decoration: none;
+}
+
+.sandbox-welcome-next-link:hover {
+	background-color: var(--text-gray-100);
+}
+
+.sandbox-welcome-next-link span:nth-child(2) {
+	flex: 1;
+	min-width: 0;
+}
+
+.sandbox-welcome-next-chevron {
+	flex-shrink: 0;
+	width: 1rem;
+	height: 1rem;
+	color: var(--text-gray-500);
+}
+
+.sandbox-welcome-stepper .step-item span {
+	max-width: 4.5rem;
+}
+
 /* Merchant detail layout */
 .merchant-detail-page {
 	width: 100%;
@@ -5872,51 +5994,4 @@ span.modal-icon--warning {
 .iconology-tile-label {
 	font-size: var(--fz-xs);
 	color: var(--text-gray-700);
-}
-
-/* Pitch tour (Driver.js) */
-.driver-popover.khusa-tour {
-	--driver-popover-bg: var(--color-white);
-	--driver-popover-color: var(--text-gray-700);
-	--driver-popover-title-color: var(--text-gray-900);
-	--driver-popover-border: 1px solid var(--text-gray-200);
-	--driver-popover-btn-bg: var(--text-gray-100);
-	--driver-popover-btn-color: var(--text-gray-900);
-	--driver-popover-btn-hover-bg: var(--text-gray-200);
-	--driver-popover-btn-hover-color: var(--text-gray-900);
-	--driver-popover-btn-active-bg: var(--text-gray-300);
-	--driver-popover-btn-active-color: var(--text-gray-900);
-	font-family: "Inter", sans-serif;
-}
-
-.driver-popover.khusa-tour .driver-popover-title {
-	font-weight: var(--fw-lg);
-}
-
-.driver-popover.khusa-tour .driver-popover-description a {
-	color: var(--color-primary);
-	font-weight: var(--fw-md);
-	text-underline-offset: 2px;
-}
-
-.driver-popover.khusa-tour .driver-popover-next-btn {
-	background-color: var(--color-primary);
-	color: var(--color-on-primary);
-}
-
-.driver-popover.khusa-tour .driver-popover-next-btn:hover,
-.driver-popover.khusa-tour .driver-popover-next-btn:focus {
-	background-color: color-mix(in srgb, var(--color-primary) 88%, var(--text-gray-900));
-	color: var(--color-on-primary);
-}
-
-html[data-bs-theme="dark"] .driver-popover.khusa-tour {
-	--driver-popover-bg: var(--color-white);
-	--driver-popover-color: var(--text-gray-700);
-	--driver-popover-title-color: var(--text-gray-900);
-	--driver-popover-border: 1px solid var(--text-gray-300);
-	--driver-popover-btn-bg: var(--text-gray-200);
-	--driver-popover-btn-color: var(--text-gray-900);
-	--driver-popover-btn-hover-bg: var(--text-gray-300);
-	--driver-popover-btn-hover-color: var(--text-gray-900);
 }

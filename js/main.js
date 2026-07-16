@@ -73,6 +73,13 @@ function initBaseStepper() {
 		var $panels = $stepper.find('.base-stepper-panel');
 		var $prev = $stepper.find('.base-stepper-prev');
 		var $next = $stepper.find('.base-stepper-next');
+		var $skip = $stepper.find('[data-stepper-skip]');
+		var startLabel = $next.attr('data-start-label');
+		var nextLabel = $next.attr('data-next-label');
+		var finishLabel = $next.attr('data-finish-label');
+		var nextArrow = $next.attr('data-next-arrow') || 'arrow-right';
+		var bsDismiss = $stepper.attr('data-stepper-bs-dismiss');
+		var hasLabeledSteps = !!(startLabel || nextLabel || finishLabel);
 
 		if (!totalSteps || !$prev.length || !$next.length) {
 			return;
@@ -81,6 +88,19 @@ function initBaseStepper() {
 		$stepper.find('form').on('submit', function (e) {
 			e.preventDefault();
 		});
+
+		function setNextLabel(label, withArrow) {
+			if (!label) {
+				return;
+			}
+			var arrow = withArrow
+				? ' <i data-lucide="' + nextArrow + '" aria-hidden="true"></i>'
+				: '';
+			$next.html(label + arrow);
+			if (typeof lucide !== 'undefined') {
+				lucide.createIcons();
+			}
+		}
 
 		function updateStepper() {
 			$items.each(function (index) {
@@ -100,7 +120,34 @@ function initBaseStepper() {
 			});
 
 			$prev.prop('hidden', currentStep === 1);
-			$next.prop('disabled', currentStep === totalSteps);
+			if ($skip.length) {
+				$skip.prop('hidden', currentStep !== 1);
+			}
+
+			if (finishLabel && currentStep === totalSteps) {
+				$next.prop('disabled', false);
+				$next.attr('data-stepper-finish', 'true');
+				if (bsDismiss === 'modal') {
+					$next.attr('data-bs-dismiss', 'modal');
+				}
+				if (hasLabeledSteps) {
+					$next.html(finishLabel + ' <i data-lucide="home" aria-hidden="true"></i>');
+					if (typeof lucide !== 'undefined') {
+						lucide.createIcons();
+					}
+				}
+			} else {
+				$next.removeAttr('data-stepper-finish');
+				$next.removeAttr('data-bs-dismiss');
+				$next.prop('disabled', !finishLabel && currentStep === totalSteps);
+				if (hasLabeledSteps) {
+					if (currentStep === 1 && startLabel) {
+						setNextLabel(startLabel, true);
+					} else if (nextLabel) {
+						setNextLabel(nextLabel, true);
+					}
+				}
+			}
 		}
 
 		$prev.on('click', function () {
@@ -111,14 +158,32 @@ function initBaseStepper() {
 		});
 
 		$next.on('click', function () {
+			if ($next.attr('data-stepper-finish') === 'true') {
+				$stepper.trigger('base-stepper:finish');
+				return;
+			}
 			if (currentStep < totalSteps) {
 				currentStep += 1;
 				updateStepper();
 			}
 		});
 
+		$skip.on('click', function () {
+			$stepper.trigger('base-stepper:skip');
+		});
+
 		updateStepper();
 	});
+}
+
+/* Merchant sandbox welcome onboarding */
+function initSandboxWelcomeModal() {
+	var modalEl = document.getElementById('modalSandboxWelcome');
+	if (!modalEl || typeof bootstrap === 'undefined') {
+		return;
+	}
+
+	bootstrap.Modal.getOrCreateInstance(modalEl).show();
 }
 
 /* Theme */
@@ -1214,236 +1279,6 @@ function initConnectorLogoPreview() {
 	});
 }
 
-/* Pitch tour (Driver.js) */
-/* A guided journey across pages: Home (intro + theme), then the design system
-   reference (components, iconology), then the Merchant and Admin portals. State
-   is carried across page loads because Driver.js only highlights the current page. */
-var PITCH_TOUR_SEEN_KEY = 'khusaPitchTourSeen';
-var PITCH_TOUR_RESUME_KEY = 'khusaPitchTourResume';
-var PITCH_TOUR_TOTAL_STEPS = 9;
-var PITCH_TOUR_HOME_PATH = '/index.html';
-var PITCH_TOUR_COMPONENTS_PATH = '/components.html';
-var PITCH_TOUR_ICONOLOGY_PATH = '/iconology.html';
-var PITCH_TOUR_MERCHANT_PATH = '/pages/merchant-portal/index.html';
-var PITCH_TOUR_ADMIN_PATH = '/pages/admin-portal/index.html';
-
-function pitchTourStepTitle(step, label) {
-	return '#' + step + ' of ' + PITCH_TOUR_TOTAL_STEPS + ': ' + label;
-}
-
-function finishPitchTour(driverObj) {
-	localStorage.setItem(PITCH_TOUR_SEEN_KEY, '1');
-	sessionStorage.removeItem(PITCH_TOUR_RESUME_KEY);
-	if (driverObj) {
-		driverObj.destroy();
-	}
-}
-
-function navigatePitchTour(driverObj, nextPath) {
-	if (driverObj) {
-		driverObj.destroy();
-	}
-	sessionStorage.setItem(PITCH_TOUR_RESUME_KEY, '1');
-	window.location.href = nextPath;
-}
-
-function getPitchTourPage() {
-	var path = location.pathname;
-
-	if (/\/pages\/merchant-portal\/(index\.html)?$/.test(path)) {
-		return 'merchant';
-	}
-
-	if (/\/pages\/admin-portal\/(index\.html)?$/.test(path)) {
-		return 'admin';
-	}
-
-	if (path.endsWith('/components.html')) {
-		return 'components';
-	}
-
-	if (path.endsWith('/iconology.html')) {
-		return 'iconology';
-	}
-
-	var trimmed = path.replace(/\/$/, '') || '/';
-	if (trimmed === '/' || trimmed.endsWith('/index.html')) {
-		return 'home';
-	}
-
-	return null;
-}
-
-function getPitchTourSteps() {
-	return {
-		home: [
-			{
-				popover: {
-					title: pitchTourStepTitle(1, 'A refreshed Khusa experience'),
-					description: 'A short tour of the redesign: full dark mode, reusable components, a unified icon set, and a responsive layout.',
-					align: 'center'
-				}
-			},
-			{
-				element: '#bd-theme',
-				popover: {
-					title: pitchTourStepTitle(2, 'Light and dark, built in'),
-					description: 'Switch themes from here. Try dark mode now: every screen, chart, and component adapts automatically. Next, the reusable components.',
-					side: 'bottom',
-					align: 'end',
-					doneBtnText: 'See components',
-					onNextClick: function (element, step, options) {
-						navigatePitchTour(options.driver, PITCH_TOUR_COMPONENTS_PATH);
-					}
-				}
-			}
-		],
-		components: [
-			{
-				element: function () { return document.querySelectorAll('.component-card')[0]; },
-				popover: {
-					title: pitchTourStepTitle(3, 'Buttons, one set of styles'),
-					description: 'This is the shared component library. Buttons come in one set of sizes, colors, and states, so every call to action stays consistent.',
-					side: 'bottom',
-					align: 'start'
-				}
-			},
-			{
-				element: function () { return document.querySelectorAll('.component-card')[1]; },
-				popover: {
-					title: pitchTourStepTitle(4, 'Badges for status'),
-					description: 'The same badge styles signal status across disbursements, disputes, users, and more.',
-					side: 'bottom',
-					align: 'start'
-				}
-			},
-			{
-				element: function () { return document.querySelectorAll('.component-card')[8]; },
-				popover: {
-					title: pitchTourStepTitle(5, 'Forms and inputs'),
-					description: 'Inputs, selects, and validation share one look and spacing on every screen.',
-					side: 'top',
-					align: 'start'
-				}
-			},
-			{
-				element: function () { return document.querySelectorAll('.component-card')[10]; },
-				popover: {
-					title: pitchTourStepTitle(6, 'Tables for data'),
-					description: 'Records and lists use one responsive table pattern across the product. Each pattern is defined once and reused everywhere.',
-					side: 'top',
-					align: 'start',
-					doneBtnText: 'See icons',
-					onNextClick: function (element, step, options) {
-						navigatePitchTour(options.driver, PITCH_TOUR_ICONOLOGY_PATH);
-					}
-				}
-			}
-		],
-		iconology: [
-			{
-				element: '.iconology-grid',
-				popover: {
-					title: pitchTourStepTitle(7, 'A unified icon language'),
-					description: 'Each action and status maps to one documented icon, so the same symbol always means the same thing across the product.',
-					side: 'bottom',
-					align: 'start',
-					doneBtnText: 'Open Merchant portal',
-					onNextClick: function (element, step, options) {
-						navigatePitchTour(options.driver, PITCH_TOUR_MERCHANT_PATH);
-					}
-				}
-			}
-		],
-		merchant: [
-			{
-				popover: {
-					title: pitchTourStepTitle(8, 'Designed for every screen'),
-					description: 'Try it now: shrink your browser window or open mobile view in your browser dev tools. The layout reflows and the sidebar becomes a slide-in menu. Next, the Admin portal.',
-					align: 'center',
-					doneBtnText: 'Open Admin portal',
-					onNextClick: function (element, step, options) {
-						navigatePitchTour(options.driver, PITCH_TOUR_ADMIN_PATH);
-					}
-				}
-			}
-		],
-		admin: [
-			{
-				popover: {
-					title: pitchTourStepTitle(9, 'Explore the rest yourself'),
-					description: 'That is the tour. Now take a moment to explore freely: open the sidebar sections, switch themes, and move between pages and portals to see the same components and icons at work everywhere.',
-					align: 'center',
-					doneBtnText: 'Back to home',
-					onNextClick: function (element, step, options) {
-						finishPitchTour(options.driver);
-						window.location.href = PITCH_TOUR_HOME_PATH;
-					}
-				}
-			}
-		]
-	};
-}
-
-function initPitchTour() {
-	if (!window.driver || !window.driver.js || typeof window.driver.js.driver !== 'function') {
-		return;
-	}
-
-	var page = getPitchTourPage();
-	if (!page) {
-		return;
-	}
-
-	var hasResume = sessionStorage.getItem(PITCH_TOUR_RESUME_KEY) !== null;
-	var seen = localStorage.getItem(PITCH_TOUR_SEEN_KEY) === '1';
-	var shouldStart = false;
-
-	if (page === 'home') {
-		if (!seen) {
-			shouldStart = true;
-			localStorage.setItem(PITCH_TOUR_SEEN_KEY, '1');
-		}
-	} else if (hasResume) {
-		shouldStart = true;
-		sessionStorage.removeItem(PITCH_TOUR_RESUME_KEY);
-	}
-
-	if (shouldStart) {
-		startPitchTour(page);
-	}
-}
-
-function startPitchTour(page) {
-	if (!window.driver || !window.driver.js || typeof window.driver.js.driver !== 'function') {
-		return;
-	}
-
-	var steps = getPitchTourSteps()[page];
-	if (!steps || !steps.length) {
-		return;
-	}
-
-	var driverObj = window.driver.js.driver({
-		popoverClass: 'khusa-tour',
-		smoothScroll: true,
-		allowClose: true,
-		showProgress: false,
-		doneBtnText: 'Done',
-		onCloseClick: function (element, step, options) {
-			finishPitchTour(options.driver);
-		},
-		onDestroyed: function () {
-			localStorage.setItem(PITCH_TOUR_SEEN_KEY, '1');
-		},
-		steps: steps
-	});
-
-	window.requestAnimationFrame(function () {
-		driverObj.drive();
-	});
-}
-
 $(function () {
 	initThemeSwitcher();
 	window.applyBrandLogoTheme(
@@ -1456,11 +1291,10 @@ $(function () {
 		lucide.createIcons();
 	}
 
-	initPitchTour();
-
 	initAirDatepickerFields();
 	initIntlTelInputFields();
 	initBaseStepper();
+	initSandboxWelcomeModal();
 	initMainNavNotifications();
 	initMainNavEnvSync();
 	initFundsTransfer();

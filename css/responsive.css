@@ -166,6 +166,36 @@
 		padding-inline: var(--space-sm);
 	}
 
+	/* Modal: two action buttons share the row */
+	.modal .modal-footer:has(> :nth-child(2)):not(:has(> :nth-child(3))) {
+		flex-wrap: nowrap;
+		justify-content: stretch;
+		gap: var(--space-md);
+	}
+
+	.modal .modal-footer:has(> :nth-child(2)):not(:has(> :nth-child(3))) > :is(.button, button) {
+		flex: 1 1 0;
+		min-width: 0;
+		width: auto;
+	}
+
+	.modal .step-button-wrapper:has([data-stepper-skip]:not([hidden])) {
+		justify-content: stretch;
+		gap: var(--space-md);
+	}
+
+	.modal .step-button-wrapper:has([data-stepper-skip]:not([hidden])) > [data-stepper-skip]:not([hidden]),
+	.modal .step-button-wrapper:has([data-stepper-skip]:not([hidden])) > .base-stepper-step-nav {
+		flex: 1 1 0;
+		min-width: 0;
+	}
+
+	.modal .step-button-wrapper:has([data-stepper-skip]:not([hidden])) > .base-stepper-step-nav .button {
+		flex: 1 1 0;
+		min-width: 0;
+		width: 100%;
+	}
+
 	/* Toasts */
 	.toast-container {
 		left: 0;

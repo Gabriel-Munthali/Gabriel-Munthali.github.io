@@ -266,6 +266,33 @@ function initIntlTelInputFields(root) {
 }
 
 /* App shell */
+function showEnvSwitchToast(environment) {
+	if (typeof bootstrap === 'undefined') {
+		return;
+	}
+	let $container = $('.toast-container').first();
+	if (!$container.length) {
+		$container = $('<div class="toast-container" aria-live="polite" aria-atomic="true"></div>').appendTo('body');
+	}
+	$('#env-switch-toast').remove();
+	const $toast = $(
+		'<div id="env-switch-toast" class="toast toast-success hide" role="alert" aria-live="assertive" ' +
+			'aria-atomic="true" data-bs-autohide="true" data-bs-delay="3000">' +
+			'<div class="toast-body">' +
+				'<i data-lucide="check-circle-2" class="toast-icon" aria-hidden="true"></i>' +
+				'<span class="toast-message">Switched to <mark>' + environment + '</mark></span>' +
+				'<button type="button" class="button-close" data-bs-dismiss="toast" aria-label="Close">' +
+					'<i data-lucide="x" aria-hidden="true"></i>' +
+				'</button>' +
+			'</div>' +
+		'</div>'
+	).appendTo($container);
+	if (typeof lucide !== 'undefined') {
+		lucide.createIcons();
+	}
+	bootstrap.Toast.getOrCreateInstance($toast[0]).show();
+}
+
 function initMainNavEnvSync() {
 	if (!document.getElementById('main-nav-env-sandbox') || !document.getElementById('offcanvas-main-nav-env-sandbox')) {
 		return;
@@ -280,6 +307,7 @@ function initMainNavEnvSync() {
 		} else {
 			document.getElementById(isLive ? 'main-nav-env-live' : 'main-nav-env-sandbox').checked = true;
 		}
+		showEnvSwitchToast(isLive ? 'Live' : 'Sandbox');
 	});
 }
 

@@ -77,22 +77,23 @@ css/
         │   ├── OTP inputs (4378)          # .authcode-inputs, .auth-code-input
         │   ├── form footer links (4429)   # .auth-form-info
         │   └── Cloudflare Turnstile mock (4470)
-        ├── Merchant Portal (4637)
-        │   ├── Sandbox welcome modal (4639)
-        │   ├── Merchant detail layout (4748)
-        │   ├── RTP detail / amount banner (4839)
-        │   ├── Disbursement add drawers (4920)
-        │   ├── Funds transfer (5022)
-        │   ├── Collections - Request to Pay (5145)
-        │   ├── Fake data (5278)
-        │   ├── Accept RTP (5318)
-        │   └── Sample disbursement (5361)
-        ├── Admin Portal (5575)
-        │   ├── Admin dashboard (5576)
-        │   ├── Admin application detail (5635)
-        │   └── Complaints / dispute detail (5747)
-        │       └── Dispute thresholds (5841)
-        └── Iconology (5946)
+        ├─── Merchant Portal (4670)
+        │   ├─── Sandbox welcome modal (4672)
+        │   ├─── Merchant detail layout (4770)
+        │   ├─── RTP detail / amount banner (4861)
+        │   ├─── Disbursement add drawers (4942)
+        │   ├─── Funds transfer (5044)
+        │   ├─── Collections - Request to Pay (5167)
+        │   ├─── Fake data (5300)
+        │   ├─── Accept RTP (5340)
+        │   ├─── Sample disbursement (5383)
+        │   └─── Application progress / Submit KYC (5597)
+        ├─── Admin Portal (5724)
+        │   ├─── Admin dashboard (2925)
+        │   ├─── Admin application detail (5784)
+        │   └─── Complaints / dispute detail (5896)
+        │       └─── Dispute thresholds (5990)
+        └─── Iconology (6095)
 ```
 
 ## Auth pages (`pages/auth/**`)
@@ -128,6 +129,9 @@ responsive.css
 ├── @media (min-width: 992px)
 ├── @media (max-width: 991.98px)
 ├── @media (max-width: 767.98px)
+│   └── Application progress stacks; full-width CTA
 ├── @media (max-width: 576px) / 575.98px
 └── @media (prefers-reduced-motion: reduce)
+    ├── Stepper glow-pulse off
+    └── Application progress glow-pulse off
 ```

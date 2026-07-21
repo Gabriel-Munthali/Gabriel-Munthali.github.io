@@ -5594,6 +5594,133 @@ span.modal-icon--warning {
     margin-top: 0;
 }
 
+/* Application progress */
+.application-progress-header {
+	margin-bottom: var(--space-lg);
+	padding-bottom: var(--space-lg);
+	border-bottom: solid 1px var(--text-gray-200);
+}
+
+.application-progress-title {
+	color: var(--text-gray-900);
+	font-size: var(--fz-sm);
+	font-weight: var(--fw-lg);
+	margin-bottom: 0;
+}
+
+.application-progress-track {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: var(--space-md);
+}
+
+.application-progress {
+	flex: 1 1 0;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.application-progress-details {
+	display: flex;
+	gap: var(--space-sm);
+	align-items: center;
+	width: 100%;
+	margin-bottom: var(--space-sm);
+}
+
+.application-progress-details span {
+	font-size: var(--fz-xs);
+	color: var(--color-white);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--space-lg);
+	height: var(--space-lg);
+	flex: none;
+	border: solid 2px var(--text-gray-300);
+	border-radius: 50%;
+	position: relative;
+}
+
+.application-progress-details span i,
+.application-progress-details span svg {
+	width: var(--fz-xs);
+	height: var(--fz-xs);
+}
+
+.application-progress-details p {
+	font-size: var(--fz-xs);
+	color: var(--text-gray-400);
+	font-weight: var(--fw-lg);
+	margin-bottom: 0;
+}
+
+.application-progress-bar {
+	height: var(--space-sm);
+	width: 100%;
+	border-radius: var(--br-lg);
+	background-color: var(--text-gray-200);
+}
+
+.application-progress.complete .application-progress-details span {
+	border-color: var(--color-primary);
+	background-color: var(--color-primary);
+}
+
+.application-progress.complete .application-progress-details p {
+	color: var(--text-gray-500);
+}
+
+.application-progress.complete .application-progress-bar {
+	background-color: var(--color-primary);
+}
+
+.application-progress.complete .elapsed-application-progress {
+	background-color: var(--color-primary);
+	border-radius: var(--br-lg);
+	height: var(--space-sm);
+	width: 100%;
+	margin: 0;
+}
+
+.application-progress.active .application-progress-details span {
+	border-color: var(--color-primary);
+}
+
+.application-progress.active .application-progress-details p {
+	color: var(--text-gray-500);
+}
+
+.application-progress.active .application-progress-details span::before {
+	content: '';
+	position: absolute;
+	top: -4%;
+	left: 50%;
+	transform: translate(-50%, 130%);
+	width: var(--space-xs);
+	height: var(--space-xs);
+	border-radius: 50%;
+	background: var(--color-primary);
+	z-index: 2;
+	animation: glow-pulse 1.2s infinite alternate;
+}
+
+.application-progress.active .application-progress-bar {
+	background-color: var(--color-primary-light);
+}
+
+.application-progress.active .elapsed-application-progress {
+	background-color: var(--color-primary);
+	border-radius: var(--br-lg);
+	height: var(--space-sm);
+	width: 30%;
+	margin: 0;
+}
+
 /* Admin Portal */
 /* Admin dashboard */
 .admin-dashboard-page {

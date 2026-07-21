@@ -38,6 +38,18 @@
 	}
 }
 
+/* Application progress */
+@media (max-width: 767.98px) {
+	.application-progress-track {
+		flex-direction: column;
+		gap: var(--space-md);
+	}
+
+	.application-progress-header .button {
+		flex: 1 1 100%;
+	}
+}
+
 /* Floating nav */
 @media (max-width: 576px) {
 	.floating-nav {
@@ -243,6 +255,11 @@
 @media (prefers-reduced-motion: reduce) {
 	/* Stepper */
 	.step-item.current::before {
+		animation: none;
+	}
+
+	/* Application progress */
+	.application-progress.active .application-progress-details span::before {
 		animation: none;
 	}
 

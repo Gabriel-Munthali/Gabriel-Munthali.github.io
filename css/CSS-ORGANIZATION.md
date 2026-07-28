@@ -32,7 +32,8 @@ css/
     │   ├── Stepper (817)
     │   ├── Floating nav (946)
     │   ├── Forms (1006)
-    │   │   └── .form-group-row (1012)   # reusable multi-field row; stacks at 576px
+    │   │   ├── .form-group-row (1012)   # reusable multi-field row; stacks at 576px
+    │   │   └── form invalid / .form-error (danger)
     │   ├── Tables (1245)
     │   │   └── Table toolbar (1247)
     │   ├── Modals (1625)
@@ -56,11 +57,11 @@ css/
     │   ├── Avatar (2611)
     │   ├── Entity card (2668)
     │   │   └── guide-card (2631)
-    │   ├── Page intro (2781)
-    │   ├── Section jump nav (2806)
-    │   ├── Tab buttons (2892)
-    │   ├── Detail group (2916)
-    │   └── Dashboard / in-page stats (2956)
+    │   ├── Page intro (2814)
+    │   ├── Section jump nav (2839)
+    │   ├── Tab buttons (2925)
+    │   ├── Detail group (2949)
+    │   └── Dashboard / in-page stats (2989)
     │       └── .app-dashboard-stat-icon* (reused on auth title icons)
     │
     ├── App shell (3100)
@@ -73,27 +74,28 @@ css/
         │   ├── layout shell (4376)      # .auth-section, .auth-header, .auth-main, .auth-footer
         │   ├── form content (4295)      # .auth-form-wrapper (flat, no card chrome)
         │   ├── title block (4318)         # .user-account-title*, .user-account-title-icon
+        │   ├── password strength          # meter, status, requirements
         │   ├── auth field overrides (4349) # focus + input surface inside .auth-form-wrapper
         │   ├── OTP inputs (4378)          # .authcode-inputs, .auth-code-input
         │   ├── form footer links (4429)   # .auth-form-info
         │   └── Cloudflare Turnstile mock (4470)
-        ├─── Merchant Portal (4670)
-        │   ├─── Sandbox welcome modal (4672)
-        │   ├─── Merchant detail layout (4770)
-        │   ├─── RTP detail / amount banner (4861)
-        │   ├─── Disbursement add drawers (4942)
-        │   ├─── Funds transfer (5044)
-        │   ├─── Collections - Request to Pay (5167)
-        │   ├─── Fake data (5300)
-        │   ├─── Accept RTP (5340)
-        │   ├─── Sample disbursement (5383)
-        │   └─── Application progress / Submit KYC (5597)
-        ├─── Admin Portal (5724)
-        │   ├─── Admin dashboard (2925)
-        │   ├─── Admin application detail (5784)
-        │   └─── Complaints / dispute detail (5896)
-        │       └─── Dispute thresholds (5990)
-        └─── Iconology (6095)
+        ├── Merchant Portal (4670)
+        │   ├── Sandbox welcome modal (4672)
+        │   ├── Merchant detail layout (4770)
+        │   ├── RTP detail / amount banner (4861)
+        │   ├── Disbursement add drawers (4942)
+        │   ├── Funds transfer (5044)
+        │   ├── Collections - Request to Pay (5167)
+        │   ├── Fake data (5300)
+        │   ├── Accept RTP (5340)
+        │   ├── Sample disbursement (5383)
+        │   └── Application progress / Submit KYC (5597)
+        ├── Admin Portal (5724)
+        │   ├── Admin dashboard (5725)
+        │   ├── Admin application detail (5784)
+        │   └── Complaints / dispute detail (5896)
+        │       └── Dispute thresholds (5990)
+        └── Iconology (6095)
 ```
 
 ## Auth pages (`pages/auth/**`)

@@ -1307,6 +1307,145 @@ function initConnectorLogoPreview() {
 	});
 }
 
+function initPasswordStrengthMeters() {
+	var $groups = $('[data-password-strength]');
+	if (!$groups.length) {
+		return;
+	}
+
+	var rules = [
+		{ key: 'length', test: function (value) { return value.length >= 8; } },
+		{ key: 'upper', test: function (value) { return /[A-Z]/.test(value); } },
+		{ key: 'lower', test: function (value) { return /[a-z]/.test(value); } },
+		{ key: 'number', test: function (value) { return /\d/.test(value); } },
+		{ key: 'special', test: function (value) { return /[!@#$%^&*(),.?":{}|<>_\-+=\[\]\\/;'`~]/.test(value); } }
+	];
+
+	var statusLabels = {
+		1: 'Weak',
+		2: 'Fair',
+		3: 'Fair',
+		4: 'Strong',
+		5: 'Strong'
+	};
+
+	$groups.each(function () {
+		var $group = $(this);
+		var $form = $group.closest('form');
+		var $input = $group.find('input[type="password"]').first();
+		var $meter = $group.find('.password-strength-meter');
+		var $status = $group.find('.password-strength-status');
+		var $list = $group.find('.password-strength-requirements');
+		var $confirmGroup = $form.find('[data-password-confirm]');
+		var $confirm = $confirmGroup.find('input[type="password"]').first();
+		var $confirmError = $confirmGroup.find('.form-error');
+		var passwordValidated = false;
+		var confirmValidated = false;
+
+		if (!$input.length || !$meter.length || !$list.length) {
+			return;
+		}
+
+		function updateConfirm(options) {
+			if (!$confirm.length) {
+				return true;
+			}
+			var requireConfirm = options && options.requireConfirm === true;
+			var passwordTyping = options && options.passwordTyping === true;
+			var passwordValue = $input.val() || '';
+			var confirmValue = $confirm.val() || '';
+			var hasConfirm = confirmValue.length > 0;
+			var matches = hasConfirm && confirmValue === passwordValue;
+
+			if (passwordTyping) {
+				if (matches || !hasConfirm) {
+					$confirmGroup.removeClass('is-invalid');
+					$confirm.attr('aria-invalid', 'false');
+					$confirmError.prop('hidden', true);
+				}
+				return matches;
+			}
+
+			var showConfirmError = confirmValidated && (
+				(hasConfirm && confirmValue !== passwordValue) ||
+				(requireConfirm && !matches)
+			);
+			$confirmGroup.toggleClass('is-invalid', showConfirmError);
+			$confirm.attr('aria-invalid', showConfirmError ? 'true' : 'false');
+			$confirmError.prop('hidden', !showConfirmError);
+			return matches;
+		}
+
+		function updateStrength(options) {
+			var value = $input.val() || '';
+			var score = 0;
+
+			rules.forEach(function (rule) {
+				var met = rule.test(value);
+				if (met) {
+					score += 1;
+				}
+				$list.find('[data-rule="' + rule.key + '"]').toggleClass('is-met', met);
+			});
+
+			$meter.attr({
+				'data-strength': score,
+				'aria-valuenow': score
+			});
+			$status
+				.attr('data-strength', score)
+				.text(value ? (statusLabels[score] || 'Weak') : '');
+			$group.toggleClass('is-invalid', passwordValidated && score < rules.length);
+			$input.attr('aria-invalid', passwordValidated && score < rules.length ? 'true' : 'false');
+			updateConfirm(options);
+			return score === rules.length;
+		}
+
+		function scheduleValidation() {
+			window.setTimeout(function () {
+				updateStrength();
+			}, 50);
+		}
+
+		$input.on('input change', function () {
+			updateStrength({ passwordTyping: true });
+		});
+		$input.on('blur', function () {
+			passwordValidated = true;
+			scheduleValidation();
+		});
+
+		if ($confirm.length) {
+			$confirm.on('input change', function () {
+				if (confirmValidated) {
+					updateConfirm();
+				}
+			});
+			$confirm.on('blur', function () {
+				confirmValidated = true;
+				scheduleValidation();
+			});
+		}
+
+		$form.on('submit', function (e) {
+			passwordValidated = true;
+			confirmValidated = true;
+			var passwordOk = updateStrength();
+			var confirmOk = updateConfirm({ requireConfirm: true });
+			if (!passwordOk || !confirmOk) {
+				e.preventDefault();
+				if (!passwordOk) {
+					$input.trigger('focus');
+				} else if ($confirm.length) {
+					$confirm.trigger('focus');
+				}
+			}
+		});
+
+		updateStrength();
+	});
+}
+
 $(function () {
 	initThemeSwitcher();
 	window.applyBrandLogoTheme(
@@ -1345,6 +1484,7 @@ $(function () {
 	initProcessingButtons();
 	initCloseDisputeRefundToggle();
 	initConnectorLogoPreview();
+	initPasswordStrengthMeters();
 
 	$('#modalAddConnector').on('shown.bs.modal', function () {
 		if (typeof lucide !== 'undefined') {

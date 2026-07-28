@@ -141,10 +141,6 @@ body {
 }
 
 /* Buttons */
-a button {
-    text-decoration: none;
-}
-
 .button {
     display: inline-flex;
     gap: var(--space-sm);
@@ -156,6 +152,7 @@ a button {
     border-radius: var(--br-md);
     font-size: var(--fz-xs);
     font-weight: var(--fw-md);
+    text-decoration: none;
 
     &:hover {
         transition: background-color 0.2s ease, color 0.2s ease;
@@ -1144,6 +1141,36 @@ a button {
     border-color: var(--text-gray-300);
     background-color: var(--text-gray-200);
     box-shadow: none;
+}
+
+.form-group.is-invalid .form-control,
+.form-control.is-invalid {
+	border-color: var(--color-danger);
+}
+
+.form-group.is-invalid .form-control:focus,
+.form-control.is-invalid:focus {
+	border-color: var(--color-danger);
+	box-shadow: none;
+}
+
+.form-group.is-invalid .form-group-input-wrapper > .lucide:not(.icon-right) {
+	color: var(--color-danger);
+}
+
+.form-error {
+	display: flex;
+	align-items: center;
+	gap: var(--space-xs);
+	margin: var(--space-sm) 0 0;
+	font-size: var(--fz-xs);
+	color: var(--color-danger);
+}
+
+.form-error .lucide {
+	flex-shrink: 0;
+	width: var(--fz-xs);
+	height: var(--fz-xs);
 }
 
 .form-check-input[type="checkbox"] {
@@ -4477,6 +4504,160 @@ span.modal-icon--warning {
 	height: 1.5rem;
 }
 
+/* Password strength */
+.password-strength-meter {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	gap: var(--space-xs);
+	margin-top: var(--space-sm);
+}
+
+[data-password-strength]:has(input[type="password"]:placeholder-shown) .password-strength-meter,
+[data-password-strength]:has(input[type="password"]:placeholder-shown) .password-strength-status,
+[data-password-strength]:has(input[type="password"]:placeholder-shown) .password-strength-requirements {
+	display: none;
+}
+
+.password-strength-bar {
+	flex: 1;
+	height: 0.375rem;
+	border-radius: var(--br-sm);
+	border: 1px solid var(--text-gray-400);
+	background-color: var(--text-gray-300);
+	box-sizing: border-box;
+}
+
+.password-strength-meter[data-strength="1"] .password-strength-bar:nth-child(-n+1),
+.password-strength-meter[data-strength="2"] .password-strength-bar:nth-child(-n+2),
+.password-strength-meter[data-strength="3"] .password-strength-bar:nth-child(-n+3),
+.password-strength-meter[data-strength="4"] .password-strength-bar:nth-child(-n+4),
+.password-strength-meter[data-strength="5"] .password-strength-bar:nth-child(-n+5) {
+	border-color: var(--bg-danger);
+	background-color: var(--color-danger);
+}
+
+.password-strength-meter[data-strength="2"] .password-strength-bar:nth-child(-n+2),
+.password-strength-meter[data-strength="3"] .password-strength-bar:nth-child(-n+3) {
+	border-color: var(--bg-warning);
+	background-color: var(--color-warning);
+}
+
+.password-strength-meter[data-strength="4"] .password-strength-bar:nth-child(-n+4),
+.password-strength-meter[data-strength="5"] .password-strength-bar:nth-child(-n+5) {
+	border-color: var(--bg-success);
+	background-color: var(--color-success);
+}
+
+.password-strength-status {
+	margin: var(--space-xs) 0 0;
+	font-size: var(--fz-xs);
+	font-weight: var(--fw-md);
+	color: var(--text-gray-600);
+}
+
+.password-strength-status:empty {
+	display: none;
+}
+
+.password-strength-status[data-strength="1"] {
+	color: var(--color-danger);
+}
+
+.password-strength-status[data-strength="2"],
+.password-strength-status[data-strength="3"] {
+	color: var(--color-warning);
+}
+
+.password-strength-status[data-strength="4"],
+.password-strength-status[data-strength="5"] {
+	color: var(--color-success);
+}
+
+.password-strength-requirements {
+	list-style: none;
+	margin: var(--space-sm) 0 0;
+	padding: 0;
+	font-size: var(--fz-xs);
+	color: var(--text-gray-600);
+	overflow: hidden;
+	transition: margin-top 0.3s ease 0.45s;
+}
+
+.password-strength-requirements:not(:has(li:not(.is-met))) {
+	margin-top: 0;
+}
+
+.password-strength-requirements li {
+	display: flex;
+	align-items: center;
+	gap: var(--space-xs);
+	margin-top: var(--space-xs);
+	max-height: 2rem;
+	overflow: hidden;
+	opacity: 1;
+	transition:
+		opacity 0.2s ease,
+		max-height 0.3s ease,
+		margin-top 0.3s ease;
+}
+
+.password-strength-requirements li:first-child {
+	margin-top: 0;
+}
+
+.password-strength-requirements li.is-met {
+	max-height: 0;
+	margin-top: 0;
+	opacity: 0;
+	pointer-events: none;
+	transition-delay: 0.45s, 0.45s, 0.45s;
+}
+
+.password-strength-req-icon {
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: var(--space-lg);
+	height: var(--space-lg);
+	border-radius: 50%;
+	background-color: var(--bg-danger);
+	color: var(--color-danger);
+}
+
+.password-strength-req-icon .lucide {
+	width: 0.625rem;
+	height: 0.625rem;
+}
+
+.password-strength-req-icon-check {
+	display: none;
+}
+
+.password-strength-requirements li.is-met .password-strength-req-icon {
+	background-color: var(--bg-success);
+	color: var(--color-success);
+}
+
+.password-strength-requirements li.is-met .password-strength-req-icon-x {
+	display: none;
+}
+
+.password-strength-requirements li.is-met .password-strength-req-icon-check {
+	display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.password-strength-requirements li {
+		transition: none;
+	}
+
+	.password-strength-requirements li.is-met {
+		transition-delay: 0s;
+	}
+}
+
 .auth-form-wrapper .form-control,
 .auth-form-wrapper .iti input.form-control,
 .auth-form-wrapper .iti input.intl-tel-input-field {
@@ -4489,6 +4670,13 @@ span.modal-icon--warning {
 	border-color: var(--color-primary);
 	background-color: var(--color-white);
 	box-shadow: none;
+}
+
+.auth-form-wrapper .form-group.is-invalid .form-control,
+.auth-form-wrapper .form-group.is-invalid .form-control:focus,
+.auth-form-wrapper .form-control.is-invalid,
+.auth-form-wrapper .form-control.is-invalid:focus {
+	border-color: var(--color-danger);
 }
 
 .auth-form-wrapper .button.button-outline {

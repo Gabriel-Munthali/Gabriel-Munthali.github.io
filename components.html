@@ -355,6 +355,69 @@
                     </dl>
                 </div>
             </div>
+			<div class="col-12">
+				<div class="component-card">
+					<div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-3">
+						<div>
+							<h4 class="card-title mb-1">Checkout</h4>
+							<p class="text-tertiary small mb-0">Hosted payment composition: amount banner, order summary, institution select, and pay CTA.</p>
+						</div>
+						<a href="/pages/checkout/checkout.html" class="button button-sm button-outline">
+							Open full page <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+						</a>
+					</div>
+					<div class="checkout-preview">
+						<div class="rtp-amount-banner checkout-amount-banner mb-4" role="region" aria-label="Payment amount">
+							<span class="rtp-detail-label">Amount due</span>
+							<p class="rtp-detail-value">MWK 25,000.00</p>
+						</div>
+						<dl class="description-list description-list-bordered mb-4">
+							<div class="description-list-row">
+								<dt>Merchant</dt>
+								<dd>Angle Dimension Ltd</dd>
+							</div>
+							<div class="description-list-row">
+								<dt>Reference</dt>
+								<dd>CHK-2026-8849201</dd>
+							</div>
+							<div class="description-list-row">
+								<dt>Description</dt>
+								<dd>Invoice INV-1042</dd>
+							</div>
+						</dl>
+						<form action="#" method="post" aria-label="Checkout payment preview">
+							<div class="form-group">
+								<label for="components-checkout-institution">Pay through</label>
+								<div class="form-group-input-wrapper">
+									<i data-lucide="landmark" aria-hidden="true"></i>
+									<select class="form-control with-icon-right" id="components-checkout-institution" name="paidThrough">
+										<option value="" selected disabled>Select institution</option>
+										<option value="tnm-mpamba">TNM Mpamba</option>
+										<option value="airtel-money">Airtel Money</option>
+										<option value="nbm">National Bank of Malawi</option>
+										<option value="fdh">FDH Bank</option>
+										<option value="standard-bank">Standard Bank Malawi</option>
+										<option value="mybucks">MyBucks</option>
+										<option value="ecobank">Ecobank Malawi</option>
+										<option value="nbs">NBS Bank</option>
+										<option value="fcb">First Capital Bank</option>
+									</select>
+									<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="components-checkout-account">Account or mobile number</label>
+								<div class="form-group-input-wrapper">
+									<i data-lucide="smartphone" aria-hidden="true"></i>
+									<input type="text" class="form-control" id="components-checkout-account" name="accountNumber"
+										placeholder="Enter account or mobile number" autocomplete="off">
+								</div>
+							</div>
+							<button type="submit" class="button button-primary button-md">Pay now</button>
+						</form>
+					</div>
+				</div>
+			</div>
             <div class="col-12">
                 <div class="component-card">
                     <h4 class="card-title">Tables</h4>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Checkout</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" href="../../css/responsive.css">
+</head>
+<body>
+	<section class="auth-section">
+		<div class="container-fluid">
+			<header class="auth-header">
+				<a href="../../" class="auth-brand-link">
+					<img class="auth-brand-image" src="../../img/khusa-logos/onekhusa-logo.svg" alt="OneKhusa">
+				</a>
+			</header>
+			<main class="auth-main">
+				<div class="auth-form-wrapper checkout-card">
+					<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3 user-account-title-icon" aria-hidden="true">
+						<i data-lucide="credit-card"></i>
+					</span>
+					<h1 class="user-account-title">Complete your payment</h1>
+					<p class="user-account-description">Pay <mark>Angle Dimension Ltd</mark> securely with OneKhusa.</p>
+
+					<div class="rtp-amount-banner checkout-amount-banner mb-4" role="region" aria-label="Payment amount">
+						<span class="rtp-detail-label">Amount due</span>
+						<p class="rtp-detail-value">MWK 25,000.00</p>
+					</div>
+
+					<dl class="description-list description-list-bordered mb-4">
+						<div class="description-list-row">
+							<dt>Merchant</dt>
+							<dd>Angle Dimension Ltd</dd>
+						</div>
+						<div class="description-list-row">
+							<dt>Reference</dt>
+							<dd>CHK-2026-8849201</dd>
+						</div>
+						<div class="description-list-row">
+							<dt>Description</dt>
+							<dd>Invoice INV-1042</dd>
+						</div>
+					</dl>
+
+					<form id="checkout-form" action="#" method="post" aria-label="Checkout payment">
+						<div class="form-group">
+							<label for="checkout-institution">Pay through</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="landmark" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="checkout-institution" name="paidThrough" required>
+									<option value="" selected disabled>Select institution</option>
+									<option value="tnm-mpamba">TNM Mpamba</option>
+									<option value="airtel-money">Airtel Money</option>
+									<option value="nbm">National Bank of Malawi</option>
+									<option value="fdh">FDH Bank</option>
+									<option value="standard-bank">Standard Bank Malawi</option>
+									<option value="mybucks">MyBucks</option>
+									<option value="ecobank">Ecobank Malawi</option>
+									<option value="nbs">NBS Bank</option>
+									<option value="fcb">First Capital Bank</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="checkout-account">Account or mobile number</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="smartphone" aria-hidden="true"></i>
+								<input type="text" class="form-control" id="checkout-account" name="accountNumber"
+									placeholder="Enter account or mobile number" autocomplete="tel" inputmode="tel" required>
+							</div>
+						</div>
+						<div class="form-group mb-4">
+							<button type="submit" class="button button-primary button-md w-100">
+								Pay now
+							</button>
+						</div>
+					</form>
+
+					<div class="callout-banner callout-banner-warning mb-0" role="region" aria-label="Security notice">
+						<div class="callout-banner-inner">
+							<i data-lucide="alert-triangle" class="callout-banner-icon" aria-hidden="true"></i>
+							<p class="callout-banner-text">
+								<strong>Stay safe:</strong> Never share your OneKhusa PIN or codes with others. We will never ask you for this information.
+							</p>
+						</div>
+					</div>
+				</div>
+			</main>
+			<footer class="auth-footer">
+				<p class="auth-footer-text">By continuing, you agree to our terms and privacy policy.</p>
+			</footer>
+		</div>
+	</section>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+	<script src="../../js/theme-init.js"></script>
+	<script src="../../js/main.js"></script>
+</body>
+</html>

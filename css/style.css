@@ -156,7 +156,7 @@ mark {
     background-color: var(--text-gray-200);
     border: none;
     border-radius: var(--br-md);
-    font-size: var(--fz-xs);
+    font-size: var(--fz-sm);
     font-weight: var(--fw-md);
     text-decoration: none;
 

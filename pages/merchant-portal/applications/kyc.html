@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Submit KYC</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../../css/style.css">
+	<link rel="stylesheet" href="../../../css/responsive.css">
+</head>
+<body class="kyc-onboarding-page has-floating-nav">
+	<div class="kyc-onboarding-progress" id="kycOnboardingProgress">
+		<div class="container-fluid">
+			<div class="row justify-content-center">
+				<div class="col-lg-10">
+					<div class="step-progress-bar" id="kycStepProgress" aria-label="KYC application progress">
+						<div class="step-item current" data-step="1">
+							<div class="step-check">
+								<i data-lucide="check" aria-hidden="true"></i>
+							</div>
+							<span>Account</span>
+						</div>
+						<div class="step-item" data-step="2">
+							<div class="step-check">
+								<i data-lucide="check" aria-hidden="true"></i>
+							</div>
+							<span>Business</span>
+						</div>
+						<div class="step-item" data-step="3">
+							<div class="step-check">
+								<i data-lucide="check" aria-hidden="true"></i>
+							</div>
+							<span>Documents</span>
+						</div>
+						<div class="step-item" data-step="4">
+							<div class="step-check">
+								<i data-lucide="check" aria-hidden="true"></i>
+							</div>
+							<span>Merchant</span>
+						</div>
+						<div class="step-item" data-step="5">
+							<div class="step-check">
+								<i data-lucide="check" aria-hidden="true"></i>
+							</div>
+							<span>Bank Details</span>
+						</div>
+						<div class="step-item" data-step="6">
+							<div class="step-check">
+								<i data-lucide="check" aria-hidden="true"></i>
+							</div>
+							<span>Summary</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<main class="kyc-onboarding-content container">
+		<div class="row justify-content-center">
+			<div class="col-lg-7">
+				<!-- Step 1: Account type -->
+				<section class="kyc-onboarding-panel" id="kycStep1" data-kyc-step="1" aria-labelledby="kyc-step1-heading">
+					<div class="page-intro page-intro-center">
+						<h1 id="kyc-step1-heading" class="page-intro-heading">Select account type</h1>
+						<p class="page-intro-lede">Select the account type based on your business license.</p>
+					</div>
+					<ul class="entity-list list-unstyled mb-4" role="radiogroup" aria-labelledby="kyc-step1-heading">
+						<li class="entity-list-row">
+						<label class="kyc-account-type-card" for="kycEntityGovernment">
+							<span class="kyc-account-type-card-media">
+								<span class="kyc-account-type-card-icon-wrap">
+									<img src="../../../img/onboarding/government-entity-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--default">
+									<img src="../../../img/onboarding/government-entity-active-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--active">
+								</span>
+								<span class="kyc-account-type-card-body">
+									<span class="kyc-account-type-card-title">Government Entity</span>
+									<span class="kyc-account-type-card-desc">Select this option if your institution is a government agency.</span>
+								</span>
+							</span>
+							<input class="kyc-account-type-radio" type="radio" name="entityType" id="kycEntityGovernment" value="government">
+						</label>
+						</li>
+						<li class="entity-list-row">
+						<label class="kyc-account-type-card" for="kycEntityPsp">
+							<span class="kyc-account-type-card-media">
+								<span class="kyc-account-type-card-icon-wrap">
+									<img src="../../../img/onboarding/psp-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--default">
+									<img src="../../../img/onboarding/psp-active-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--active">
+								</span>
+								<span class="kyc-account-type-card-body">
+									<span class="kyc-account-type-card-title">Payment Service Provider (PSP)</span>
+									<span class="kyc-account-type-card-desc">Select this option if your business provides payment processing services.</span>
+								</span>
+							</span>
+							<input class="kyc-account-type-radio" type="radio" name="entityType" id="kycEntityPsp" value="psp">
+						</label>
+						</li>
+						<li class="entity-list-row">
+						<label class="kyc-account-type-card" for="kycEntityPrivateLtd">
+							<span class="kyc-account-type-card-media">
+								<span class="kyc-account-type-card-icon-wrap">
+									<img src="../../../img/onboarding/private-ltd-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--default">
+									<img src="../../../img/onboarding/private-ltd-active-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--active">
+								</span>
+								<span class="kyc-account-type-card-body">
+									<span class="kyc-account-type-card-title">Private Limited Liability Company</span>
+									<span class="kyc-account-type-card-desc">Select this option if your business operates as a private limited liability company.</span>
+								</span>
+							</span>
+							<input class="kyc-account-type-radio" type="radio" name="entityType" id="kycEntityPrivateLtd" value="private-ltd">
+						</label>
+						</li>
+						<li class="entity-list-row">
+						<label class="kyc-account-type-card" for="kycEntityPublicLtd">
+							<span class="kyc-account-type-card-media">
+								<span class="kyc-account-type-card-icon-wrap">
+									<img src="../../../img/onboarding/public-ltd-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--default">
+									<img src="../../../img/onboarding/public-ltd-active-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--active">
+								</span>
+								<span class="kyc-account-type-card-body">
+									<span class="kyc-account-type-card-title">Public Limited Liability Company</span>
+									<span class="kyc-account-type-card-desc">Select this option if your business operates as a public limited liability company.</span>
+								</span>
+							</span>
+							<input class="kyc-account-type-radio" type="radio" name="entityType" id="kycEntityPublicLtd" value="public-ltd">
+						</label>
+						</li>
+						<li class="entity-list-row">
+						<label class="kyc-account-type-card" for="kycEntityProprietor">
+							<span class="kyc-account-type-card-media">
+								<span class="kyc-account-type-card-icon-wrap">
+									<img src="../../../img/onboarding/proprietor-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--default">
+									<img src="../../../img/onboarding/proprietor-active-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--active">
+								</span>
+								<span class="kyc-account-type-card-body">
+									<span class="kyc-account-type-card-title">Sole Proprietorship</span>
+									<span class="kyc-account-type-card-desc">Select this option if your business operates as a sole proprietorship.</span>
+								</span>
+							</span>
+							<input class="kyc-account-type-radio" type="radio" name="entityType" id="kycEntityProprietor" value="proprietor">
+						</label>
+						</li>
+						<li class="entity-list-row">
+						<label class="kyc-account-type-card" for="kycEntityNgo">
+							<span class="kyc-account-type-card-media">
+								<span class="kyc-account-type-card-icon-wrap">
+									<img src="../../../img/onboarding/ngo-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--default">
+									<img src="../../../img/onboarding/ngo-active-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--active">
+								</span>
+								<span class="kyc-account-type-card-body">
+									<span class="kyc-account-type-card-title">Non-Government Organization</span>
+									<span class="kyc-account-type-card-desc">Select this option if your business operates as a non-government organization.</span>
+								</span>
+							</span>
+							<input class="kyc-account-type-radio" type="radio" name="entityType" id="kycEntityNgo" value="ngo">
+						</label>
+						</li>
+						<li class="entity-list-row">
+						<label class="kyc-account-type-card" for="kycEntityTrust">
+							<span class="kyc-account-type-card-media">
+								<span class="kyc-account-type-card-icon-wrap">
+									<img src="../../../img/onboarding/trust-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--default">
+									<img src="../../../img/onboarding/trust-active-icon.svg" alt=""
+										class="kyc-account-type-card-icon kyc-account-type-card-icon--active">
+								</span>
+								<span class="kyc-account-type-card-body">
+									<span class="kyc-account-type-card-title">Trust</span>
+									<span class="kyc-account-type-card-desc">Select this option if your business operates as a trust.</span>
+								</span>
+							</span>
+							<input class="kyc-account-type-radio" type="radio" name="entityType" id="kycEntityTrust" value="trust">
+						</label>
+						</li>
+					</ul>
+					<div class="step-button-wrapper">
+						<button type="button" class="button button-primary button-md w-100" id="kycStep1Next" data-kyc-next disabled>Next <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+					</div>
+				</section>
+
+				<!-- Step 2: Business details -->
+				<section class="kyc-onboarding-panel" id="kycStep2" data-kyc-step="2" hidden aria-labelledby="kyc-step2-heading">
+					<div class="page-intro page-intro-center">
+						<h1 id="kyc-step2-heading" class="page-intro-heading">Business details</h1>
+						<p class="page-intro-lede">Please enter your business details below.</p>
+					</div>
+					<div class="component-card mb-0">
+						<div class="form-group">
+							<label for="kycBusinessName">Business name</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="store" aria-hidden="true"></i>
+								<input type="text" class="form-control" id="kycBusinessName" placeholder="Your business name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="kycBusinessCategory">Business category</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="briefcase" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="kycBusinessCategory">
+									<option value="" selected disabled>Select your business category</option>
+									<option value="retail">Retail and wholesale trade</option>
+									<option value="financial">Financial services</option>
+									<option value="technology">Technology and software</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="kycCountryRegistration">Country of registration</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="globe" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="kycCountryRegistration">
+									<option value="" selected disabled>Select your country of registration</option>
+									<option value="mw">Malawi</option>
+									<option value="zm">Zambia</option>
+									<option value="zw">Zimbabwe</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="kycIsicSector">ISIC sector</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="layers" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="kycIsicSector">
+									<option value="" selected disabled>Select your ISIC sector</option>
+									<option value="finance">Financial and insurance activities</option>
+									<option value="trade">Wholesale and retail trade</option>
+									<option value="info">Information and communication</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-group-row">
+							<div class="form-group form-group-row-item">
+								<label for="kycRegistrationNumber">Registration number</label>
+								<div class="form-group-input-wrapper">
+									<i data-lucide="hash" aria-hidden="true"></i>
+									<input type="text" class="form-control" id="kycRegistrationNumber" placeholder="Registration number">
+								</div>
+							</div>
+							<div class="form-group form-group-row-item">
+								<label for="kycTaxId">Tax identification number</label>
+								<div class="form-group-input-wrapper">
+									<i data-lucide="hash" aria-hidden="true"></i>
+									<input type="text" class="form-control" id="kycTaxId" placeholder="Tax ID">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="kycPostalAddress">Postal address</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="map-pin" aria-hidden="true"></i>
+								<input type="text" class="form-control" id="kycPostalAddress" placeholder="Your postal address">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="kycBusinessEmail">Business email</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="mail" aria-hidden="true"></i>
+								<input type="email" class="form-control" id="kycBusinessEmail" placeholder="Your business email">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="kycBusinessContact">Business contact</label>
+							<input type="tel" class="form-control intl-tel-input-field" id="kycBusinessContact" placeholder="555 000 000">
+						</div>
+						<div class="form-group">
+							<label for="kycWebsite">Website address</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="globe" aria-hidden="true"></i>
+								<input type="url" class="form-control" id="kycWebsite" placeholder="Your website address">
+							</div>
+						</div>
+						<div class="form-group mb-0">
+							<div class="form-check">
+								<input class="form-check-input" type="checkbox" id="kycPrivacyPolicy" required>
+								<label class="form-check-label" for="kycPrivacyPolicy">
+									You agree to our friendly <a href="#">Privacy Policy</a> and <a href="#">Terms &amp; Conditions</a>
+								</label>
+							</div>
+						</div>
+						<div class="step-button-wrapper">
+							<button type="button" class="button button-primary button-md w-100" data-kyc-next>Next <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</section>
+
+				<!-- Step 3: Documents -->
+				<section class="kyc-onboarding-panel" id="kycStep3" data-kyc-step="3" hidden aria-labelledby="kyc-step3-heading">
+					<div class="page-intro page-intro-center">
+						<h1 id="kyc-step3-heading" class="page-intro-heading">Business documents</h1>
+						<p class="page-intro-lede">Upload documents below. We support PDF and DOCX up to 10MB.</p>
+					</div>
+					<ul class="entity-list list-unstyled mb-0">
+						<li class="entity-list-row kyc-document-row" data-kyc-upload-row>
+							<div class="entity-card">
+								<div class="entity-card-main">
+									<span class="entity-card-icon" aria-hidden="true"><i data-lucide="file-text"></i></span>
+									<div class="entity-card-meta">
+										<p class="entity-card-title mb-0">Certificate of Incorporation</p>
+										<span class="entity-card-subtitle text-secondary" data-upload-placeholder>Click the button to upload file.</span>
+										<span class="entity-card-subtitle text-secondary" data-upload-meta></span>
+									</div>
+								</div>
+								<div class="entity-card-actions">
+									<input type="file" class="visually-hidden kyc-document-file-input" accept=".pdf,.doc,.docx">
+									<button type="button" class="button button-sm button-outline kyc-document-upload-btn">Select file</button>
+									<span class="kyc-document-verified" aria-hidden="true"><i data-lucide="check"></i></span>
+									<button type="button" class="button button-sm button-outline kyc-document-remove-btn" aria-label="Remove Certificate of Incorporation">
+										<i data-lucide="trash" aria-hidden="true"></i>
+									</button>
+								</div>
+							</div>
+						</li>
+						<li class="entity-list-row kyc-document-row" data-kyc-upload-row>
+							<div class="entity-card">
+								<div class="entity-card-main">
+									<span class="entity-card-icon" aria-hidden="true"><i data-lucide="file-text"></i></span>
+									<div class="entity-card-meta">
+										<p class="entity-card-title mb-0">Tax Clearance Certificate (TCC)</p>
+										<span class="entity-card-subtitle text-secondary" data-upload-placeholder>Click the button to upload file.</span>
+										<span class="entity-card-subtitle text-secondary" data-upload-meta></span>
+									</div>
+								</div>
+								<div class="entity-card-actions">
+									<input type="file" class="visually-hidden kyc-document-file-input" accept=".pdf,.doc,.docx">
+									<button type="button" class="button button-sm button-outline kyc-document-upload-btn">Select file</button>
+									<span class="kyc-document-verified" aria-hidden="true"><i data-lucide="check"></i></span>
+									<button type="button" class="button button-sm button-outline kyc-document-remove-btn" aria-label="Remove Tax Clearance Certificate">
+										<i data-lucide="trash" aria-hidden="true"></i>
+									</button>
+								</div>
+							</div>
+						</li>
+					</ul>
+					<div class="step-button-wrapper">
+						<button type="button" class="button button-primary button-md w-100" data-kyc-next>Next <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+					</div>
+				</section>
+
+				<!-- Step 4: Merchant -->
+				<section class="kyc-onboarding-panel" id="kycStep4" data-kyc-step="4" hidden aria-labelledby="kyc-step4-heading">
+					<div class="page-intro page-intro-center">
+						<h1 id="kyc-step4-heading" class="page-intro-heading">Merchant account details</h1>
+						<p class="page-intro-lede">Provide your merchant account details below to get started.</p>
+					</div>
+					<div class="component-card mb-0">
+						<div class="form-group">
+							<label for="kycMerchantName">Merchant name</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="store" aria-hidden="true"></i>
+								<input type="text" class="form-control" id="kycMerchantName" placeholder="Your merchant name">
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="kycTransactionCurrency">Transaction currency</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="coins" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="kycTransactionCurrency">
+									<option value="" selected disabled>Select transaction currency</option>
+									<option value="MWK">MWK</option>
+									<option value="USD">USD</option>
+									<option value="GBP">GBP</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-group mb-0">
+							<label for="kycAuthorizationLevel">Authorization level</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="shield" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="kycAuthorizationLevel">
+									<option value="" selected disabled>Select authorization level</option>
+									<option value="senior">Senior</option>
+									<option value="executive">Senior Executive</option>
+									<option value="intern">Senior Intern</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="step-button-wrapper">
+							<button type="button" class="button button-primary button-md w-100" data-kyc-next>Next <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</section>
+
+				<!-- Step 5: Bank details -->
+				<section class="kyc-onboarding-panel" id="kycStep5" data-kyc-step="5" hidden aria-labelledby="kyc-step5-heading">
+					<div class="page-intro page-intro-center">
+						<h1 id="kyc-step5-heading" class="page-intro-heading">Bank details</h1>
+						<p class="page-intro-lede">These bank account details will be used for your settlement and disbursements.</p>
+					</div>
+					<div class="component-card mb-0">
+						<div class="form-group">
+							<label for="kycBankName">Bank name</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="landmark" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="kycBankName">
+									<option value="" selected disabled>Select your bank</option>
+									<option value="nbm">National Bank of Malawi</option>
+									<option value="nbs">NBS Bank</option>
+									<option value="standard">Standard Bank Malawi</option>
+									<option value="fdh">FDH Bank</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="kycAccountName">Account name</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="user" aria-hidden="true"></i>
+								<input type="text" class="form-control" id="kycAccountName" placeholder="Account name">
+							</div>
+						</div>
+						<div class="form-group mb-0">
+							<label for="kycAccountNumber">Account number</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="hash" aria-hidden="true"></i>
+								<input type="text" class="form-control" id="kycAccountNumber" placeholder="Account number">
+							</div>
+						</div>
+						<div class="step-button-wrapper">
+							<button type="button" class="button button-primary button-md w-100" data-kyc-next>Next <i data-lucide="arrow-right" aria-hidden="true"></i></button>
+						</div>
+					</div>
+				</section>
+
+				<!-- Step 6: Summary -->
+				<section class="kyc-onboarding-panel" id="kycStep6" data-kyc-step="6" hidden aria-labelledby="kyc-step6-heading">
+					<div class="page-intro page-intro-center">
+						<h1 id="kyc-step6-heading" class="page-intro-heading">Verify your application details</h1>
+						<p class="page-intro-lede">Review each section before you submit your application for compliance review.</p>
+					</div>
+					<div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+						<h2 class="card-title mb-0">All details</h2>
+						<div class="kyc-summary-pagination" aria-label="Summary pages">
+							<button type="button" id="kycSummaryPrev" aria-label="Previous summary page" disabled>
+								<i data-lucide="chevron-left" aria-hidden="true"></i>
+							</button>
+							<span id="kycSummaryPageLabel">1 of 3</span>
+							<button type="button" id="kycSummaryNext" aria-label="Next summary page">
+								<i data-lucide="chevron-right" aria-hidden="true"></i>
+							</button>
+						</div>
+					</div>
+
+					<div data-kyc-summary-page="1">
+						<section class="mb-4" aria-labelledby="kyc-summary-account-heading">
+							<div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+								<h3 id="kyc-summary-account-heading" class="card-title mb-0">Account details</h3>
+								<a href="#" class="button button-text" data-kyc-edit="1">Edit <i data-lucide="file-pen" aria-hidden="true"></i></a>
+							</div>
+							<dl class="description-list description-list-bordered mb-0">
+								<div class="description-list-row">
+									<dt><i data-lucide="building-2" aria-hidden="true"></i> Type of account</dt>
+									<dd>Private Limited Liability Company</dd>
+								</div>
+							</dl>
+						</section>
+						<section class="mb-4" aria-labelledby="kyc-summary-business-heading">
+							<div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+								<h3 id="kyc-summary-business-heading" class="card-title mb-0">Business details</h3>
+								<a href="#" class="button button-text" data-kyc-edit="2">Edit <i data-lucide="file-pen" aria-hidden="true"></i></a>
+							</div>
+							<dl class="description-list description-list-bordered mb-0">
+								<div class="description-list-row">
+									<dt><i data-lucide="store" aria-hidden="true"></i> Business name</dt>
+									<dd>Angle Dimension Ltd</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="briefcase" aria-hidden="true"></i> Business category</dt>
+									<dd>Technology and software</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="globe" aria-hidden="true"></i> Country of registration</dt>
+									<dd>Malawi</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="layers" aria-hidden="true"></i> ISIC sector</dt>
+									<dd>Information and communication</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="hash" aria-hidden="true"></i> Registration number</dt>
+									<dd>MW-COY-2019-8844221</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="hash" aria-hidden="true"></i> Tax identification number</dt>
+									<dd>TIN-MW-9988776655</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="map-pin" aria-hidden="true"></i> Postal address</dt>
+									<dd>Plot 42, Area 47, Lilongwe, Malawi</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="mail" aria-hidden="true"></i> Business email</dt>
+									<dd>compliance@angledimension.com</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="phone" aria-hidden="true"></i> Business contact</dt>
+									<dd>+265 991 234 567</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="globe" aria-hidden="true"></i> Business website</dt>
+									<dd>https://www.angledimension.com</dd>
+								</div>
+							</dl>
+						</section>
+					</div>
+
+					<div data-kyc-summary-page="2" hidden>
+						<section class="mb-4" aria-labelledby="kyc-summary-documents-heading">
+							<div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+								<h3 id="kyc-summary-documents-heading" class="card-title mb-0">Documents uploaded</h3>
+								<a href="#" class="button button-text" data-kyc-edit="3">Upload <i data-lucide="refresh-cw" aria-hidden="true"></i></a>
+							</div>
+							<ul class="entity-list list-unstyled mb-0">
+								<li class="entity-list-row">
+									<div class="entity-card">
+										<div class="entity-card-main">
+											<span class="entity-card-icon" aria-hidden="true"><i data-lucide="file-text"></i></span>
+											<div class="entity-card-meta">
+												<p class="entity-card-title mb-0">Certificate_of_Incorporation.pdf</p>
+												<span class="entity-card-subtitle text-secondary">2.4 MB</span>
+											</div>
+										</div>
+										<div class="entity-card-actions">
+											<a href="#" class="button button-sm button-outline">Preview</a>
+											<span class="kyc-document-verified" aria-hidden="true"><i data-lucide="check"></i></span>
+										</div>
+									</div>
+								</li>
+								<li class="entity-list-row">
+									<div class="entity-card">
+										<div class="entity-card-main">
+											<span class="entity-card-icon" aria-hidden="true"><i data-lucide="file-text"></i></span>
+											<div class="entity-card-meta">
+												<p class="entity-card-title mb-0">Tax_Clearance_Certificate_2025.pdf</p>
+												<span class="entity-card-subtitle text-secondary">1.1 MB</span>
+											</div>
+										</div>
+										<div class="entity-card-actions">
+											<a href="#" class="button button-sm button-outline">Preview</a>
+											<span class="kyc-document-verified" aria-hidden="true"><i data-lucide="check"></i></span>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</section>
+					</div>
+
+					<div data-kyc-summary-page="3" hidden>
+						<section class="mb-4" aria-labelledby="kyc-summary-merchant-heading">
+							<div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+								<h3 id="kyc-summary-merchant-heading" class="card-title mb-0">Merchant details</h3>
+								<a href="#" class="button button-text" data-kyc-edit="4">Edit <i data-lucide="file-pen" aria-hidden="true"></i></a>
+							</div>
+							<dl class="description-list description-list-bordered mb-0">
+								<div class="description-list-row">
+									<dt><i data-lucide="store" aria-hidden="true"></i> Merchant name</dt>
+									<dd>Angle Dimension Ltd</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="coins" aria-hidden="true"></i> Transaction currency</dt>
+									<dd>MWK</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="shield" aria-hidden="true"></i> Authorization level</dt>
+									<dd>Senior Executive</dd>
+								</div>
+							</dl>
+						</section>
+						<section class="mb-4" aria-labelledby="kyc-summary-bank-heading">
+							<div class="d-flex justify-content-between align-items-center gap-3 mb-3">
+								<h3 id="kyc-summary-bank-heading" class="card-title mb-0">Bank details</h3>
+								<a href="#" class="button button-text" data-kyc-edit="5">Edit <i data-lucide="file-pen" aria-hidden="true"></i></a>
+							</div>
+							<dl class="description-list description-list-bordered mb-0">
+								<div class="description-list-row">
+									<dt><i data-lucide="landmark" aria-hidden="true"></i> Bank name</dt>
+									<dd>National Bank of Malawi</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="user" aria-hidden="true"></i> Account name</dt>
+									<dd>Angle Dimension Ltd</dd>
+								</div>
+								<div class="description-list-row">
+									<dt><i data-lucide="hash" aria-hidden="true"></i> Account number</dt>
+									<dd>0001234567890</dd>
+								</div>
+							</dl>
+						</section>
+					</div>
+
+					<div class="step-button-wrapper">
+						<button type="button" class="button button-primary button-md w-100" id="kycConfirmDetails">Confirm details</button>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+
+	<nav class="floating-nav floating-nav-stack" aria-label="KYC navigation">
+		<button type="button" class="button floating-nav-action" id="kycBackButton" hidden aria-label="Go back">
+			<i data-lucide="arrow-left" aria-hidden="true"></i>
+		</button>
+		<a href="../index.html" class="button floating-nav-action" id="kycHomeButton" aria-label="Return to dashboard">
+			<i data-lucide="home" aria-hidden="true"></i>
+		</a>
+	</nav>
+
+	<!-- Terms modal -->
+	<div class="modal fade" id="kycTermsModal" tabindex="-1" aria-labelledby="kycTermsModalLabel"
+		data-bs-backdrop="static" data-bs-keyboard="false" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-size-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-header-leading">
+						<span class="modal-leading-icon" aria-hidden="true">
+							<span class="modal-leading-icon-main">
+								<i data-lucide="info"></i>
+							</span>
+						</span>
+						<h1 class="modal-title" id="kycTermsModalLabel">Please read our terms before you continue the onboarding process</h1>
+					</div>
+				</div>
+				<div class="modal-body">
+					<p class="text-secondary mb-0">
+						No entity shall submit forged or falsified documents for the sake of gaining access to production or live
+						environment. OneKhusa Limited will block your organization permanently and initiate legal proceedings against
+						your company that will involve RBM, Malawi Fiscal Police, and Financial Intelligence Unit (FIU).
+					</p>
+				</div>
+				<div class="modal-footer modal-footer-between">
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" id="kycTermsAgree">
+						<label class="form-check-label" for="kycTermsAgree">I agree to these terms</label>
+					</div>
+					<button type="button" class="button button-outline button-md" id="kycTermsContinue" disabled>Continue</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- OTP modal -->
+	<div class="modal fade" id="kycOtpModal" tabindex="-1" aria-labelledby="kycOtpModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-size-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-header-leading modal-header-leading--stacked">
+						<span class="modal-leading-icon" aria-hidden="true">
+							<span class="modal-leading-icon-main">
+								<i data-lucide="shield"></i>
+							</span>
+						</span>
+						<h1 class="modal-title" id="kycOtpModalLabel">Confirm your submission</h1>
+					</div>
+				</div>
+				<div class="modal-body">
+					<p class="text-secondary">
+						Please enter the verification code sent to your email, <mark>compliance@angledimension.com</mark>
+					</p>
+					<div class="authcode-inputs">
+						<input type="text" class="auth-code-input" maxlength="1" inputmode="numeric" autocomplete="one-time-code" aria-label="Digit 1">
+						<input type="text" class="auth-code-input" maxlength="1" inputmode="numeric" aria-label="Digit 2">
+						<input type="text" class="auth-code-input" maxlength="1" inputmode="numeric" aria-label="Digit 3">
+						<input type="text" class="auth-code-input" maxlength="1" inputmode="numeric" aria-label="Digit 4">
+						<input type="text" class="auth-code-input" maxlength="1" inputmode="numeric" aria-label="Digit 5">
+						<input type="text" class="auth-code-input" maxlength="1" inputmode="numeric" aria-label="Digit 6">
+					</div>
+					<p class="text-tertiary small text-center mb-0">Didn't receive the code? <a href="#">Resend code</a></p>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="button button-outline button-md" data-bs-dismiss="modal">Cancel</button>
+					<button type="button" class="button button-primary button-md" id="kycVerifyCode">Verify</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Submitted modal -->
+	<div class="modal fade" id="kycSubmittedModal" tabindex="-1" aria-labelledby="kycSubmittedModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-size-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<span class="modal-icon modal-icon--success" aria-hidden="true"><i data-lucide="check"></i></span>
+					<h1 class="modal-title" id="kycSubmittedModalLabel">Application submitted</h1>
+				</div>
+				<div class="modal-body text-secondary">
+					<p class="mb-0">
+						<mark>Angle Dimension Ltd</mark> has been submitted to <mark>compliance@angledimension.com</mark>.
+						You can track your application progress.
+					</p>
+				</div>
+				<div class="modal-footer flex-column gap-2">
+					<button type="button" class="button button-outline button-md w-100" id="kycTrackProgress">Track progress</button>
+					<button type="button" class="button button-primary button-md w-100" id="kycFinish">Finish</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+	<script src="../../../js/theme-init.js"></script>
+	<script src="../../../js/main.js"></script>
+	<script src="../../../js/kyc-onboarding.js"></script>
+</body>
+</html>

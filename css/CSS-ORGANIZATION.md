@@ -21,6 +21,7 @@ css/
     │
     ├── Utilities (110)
     │   └── .text-* helpers
+    │   └── mark (143)
     │
     ├── Shared components
     │   ├── Buttons (143)
@@ -30,7 +31,8 @@ css/
     │   ├── Callout banners (641)
     │   ├── Toasts (739)
     │   ├── Stepper (814)
-    │   ├── Floating nav (976)
+    │   ├── Floating nav (982)
+    │   │   └── Floating nav stack (1042)
     │   ├── Forms (1036)
     │   │   ├── .form-group-row (1042)   # reusable multi-field row; stacks at 576px
     │   │   └── form invalid / .form-error (danger)
@@ -44,6 +46,7 @@ css/
     │   │   ├── internal spacing (1844)
     │   │   ├── width modifiers (1899)
     │   │   └── confirm row (1937)
+    │   │       └── Modal footer between (1944)
     │   └── Offcanvas (1970)
     │       ├── Air Datepicker z-index (1970)
     │       ├── panel (1976)
@@ -58,7 +61,8 @@ css/
     │   ├── Entity card (2707)
     │   │   └── guide-card (2779)
     │   ├── Page intro (2820)
-    │   ├── Section jump nav (2845)
+    │   │   └── Page intro center (2899)
+    │   ├── Section jump nav (2907)
     │   ├── Tab buttons (2931)
     │   ├── Detail group (2955)
     │   └── Dashboard / in-page stats (2995)
@@ -96,8 +100,9 @@ css/
         │   ├── Fake data (5526)
         │   ├── Accept RTP (5566)
         │   ├── Sample disbursement (5609)
-        │   └── Application progress / Submit KYC (5823)
-        ├── Admin Portal (5950)
+        │   └── Application progress / Submit KYC (5885)
+        │       └── KYC / Onboarding (6012)
+        ├── Admin Portal (6230)
         │   ├── Admin dashboard (5951)
         │   ├── Admin application detail (6010)
         │   └── Complaints / dispute detail (6122)

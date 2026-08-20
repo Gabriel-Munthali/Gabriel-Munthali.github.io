@@ -59,60 +59,245 @@
 			<div class="app-content">
 				<div class="app-content-inner container-fluid">
 					<header class="page-intro">
-						<h1 class="page-intro-heading">Auth email templates</h1>
-						<p class="page-intro-lede">Journey-first transactional emails: orient the reader, one primary moment, then just-in-time next steps. Each template is Outlook-safe HTML for a specific auth step.</p>
+						<h1 class="page-intro-heading">Email templates</h1>
+						<p class="page-intro-lede">Journey-first transactional emails: orient the reader, one primary moment, then just-in-time next steps. Each template is Outlook-safe HTML for a specific send.</p>
 					</header>
-					<div class="row row-cols-1 row-cols-md-2 g-3">
-						<div class="col">
-							<a href="shell.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
-								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="layout-template"></i></span>
-								<h2 class="card-title">Email shell</h2>
-								<p class="text-secondary mb-0">My building blocks by phase: orient, commit, recover, post-action.</p>
+					<ul class="email-catalog">
+						<li>
+							<a href="shell.html" class="email-catalog-leaf">
+								<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+								Email shell
 							</a>
-						</div>
-						<div class="col">
-							<a href="login-verification.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
-								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="shield-check"></i></span>
-								<h2 class="card-title">Login verification</h2>
-								<p class="text-secondary mb-0">Commit: sign-in code first, then attempt details and a recover branch if it wasn't you.</p>
-							</a>
-						</div>
-						<div class="col">
-							<a href="email-verification.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
-								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="mail-check"></i></span>
-								<h2 class="card-title">Email verification</h2>
-								<p class="text-secondary mb-0">Commit: finish account creation with a verification code.</p>
-							</a>
-						</div>
-						<div class="col">
-							<a href="password-reset.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
-								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="key-round"></i></span>
-								<h2 class="card-title">Password reset</h2>
-								<p class="text-secondary mb-0">Recover: code first, optional reset page, ignore if you didn't ask.</p>
-							</a>
-						</div>
-						<div class="col">
-							<a href="password-changed.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
-								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="badge-check"></i></span>
-								<h2 class="card-title">Password changed</h2>
-								<p class="text-secondary mb-0">Post-action: confirm the change, then a clear recover path if it wasn't you.</p>
-							</a>
-						</div>
-						<div class="col">
-							<a href="account-locked.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
-								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="lock"></i></span>
-								<h2 class="card-title">Account locked</h2>
-								<p class="text-secondary mb-0">Recover: what happened, how long the lock lasts, and how to get back in.</p>
-							</a>
-						</div>
-						<div class="col">
-							<a href="welcome.html" class="component-card d-flex flex-column h-100 mb-0 text-decoration-none">
-								<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary mb-3" aria-hidden="true"><i data-lucide="hand-metal"></i></span>
-								<h2 class="card-title">Welcome</h2>
-								<p class="text-secondary mb-0">Orient: who OneKhusa is for, one primary next step, tips later.</p>
-							</a>
-						</div>
-					</div>
+						</li>
+						<li>
+							<button type="button" class="email-catalog-folder" data-bs-toggle="collapse"
+								data-bs-target="#email-catalog-auth" aria-expanded="false" aria-controls="email-catalog-auth">
+								<span class="email-catalog-folder-label">Auth</span>
+								<i data-lucide="chevron-down" class="email-catalog-chevron" aria-hidden="true"></i>
+							</button>
+							<ul id="email-catalog-auth" class="collapse email-catalog-leaves">
+								<li>
+									<a href="auth/login-verification.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Login verification
+									</a>
+								</li>
+								<li>
+									<a href="auth/email-verification.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Email verification
+									</a>
+								</li>
+								<li>
+									<a href="auth/password-reset.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Password reset
+									</a>
+								</li>
+								<li>
+									<a href="auth/password-changed.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Password changed
+									</a>
+								</li>
+								<li>
+									<a href="auth/account-locked.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Account locked
+									</a>
+								</li>
+								<li>
+									<a href="auth/welcome.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Welcome
+									</a>
+								</li>
+								<li>
+									<a href="auth/user-invitation.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										User invitation
+									</a>
+								</li>
+								<li>
+									<a href="auth/applicant-onboarding.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Applicant onboarding
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<button type="button" class="email-catalog-folder" data-bs-toggle="collapse"
+								data-bs-target="#email-catalog-applications" aria-expanded="false" aria-controls="email-catalog-applications">
+								<span class="email-catalog-folder-label">Applications</span>
+								<i data-lucide="chevron-down" class="email-catalog-chevron" aria-hidden="true"></i>
+							</button>
+							<ul id="email-catalog-applications" class="collapse email-catalog-leaves">
+								<li>
+									<a href="applications/received-applicant.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Received (applicant)
+									</a>
+								</li>
+								<li>
+									<a href="applications/received-account-manager.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Received (account manager)
+									</a>
+								</li>
+								<li>
+									<a href="applications/changes-required.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Changes required
+									</a>
+								</li>
+								<li>
+									<a href="applications/under-review.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Under final review
+									</a>
+								</li>
+								<li>
+									<a href="applications/authorized.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Authorized
+									</a>
+								</li>
+								<li>
+									<a href="applications/rejected-applicant.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Rejected (applicant)
+									</a>
+								</li>
+								<li>
+									<a href="applications/rejected-account-manager.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Rejected (account manager)
+									</a>
+								</li>
+								<li>
+									<a href="applications/senior-am-authorization.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Senior AM authorization
+									</a>
+								</li>
+								<li>
+									<a href="applications/agreement-signed.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Merchant agreement signed
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<button type="button" class="email-catalog-folder" data-bs-toggle="collapse"
+								data-bs-target="#email-catalog-disbursements" aria-expanded="false" aria-controls="email-catalog-disbursements">
+								<span class="email-catalog-folder-label">Disbursements</span>
+								<i data-lucide="chevron-down" class="email-catalog-chevron" aria-hidden="true"></i>
+							</button>
+							<ul id="email-catalog-disbursements" class="collapse email-catalog-leaves">
+								<li>
+									<a href="disbursements/batch-queued.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Batch queued
+									</a>
+								</li>
+								<li>
+									<a href="disbursements/batch-failed.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Batch failed
+									</a>
+								</li>
+								<li>
+									<a href="disbursements/batch-general-errors.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Batch general errors
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<button type="button" class="email-catalog-folder" data-bs-toggle="collapse"
+								data-bs-target="#email-catalog-disputes" aria-expanded="false" aria-controls="email-catalog-disputes">
+								<span class="email-catalog-folder-label">Disputes</span>
+								<i data-lucide="chevron-down" class="email-catalog-chevron" aria-hidden="true"></i>
+							</button>
+							<ul id="email-catalog-disputes" class="collapse email-catalog-leaves">
+								<li>
+									<a href="disputes/opened.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Dispute opened
+									</a>
+								</li>
+								<li>
+									<a href="disputes/event.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Dispute event
+									</a>
+								</li>
+								<li>
+									<a href="disputes/event-admin.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Dispute event (admin)
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<button type="button" class="email-catalog-folder" data-bs-toggle="collapse"
+								data-bs-target="#email-catalog-merchants" aria-expanded="false" aria-controls="email-catalog-merchants">
+								<span class="email-catalog-folder-label">Merchants</span>
+								<i data-lucide="chevron-down" class="email-catalog-chevron" aria-hidden="true"></i>
+							</button>
+							<ul id="email-catalog-merchants" class="collapse email-catalog-leaves">
+								<li>
+									<a href="merchants/created.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										New merchant created
+									</a>
+								</li>
+								<li>
+									<a href="merchants/suspended.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Merchant suspended
+									</a>
+								</li>
+								<li>
+									<a href="merchants/reactivated.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Merchant reactivated
+									</a>
+								</li>
+								<li>
+									<a href="merchants/blacklisted.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Merchant blacklisted
+									</a>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<button type="button" class="email-catalog-folder" data-bs-toggle="collapse"
+								data-bs-target="#email-catalog-security" aria-expanded="false" aria-controls="email-catalog-security">
+								<span class="email-catalog-folder-label">Security</span>
+								<i data-lucide="chevron-down" class="email-catalog-chevron" aria-hidden="true"></i>
+							</button>
+							<ul id="email-catalog-security" class="collapse email-catalog-leaves">
+								<li>
+									<a href="security/virus-warning.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Virus detected (warning)
+									</a>
+								</li>
+								<li>
+									<a href="security/virus-blocked.html" class="email-catalog-leaf">
+										<i data-lucide="mail" class="email-catalog-leaf-icon" aria-hidden="true"></i>
+										Virus detected (account blocked)
+									</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</main>

@@ -190,7 +190,37 @@ mark {
     padding: var(--space-lg) var(--space-2xl);
 }
 
+/* Icon-only buttons: square background */
+.button:has(> .lucide:only-child),
+.button:has(> i:only-child) {
+	box-sizing: border-box;
+	padding: 0;
+	flex-shrink: 0;
+}
 
+.button-xs:has(> .lucide:only-child),
+.button-xs:has(> i:only-child) {
+	width: var(--space-2xl);
+	height: var(--space-2xl);
+}
+
+.button-sm:has(> .lucide:only-child),
+.button-sm:has(> i:only-child) {
+	width: var(--space-3xl);
+	height: var(--space-3xl);
+}
+
+.button-md:has(> .lucide:only-child),
+.button-md:has(> i:only-child) {
+	width: var(--space-4xl);
+	height: var(--space-4xl);
+}
+
+.button-lg:has(> .lucide:only-child),
+.button-lg:has(> i:only-child) {
+	width: var(--space-5xl);
+	height: var(--space-5xl);
+}
 
 .button-loading [data-lucide="loader-circle"] {
     display: inline-block;

@@ -6,6 +6,7 @@ Structure reference for `css/`. Line numbers are approximate.
 css/
 ├── theme-dark.css            # dark theme token overrides (imported by style.css)
 ├── responsive.css            # cross-cutting breakpoints (linked after style.css)
+├── docs.css                  # lab index chrome only (linked after responsive.css on lab pages)
 └── style.css
     ├── @import               # Inter font, theme-dark.css
     ├── :root                 # design tokens (4-95)
@@ -24,14 +25,15 @@ css/
     │   └── mark (143)
     │
     ├── Shared components
-    │   ├── Buttons (143)
-    │   │   └── Text buttons (430)
-    │   ├── Badges (447)
-    │   ├── Alerts (510)
-    │   ├── Callout banners (641)
-    │   ├── Toasts (739)
-    │   ├── Stepper (814)
-    │   ├── Floating nav (982)
+    │   ├── Buttons (153)
+    │   │   └── Text buttons (448)
+    │   ├── Badges (465)
+    │   ├── Alerts (528)
+    │   ├── Callout banners (659)
+    │   ├── Toasts (757)
+    │   ├── Tooltips (832)
+    │   ├── Stepper (851)
+    │   ├── Floating nav (1011)
     │   │   └── Floating nav stack (1042)
     │   ├── Forms (1036)
     │   │   ├── .form-group-row (1042)   # reusable multi-field row; stacks at 576px
@@ -62,25 +64,25 @@ css/
     │   │   └── guide-card (2779)
     │   ├── Page intro (2820)
     │   │   └── Page intro center (2899)
-    │   ├── Email catalog (2907)
     │   ├── Section jump nav (3028)
     │   ├── Tab buttons (3114)
     │   ├── Detail group (3138)
     │   └── Dashboard / in-page stats (3178)
     │       └── .app-dashboard-stat-icon* (reused on auth title icons)
     │
-    ├── App shell (3322)
-    │   ├── Sidebar brand (3359)
-    │   ├── Sidebar nav (3382)
-    │   ├── Sidebar nav nested (3504)
-    │   ├── Sidebar footer (3549)
-    │   ├── Main column (3680)
-    │   │   └── dashboard scroll (3688)
-    │   ├── Main nav (3715)
-    │   └── Sidebar offcanvas (4368)
+    ├── App shell (3230)
+    │   ├── Sidebar brand (3267)
+    │   ├── Sidebar collapsed (3329)       # .is-sidebar-collapsed icon rail (lg+ only)
+    │   ├── Sidebar nav (3446)
+    │   ├── Sidebar nav nested (3568)
+    │   ├── Sidebar footer (3613)
+    │   ├── Main column (3744)
+    │   │   └── dashboard scroll (3752)
+    │   ├── Main nav (3779)
+    │   └── Sidebar offcanvas (4432)
     │
     └── Page / feature blocks
-        ├── Auth (4450)
+        ├── Auth (4698)
         │   ├── layout shell (4451)        # .auth-section, .auth-header, .auth-brand-*, .auth-main
         │   ├── form content (4484)        # .auth-form-wrapper
         │   ├── title block (4493)         # .user-account-title-icon, .user-account-title*
@@ -91,7 +93,7 @@ css/
         │   ├── Cloudflare Turnstile mock (4796)
         │   ├── footer (4865)              # .auth-footer, .auth-footer-text
         │   └── Hosted checkout (4875)
-        ├── Merchant Portal (4896)
+        ├── Merchant Portal (5144)
         │   ├── Sandbox welcome modal (4898)
         │   ├── Merchant detail layout (4996)
         │   ├── RTP detail / amount banner (5087)
@@ -103,13 +105,28 @@ css/
         │   ├── Sample disbursement (5609)
         │   └── Application progress / Submit KYC (5885)
         │       └── KYC / Onboarding (6012)
-        ├── Admin Portal (6230)
+        ├── Admin Portal (6431)
         │   ├── Admin dashboard (5951)
         │   ├── Admin application detail (6010)
         │   └── Complaints / dispute detail (6122)
         │       └── Dispute thresholds (6216)
-        └── Iconology (6321)
 ```
+
+## docs.css (lab index only)
+
+Styles for browsing this GitHub Pages site. Not shipped in prod.
+
+```
+docs.css
+├── Email catalog           # pages/emails/index.html folder tree
+└── Iconology               # iconology.html tile grid
+```
+
+Link `docs.css` after `responsive.css` on lab index pages only. Do not link on portal screens, auth forms, or email templates.
+
+Mixed classes used on lab indexes and product pages stay in `style.css` (for example `.page-intro`, `.component-card`, `.section-jump-nav`).
+
+New lab-only CSS goes in `docs.css`, not at the bottom of `style.css`. Omit `docs.css` from org product CSS sync unless explicitly requested.
 
 ## Auth pages (`pages/auth/**`)
 
@@ -147,6 +164,6 @@ responsive.css
 │   └── Application progress stacks; full-width CTA
 ├── @media (max-width: 576px) / 575.98px
 └── @media (prefers-reduced-motion: reduce)
-    ├── Stepper glow-pulse off
-    └── Application progress glow-pulse off
+    ├── Stepper blink animation off
+    └── Application progress blink animation off
 ```

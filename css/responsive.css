@@ -269,17 +269,24 @@
 
 @media (prefers-reduced-motion: reduce) {
 	/* Stepper */
-	.step-item.current::before {
+	.step-item.current .step-check::after {
 		animation: none;
+		opacity: 1;
 	}
 
 	/* Application progress */
-	.application-progress.active .application-progress-details span::before {
+	.application-progress.active .application-progress-details span::after {
 		animation: none;
+		opacity: 1;
 	}
 
 	/* Section jump nav */
 	.section-jump-nav .section-jump-link {
 		animation: none;
+	}
+
+	/* App sidebar */
+	.app-sidebar {
+		transition: none;
 	}
 }

@@ -971,43 +971,122 @@
 								<i data-lucide="plus"></i>
 							</span>
 						</span>
-						<h1 class="modal-title" id="modalNewMerchantLabel">Add new merchant</h1>
+						<h1 class="modal-title" id="modalNewMerchantLabel">Add Merchant Account</h1>
 					</div>
 				</div>
 				<div class="modal-body">
 					<p id="modalNewMerchantDescription" class="text-secondary">Specify details for the new merchant account.</p>
 					<div class="form-group">
-						<label for="new-merchant-name">Merchant name</label>
+						<label for="new-merchant-name">Merchant Name <span class="text-danger" aria-hidden="true">*</span></label>
 						<div class="form-group-input-wrapper">
 							<i data-lucide="store" aria-hidden="true"></i>
 							<input type="text" class="form-control" id="new-merchant-name" name="merchantName"
-								placeholder="Legal or trading name" autocomplete="organization">
+								placeholder="Your merchant name" autocomplete="organization" required>
 						</div>
 					</div>
 					<div class="form-group">
-						<label for="new-merchant-currency">Transaction currency</label>
+						<label for="new-merchant-postal-address">
+							Postal Address <span class="text-danger" aria-hidden="true">*</span>
+							<button type="button" class="form-label-help" data-bs-toggle="tooltip"
+								data-bs-custom-class="tooltip-khusa"
+								title="Mailing address used for statements and notices."
+								aria-label="More about postal address">
+								<i data-lucide="circle-help" aria-hidden="true"></i>
+							</button>
+						</label>
 						<div class="form-group-input-wrapper">
-							<i data-lucide="banknote" aria-hidden="true"></i>
-							<select class="form-control with-icon-right" id="new-merchant-currency" name="currency">
-								<option value="" disabled selected>Select currency</option>
-								<option value="MWK">MWK (Malawian kwacha)</option>
-								<option value="USD">USD (US dollar)</option>
-								<option value="ZAR">ZAR (South African rand)</option>
-							</select>
-							<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							<i data-lucide="map-pin" aria-hidden="true"></i>
+							<input type="text" class="form-control" id="new-merchant-postal-address" name="postalAddress"
+								placeholder="Enter postal address" autocomplete="street-address" required>
 						</div>
 					</div>
-					<div class="form-group">
-						<label for="new-merchant-auth-level">Authorization level</label>
-						<div class="form-group-input-wrapper">
-							<i data-lucide="shield-check" aria-hidden="true"></i>
-							<select class="form-control with-icon-right" id="new-merchant-auth-level" name="authorizationLevel">
-								<option value="" disabled selected>Select level</option>
-								<option value="standard">Standard</option>
-								<option value="elevated">Elevated</option>
-								<option value="restricted">Restricted</option>
-							</select>
-							<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+					<div class="form-group-row">
+						<div class="form-group form-group-row-item">
+							<label for="new-merchant-auth-level">
+								Authorization Level <span class="text-danger" aria-hidden="true">*</span>
+								<button type="button" class="form-label-help" data-bs-toggle="tooltip"
+									data-bs-custom-class="tooltip-khusa"
+									title="Controls how disbursements are processed and whether 1, 2, or 3 users are required to transfer funds."
+									aria-label="More about authorization level">
+									<i data-lucide="circle-help" aria-hidden="true"></i>
+								</button>
+							</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="shield" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="new-merchant-auth-level"
+									name="authorizationLevel" required>
+									<option value="" disabled selected>Select authorization level</option>
+									<option value="1">Initiator Only</option>
+									<option value="2">Initiator -&gt; Approver</option>
+									<option value="3">Initiator -&gt; Reviewer -&gt; Approver</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-group form-group-row-item">
+							<label for="new-merchant-currency">Transaction Currency <span class="text-danger" aria-hidden="true">*</span></label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="coins" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="new-merchant-currency" name="currency" required>
+									<option value="" disabled selected>Select currency</option>
+									<option value="MWK">MWK (Malawian Kwacha)</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+					</div>
+					<div class="form-group-row">
+						<div class="form-group form-group-row-item">
+							<label for="new-merchant-classification">Classification <span class="text-danger" aria-hidden="true">*</span></label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="layers" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="new-merchant-classification"
+									name="classification" required>
+									<option value="" disabled selected>Select classification</option>
+									<option value="0021">Services</option>
+									<option value="SME">Small to Medium Enterprise</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-group form-group-row-item">
+							<label for="new-merchant-category">Category <span class="text-danger" aria-hidden="true">*</span></label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="tag" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="new-merchant-category" name="category" required>
+									<option value="" disabled selected>Select category</option>
+									<option value="8352">Other Services</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+					</div>
+					<div class="form-group-row">
+						<div class="form-group form-group-row-item">
+							<label for="new-merchant-disbursement-fee-rule">Disbursement Fee Rule <span class="text-danger" aria-hidden="true">*</span></label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="percent" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="new-merchant-disbursement-fee-rule"
+									name="disbursementFeeRule" required>
+									<option value="" disabled selected>Select fee rule</option>
+									<option value="CM">Charge Fees To The Merchant</option>
+									<option value="CC">Charge Fees To The Customer</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
+						</div>
+						<div class="form-group form-group-row-item">
+							<label for="new-merchant-collection-fee-rule">Collection Fee Rule <span class="text-danger" aria-hidden="true">*</span></label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="percent" aria-hidden="true"></i>
+								<select class="form-control with-icon-right" id="new-merchant-collection-fee-rule"
+									name="collectionFeeRule" required>
+									<option value="" disabled selected>Select fee rule</option>
+									<option value="CM">Charge Fees To The Merchant</option>
+									<option value="CC">Charge Fees To The Customer</option>
+								</select>
+								<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+							</div>
 						</div>
 					</div>
 				</div>

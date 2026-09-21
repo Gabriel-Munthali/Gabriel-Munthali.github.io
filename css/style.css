@@ -1115,8 +1115,36 @@ mark {
 }
 
 .form-group label {
-    font-size: var(--fz-xs);
-    font-weight: var(--fw-lg);
+	display: inline-flex;
+	align-items: center;
+	gap: var(--space-xs);
+	font-size: var(--fz-xs);
+	font-weight: var(--fw-lg);
+	line-height: var(--lg-md);
+}
+
+.form-label-help {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: var(--text-gray-500);
+	line-height: 1;
+	cursor: help;
+}
+
+.form-label-help .lucide {
+	display: block;
+	width: 1em;
+	height: 1em;
+}
+
+.form-label-help:hover,
+.form-label-help:focus-visible {
+	color: var(--text-gray-700);
 }
 
 .form-group-input-wrapper {
@@ -1915,7 +1943,8 @@ span.modal-icon--warning {
     margin-bottom: var(--space-lg);
 }
 
-.modal .modal-body > .form-group:last-child {
+.modal .modal-body > .form-group:last-child,
+.modal .modal-body > .form-group-row:last-child {
     margin-bottom: 0;
 }
 

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Checkout · Components</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/responsive.css">
+	<link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+	<div class="app-shell">
+		<aside class="app-sidebar d-none d-lg-flex flex-column" aria-label="Sidebar">
+			<header class="app-sidebar-brand">
+				<a href="/" class="app-sidebar-brand-link">
+					<img src="/img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<nav class="app-sidebar-nav" aria-label="Sidebar navigation">
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="/" class="app-sidebar-nav-link">
+							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Home</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Portals</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="/pages/merchant-portal/" class="app-sidebar-nav-link">
+								<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Merchant portal</span>
+							</a>
+						</li>
+						<li>
+							<a href="/pages/admin-portal/" class="app-sidebar-nav-link">
+								<i data-lucide="shield" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Admin portal</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="/pages/auth/" class="app-sidebar-nav-link">
+							<i data-lucide="log-in" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Auth</span>
+						</a>
+					</li>
+					<li>
+						<a href="/pages/emails/" class="app-sidebar-nav-link">
+							<i data-lucide="mail" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Emails</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Design system</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="#sidebar-nav-sub-components" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="true" aria-controls="sidebar-nav-sub-components" data-bs-toggle="collapse">
+								<i data-lucide="layout-grid" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Components</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-components" class="collapse show app-sidebar-nav-sublist">
+								<li><a href="/pages/components/" class="app-sidebar-nav-sublink">Overview</a></li>
+								<li><a href="/pages/components/buttons/" class="app-sidebar-nav-sublink">Buttons</a></li>
+								<li><a href="/pages/components/badges/" class="app-sidebar-nav-sublink">Badges</a></li>
+								<li><a href="/pages/components/modals/" class="app-sidebar-nav-sublink">Modals</a></li>
+								<li><a href="/pages/components/alerts/" class="app-sidebar-nav-sublink">Alerts</a></li>
+								<li><a href="/pages/components/tooltips/" class="app-sidebar-nav-sublink">Tooltips</a></li>
+								<li><a href="/pages/components/toasts/" class="app-sidebar-nav-sublink">Toasts</a></li>
+								<li><a href="/pages/components/callout-banners/" class="app-sidebar-nav-sublink">Callout banners</a></li>
+								<li><a href="/pages/components/stepper/" class="app-sidebar-nav-sublink">Stepper</a></li>
+								<li><a href="/pages/components/floating-nav/" class="app-sidebar-nav-sublink">Floating nav</a></li>
+								<li><a href="/pages/components/forms/" class="app-sidebar-nav-sublink">Forms</a></li>
+								<li><a href="/pages/components/description-lists/" class="app-sidebar-nav-sublink">Description lists</a></li>
+								<li><a href="/pages/components/checkout/" class="app-sidebar-nav-sublink" aria-current="page">Checkout</a></li>
+								<li><a href="/pages/components/tables/" class="app-sidebar-nav-sublink">Tables</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/pages/checkout/checkout.html" class="app-sidebar-nav-link">
+								<i data-lucide="credit-card" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Checkout</span>
+							</a>
+						</li>
+						<li>
+							<a href="/iconology.html" class="app-sidebar-nav-link">
+								<i data-lucide="shapes" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Iconology</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</nav>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">AC</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Account</span>
+						<span class="app-sidebar-user-email">account@example.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#"><i data-lucide="user-round" aria-hidden="true"></i>Link</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Link</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Link</a></li>
+					</ul>
+				</div>
+			</footer>
+		</aside>
+		<main class="app-main">
+			<nav class="app-main-nav" aria-label="Main">
+				<div class="app-main-nav-start">
+					<button type="button" class="app-main-nav-toggle d-lg-none" data-bs-toggle="offcanvas"
+						data-bs-target="#appSidebarMenu" aria-controls="appSidebarMenu" aria-label="Open sidebar">
+						<i data-lucide="menu" class="app-main-nav-toggle-icon" aria-hidden="true"></i>
+					</button>
+					<nav class="app-main-nav-breadcrumb" aria-label="Breadcrumb">
+						<ol class="app-main-nav-breadcrumb-list">
+							<li><a href="/">Home</a></li>
+							<li><a href="/pages/components/">Components</a></li>
+							<li><span aria-current="page">Checkout</span></li>
+						</ol>
+					</nav>
+				</div>
+			</nav>
+			<div class="app-content">
+				<div class="app-content-inner container-fluid">
+					<header class="page-intro">
+								<h1 class="page-intro-heading">Checkout</h1>
+								<p class="page-intro-lede">Hosted payment composition: amount banner, order summary, institution select, and pay CTA. Full page lives at <a href="/pages/checkout/checkout.html">Checkout</a>.</p>
+							</header>
+
+							<section class="component-docs-section" aria-labelledby="preview-heading">
+								<h2 id="preview-heading" class="component-docs-section-title">Preview</h2>
+								<div class="component-card">
+									<div class="d-flex flex-wrap align-items-start justify-content-between gap-3 mb-3">
+										<p class="text-tertiary small mb-0">Component preview</p>
+										<a href="/pages/checkout/checkout.html" class="button button-sm button-outline">
+											Open full page <i data-lucide="arrow-up-right" aria-hidden="true"></i>
+										</a>
+									</div>
+									<div class="checkout-preview">
+										<div class="rtp-amount-banner checkout-amount-banner mb-4" role="region" aria-label="Payment amount">
+											<span class="rtp-detail-label">Amount due</span>
+											<p class="rtp-detail-value">MWK 25,000.00</p>
+										</div>
+										<dl class="description-list description-list-bordered mb-4">
+											<div class="description-list-row">
+												<dt>Merchant</dt>
+												<dd>Angle Dimension Ltd</dd>
+											</div>
+											<div class="description-list-row">
+												<dt>Reference</dt>
+												<dd>CHK-2026-8849201</dd>
+											</div>
+											<div class="description-list-row">
+												<dt>Description</dt>
+												<dd>Invoice INV-1042</dd>
+											</div>
+										</dl>
+										<form action="#" method="post" aria-label="Checkout payment preview">
+											<div class="form-group">
+												<label for="components-checkout-institution">Pay through</label>
+												<div class="form-group-input-wrapper">
+													<i data-lucide="landmark" aria-hidden="true"></i>
+													<select class="form-control with-icon-right" id="components-checkout-institution" name="paidThrough">
+														<option value="" selected disabled>Select institution</option>
+														<option value="tnm-mpamba">TNM Mpamba</option>
+														<option value="airtel-money">Airtel Money</option>
+														<option value="nbm">National Bank of Malawi</option>
+														<option value="fdh">FDH Bank</option>
+														<option value="standard-bank">Standard Bank Malawi</option>
+														<option value="mybucks">MyBucks</option>
+														<option value="ecobank">Ecobank Malawi</option>
+														<option value="nbs">NBS Bank</option>
+														<option value="fcb">First Capital Bank</option>
+													</select>
+													<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+												</div>
+											</div>
+											<div class="form-group">
+												<label for="components-checkout-account">Account or mobile number</label>
+												<div class="form-group-input-wrapper">
+													<i data-lucide="smartphone" aria-hidden="true"></i>
+													<input type="text" class="form-control" id="components-checkout-account" name="accountNumber"
+														placeholder="Enter account or mobile number" autocomplete="off">
+												</div>
+											</div>
+											<button type="submit" class="button button-primary button-md">Pay now</button>
+										</form>
+									</div>
+								</div>
+							</section>
+
+							<section class="component-docs-section" aria-labelledby="usage-heading">
+								<h2 id="usage-heading" class="component-docs-section-title">Usage</h2>
+								<ul class="component-docs-classes">
+									<li><code>.checkout-preview</code></li>
+									<li><code>.rtp-amount-banner / .checkout-amount-banner</code></li>
+									<li><code>.rtp-detail-label / .rtp-detail-value</code></li>
+									<li><code>.description-list / .description-list-bordered / .description-list-row</code></li>
+									<li><code>.form-group / .form-group-input-wrapper / .form-control</code></li>
+									<li><code>.with-icon-right / .icon-right</code></li>
+									<li><code>.button-primary</code></li>
+								</ul>
+							</section>
+
+							<section class="component-docs-section" aria-labelledby="agent-heading">
+								<h2 id="agent-heading" class="component-docs-section-title">Agent instruction</h2>
+								<div class="component-docs-agent">
+									<ul>
+										<li>Reuse amount banner + bordered description list + form; do not invent a new checkout card layout.</li>
+										<li>Institution select uses <code>landmark</code> and a right <code>chevron-down</code>.</li>
+										<li>Account/mobile field uses <code>smartphone</code>.</li>
+										<li>For the full customer-facing page, edit <code>/pages/checkout/checkout.html</code> rather than only this docs preview.</li>
+									</ul>
+								</div>
+							</section>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<div class="offcanvas offcanvas-start app-sidebar-offcanvas" tabindex="-1" id="appSidebarMenu"
+		aria-label="Sidebar">
+		<div class="offcanvas-header">
+			<header class="app-sidebar-brand app-sidebar-offcanvas-brand">
+				<a href="/" class="app-sidebar-brand-link">
+					<img src="/img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<button type="button" class="ms-auto flex-shrink-0" data-bs-dismiss="offcanvas" aria-label="Close"><i
+					data-lucide="x"></i></button>
+		</div>
+		<div class="offcanvas-body app-sidebar-offcanvas-body">
+			<div class="app-sidebar-offcanvas-scroll">
+				<nav class="app-sidebar-nav app-sidebar-offcanvas-nav" aria-label="Sidebar navigation">
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="/" class="app-sidebar-nav-link">
+							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Home</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Portals</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="/pages/merchant-portal/" class="app-sidebar-nav-link">
+								<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Merchant portal</span>
+							</a>
+						</li>
+						<li>
+							<a href="/pages/admin-portal/" class="app-sidebar-nav-link">
+								<i data-lucide="shield" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Admin portal</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="/pages/auth/" class="app-sidebar-nav-link">
+							<i data-lucide="log-in" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Auth</span>
+						</a>
+					</li>
+					<li>
+						<a href="/pages/emails/" class="app-sidebar-nav-link">
+							<i data-lucide="mail" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Emails</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Design system</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="#offcanvas-nav-sub-components" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="true" aria-controls="offcanvas-nav-sub-components" data-bs-toggle="collapse">
+								<i data-lucide="layout-grid" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Components</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="offcanvas-nav-sub-components" class="collapse show app-sidebar-nav-sublist">
+								<li><a href="/pages/components/" class="app-sidebar-nav-sublink">Overview</a></li>
+								<li><a href="/pages/components/buttons/" class="app-sidebar-nav-sublink">Buttons</a></li>
+								<li><a href="/pages/components/badges/" class="app-sidebar-nav-sublink">Badges</a></li>
+								<li><a href="/pages/components/modals/" class="app-sidebar-nav-sublink">Modals</a></li>
+								<li><a href="/pages/components/alerts/" class="app-sidebar-nav-sublink">Alerts</a></li>
+								<li><a href="/pages/components/tooltips/" class="app-sidebar-nav-sublink">Tooltips</a></li>
+								<li><a href="/pages/components/toasts/" class="app-sidebar-nav-sublink">Toasts</a></li>
+								<li><a href="/pages/components/callout-banners/" class="app-sidebar-nav-sublink">Callout banners</a></li>
+								<li><a href="/pages/components/stepper/" class="app-sidebar-nav-sublink">Stepper</a></li>
+								<li><a href="/pages/components/floating-nav/" class="app-sidebar-nav-sublink">Floating nav</a></li>
+								<li><a href="/pages/components/forms/" class="app-sidebar-nav-sublink">Forms</a></li>
+								<li><a href="/pages/components/description-lists/" class="app-sidebar-nav-sublink">Description lists</a></li>
+								<li><a href="/pages/components/checkout/" class="app-sidebar-nav-sublink" aria-current="page">Checkout</a></li>
+								<li><a href="/pages/components/tables/" class="app-sidebar-nav-sublink">Tables</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/pages/checkout/checkout.html" class="app-sidebar-nav-link">
+								<i data-lucide="credit-card" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Checkout</span>
+							</a>
+						</li>
+						<li>
+							<a href="/iconology.html" class="app-sidebar-nav-link">
+								<i data-lucide="shapes" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Iconology</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				</nav>
+			</div>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">AC</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Account</span>
+						<span class="app-sidebar-user-email">account@example.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#"><i data-lucide="user-round" aria-hidden="true"></i>Link</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Link</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Link</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+	<script src="/js/theme-init.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>

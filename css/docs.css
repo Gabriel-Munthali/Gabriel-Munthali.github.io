@@ -163,3 +163,78 @@
 	font-size: var(--fz-xs);
 	color: var(--text-gray-700);
 }
+
+/* Component docs (pages/components/) */
+.page-intro-eyebrow {
+	margin: 0 0 var(--space-xs);
+	font-size: var(--fz-xs);
+	font-weight: var(--fw-md);
+	line-height: var(--lg-md);
+	color: var(--text-gray-600);
+}
+
+.page-intro-eyebrow a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.page-intro-eyebrow a:hover {
+	color: var(--text-gray-900);
+	text-decoration: underline;
+}
+
+.page-intro-eyebrow a:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
+.component-docs-section {
+	margin-bottom: var(--space-3xl);
+}
+
+.component-docs-section-title {
+	margin: 0 0 var(--space-md);
+	font-size: var(--fz-md);
+	font-weight: var(--fw-lg);
+	color: var(--text-gray-900);
+}
+
+.component-docs-classes {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	max-width: 40rem;
+}
+
+.component-docs-classes li + li {
+	margin-top: var(--space-xs);
+}
+
+.component-docs-classes code {
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-size: var(--fz-sm);
+	color: var(--text-gray-900);
+}
+
+.component-docs-agent {
+	max-width: 40rem;
+	padding: var(--space-md);
+	background-color: var(--text-gray-100);
+	border: 1px solid var(--text-gray-200);
+	border-radius: var(--br-md);
+}
+
+.component-docs-agent ul {
+	margin: 0;
+	padding-left: 1.25rem;
+}
+
+.component-docs-agent li + li {
+	margin-top: var(--space-xs);
+}
+
+.component-docs-agent li {
+	font-size: var(--fz-sm);
+	line-height: 1.5;
+	color: var(--text-gray-800);
+}

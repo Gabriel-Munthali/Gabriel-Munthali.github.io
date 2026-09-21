@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Callout banners · Components</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="/css/responsive.css">
+	<link rel="stylesheet" href="/css/docs.css">
+</head>
+<body>
+	<div class="app-shell">
+		<aside class="app-sidebar d-none d-lg-flex flex-column" aria-label="Sidebar">
+			<header class="app-sidebar-brand">
+				<a href="/" class="app-sidebar-brand-link">
+					<img src="/img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<nav class="app-sidebar-nav" aria-label="Sidebar navigation">
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="/" class="app-sidebar-nav-link">
+							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Home</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Portals</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="/pages/merchant-portal/" class="app-sidebar-nav-link">
+								<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Merchant portal</span>
+							</a>
+						</li>
+						<li>
+							<a href="/pages/admin-portal/" class="app-sidebar-nav-link">
+								<i data-lucide="shield" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Admin portal</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="/pages/auth/" class="app-sidebar-nav-link">
+							<i data-lucide="log-in" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Auth</span>
+						</a>
+					</li>
+					<li>
+						<a href="/pages/emails/" class="app-sidebar-nav-link">
+							<i data-lucide="mail" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Emails</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Design system</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="#sidebar-nav-sub-components" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="true" aria-controls="sidebar-nav-sub-components" data-bs-toggle="collapse">
+								<i data-lucide="layout-grid" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Components</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="sidebar-nav-sub-components" class="collapse show app-sidebar-nav-sublist">
+								<li><a href="/pages/components/" class="app-sidebar-nav-sublink">Overview</a></li>
+								<li><a href="/pages/components/buttons/" class="app-sidebar-nav-sublink">Buttons</a></li>
+								<li><a href="/pages/components/badges/" class="app-sidebar-nav-sublink">Badges</a></li>
+								<li><a href="/pages/components/modals/" class="app-sidebar-nav-sublink">Modals</a></li>
+								<li><a href="/pages/components/alerts/" class="app-sidebar-nav-sublink">Alerts</a></li>
+								<li><a href="/pages/components/tooltips/" class="app-sidebar-nav-sublink">Tooltips</a></li>
+								<li><a href="/pages/components/toasts/" class="app-sidebar-nav-sublink">Toasts</a></li>
+								<li><a href="/pages/components/callout-banners/" class="app-sidebar-nav-sublink" aria-current="page">Callout banners</a></li>
+								<li><a href="/pages/components/stepper/" class="app-sidebar-nav-sublink">Stepper</a></li>
+								<li><a href="/pages/components/floating-nav/" class="app-sidebar-nav-sublink">Floating nav</a></li>
+								<li><a href="/pages/components/forms/" class="app-sidebar-nav-sublink">Forms</a></li>
+								<li><a href="/pages/components/description-lists/" class="app-sidebar-nav-sublink">Description lists</a></li>
+								<li><a href="/pages/components/checkout/" class="app-sidebar-nav-sublink">Checkout</a></li>
+								<li><a href="/pages/components/tables/" class="app-sidebar-nav-sublink">Tables</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/pages/checkout/checkout.html" class="app-sidebar-nav-link">
+								<i data-lucide="credit-card" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Checkout</span>
+							</a>
+						</li>
+						<li>
+							<a href="/iconology.html" class="app-sidebar-nav-link">
+								<i data-lucide="shapes" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Iconology</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+			</nav>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">AC</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Account</span>
+						<span class="app-sidebar-user-email">account@example.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#"><i data-lucide="user-round" aria-hidden="true"></i>Link</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Link</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Link</a></li>
+					</ul>
+				</div>
+			</footer>
+		</aside>
+		<main class="app-main">
+			<nav class="app-main-nav" aria-label="Main">
+				<div class="app-main-nav-start">
+					<button type="button" class="app-main-nav-toggle d-lg-none" data-bs-toggle="offcanvas"
+						data-bs-target="#appSidebarMenu" aria-controls="appSidebarMenu" aria-label="Open sidebar">
+						<i data-lucide="menu" class="app-main-nav-toggle-icon" aria-hidden="true"></i>
+					</button>
+					<nav class="app-main-nav-breadcrumb" aria-label="Breadcrumb">
+						<ol class="app-main-nav-breadcrumb-list">
+							<li><a href="/">Home</a></li>
+							<li><a href="/pages/components/">Components</a></li>
+							<li><span aria-current="page">Callout banners</span></li>
+						</ol>
+					</nav>
+				</div>
+			</nav>
+			<div class="app-content">
+				<div class="app-content-inner container-fluid">
+					<header class="page-intro">
+								<h1 class="page-intro-heading">Callout banners</h1>
+								<p class="page-intro-lede">Full-width notices for feature onboarding and contextual information. Dismissible banners remember your choice per id.</p>
+							</header>
+
+							<section class="component-docs-section" aria-labelledby="preview-heading">
+								<h2 id="preview-heading" class="component-docs-section-title">Preview</h2>
+								<div class="component-card">
+									<div class="d-flex flex-column gap-3">
+										<div class="callout-banner callout-banner-info" role="region" aria-label="Platform update">
+											<div class="callout-banner-inner">
+												<i data-lucide="info" class="callout-banner-icon" aria-hidden="true"></i>
+												<p class="callout-banner-text">
+													<strong>Scheduled maintenance:</strong> Payout processing may be delayed on Sunday between 2:00 and 4:00 AM CAT.
+												</p>
+											</div>
+										</div>
+										<div class="callout-banner callout-banner-primary" id="calloutBannerWebhooks" data-callout-banner-id="webhooks-onboarding" role="region" aria-label="Webhooks onboarding">
+											<div class="callout-banner-inner">
+												<i data-lucide="webhook" class="callout-banner-icon" aria-hidden="true"></i>
+												<p class="callout-banner-text">
+													<strong>Webhooks:</strong> Get notified when payouts settle.
+													<a href="#">Learn more</a>
+												</p>
+											</div>
+											<button type="button" class="callout-banner-close" aria-label="Dismiss webhooks notice">
+												<i data-lucide="circle-x" aria-hidden="true"></i>
+											</button>
+										</div>
+										<div class="callout-banner callout-banner-primary" id="calloutBannerRtp" data-callout-banner-id="rtp-onboarding" role="region" aria-label="Request to Pay onboarding">
+											<div class="callout-banner-inner">
+												<i data-lucide="banknote" class="callout-banner-icon" aria-hidden="true"></i>
+												<p class="callout-banner-text">
+													<strong>Request to Pay:</strong> Send payment requests directly to your customers.
+												</p>
+												<a href="#" class="button button-sm button-primary callout-banner-action">Set up Request to Pay</a>
+											</div>
+											<button type="button" class="callout-banner-close" aria-label="Dismiss Request to Pay notice">
+												<i data-lucide="circle-x" aria-hidden="true"></i>
+											</button>
+										</div>
+										<div class="callout-banner callout-banner-warning" id="calloutBannerSecurity" data-callout-banner-id="security-notice" role="region" aria-label="Security notice">
+											<div class="callout-banner-inner">
+												<i data-lucide="alert-triangle" class="callout-banner-icon" aria-hidden="true"></i>
+												<p class="callout-banner-text">
+													<strong>Stay safe:</strong> Never share your OneKhusa PIN or codes with others. We will never ask you for this information.
+												</p>
+											</div>
+											<button type="button" class="callout-banner-close" aria-label="Dismiss security notice">
+												<i data-lucide="circle-x" aria-hidden="true"></i>
+											</button>
+										</div>
+									</div>
+								</div>
+							</section>
+
+							<section class="component-docs-section" aria-labelledby="usage-heading">
+								<h2 id="usage-heading" class="component-docs-section-title">Usage</h2>
+								<ul class="component-docs-classes">
+									<li><code>.callout-banner</code></li>
+									<li><code>.callout-banner-info / .callout-banner-primary / .callout-banner-warning</code></li>
+									<li><code>.callout-banner-inner / .callout-banner-icon / .callout-banner-text</code></li>
+									<li><code>.callout-banner-close / .callout-banner-action</code></li>
+									<li><code>data-callout-banner-id</code></li>
+								</ul>
+							</section>
+
+							<section class="component-docs-section" aria-labelledby="agent-heading">
+								<h2 id="agent-heading" class="component-docs-section-title">Agent instruction</h2>
+								<div class="component-docs-agent">
+									<ul>
+										<li>Use for page-level onboarding or persistent context, not for form field errors.</li>
+										<li>Dismissible banners must include a unique <code>data-callout-banner-id</code>.</li>
+										<li>Close icon is <code>circle-x</code> on <code>.callout-banner-close</code>.</li>
+										<li>Optional CTA uses <code>.callout-banner-action</code> with a project button class.</li>
+										<li>Variants: <code>callout-banner-info</code>, <code>callout-banner-primary</code>, <code>callout-banner-warning</code>.</li>
+									</ul>
+								</div>
+							</section>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<div class="offcanvas offcanvas-start app-sidebar-offcanvas" tabindex="-1" id="appSidebarMenu"
+		aria-label="Sidebar">
+		<div class="offcanvas-header">
+			<header class="app-sidebar-brand app-sidebar-offcanvas-brand">
+				<a href="/" class="app-sidebar-brand-link">
+					<img src="/img/khusa-logos/onekhusa-logo.svg" alt="Khusa" class="app-sidebar-brand-logo"
+						width="120" height="28">
+				</a>
+			</header>
+			<button type="button" class="ms-auto flex-shrink-0" data-bs-dismiss="offcanvas" aria-label="Close"><i
+					data-lucide="x"></i></button>
+		</div>
+		<div class="offcanvas-body app-sidebar-offcanvas-body">
+			<div class="app-sidebar-offcanvas-scroll">
+				<nav class="app-sidebar-nav app-sidebar-offcanvas-nav" aria-label="Sidebar navigation">
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="/" class="app-sidebar-nav-link">
+							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Home</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Portals</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="/pages/merchant-portal/" class="app-sidebar-nav-link">
+								<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Merchant portal</span>
+							</a>
+						</li>
+						<li>
+							<a href="/pages/admin-portal/" class="app-sidebar-nav-link">
+								<i data-lucide="shield" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Admin portal</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="/pages/auth/" class="app-sidebar-nav-link">
+							<i data-lucide="log-in" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Auth</span>
+						</a>
+					</li>
+					<li>
+						<a href="/pages/emails/" class="app-sidebar-nav-link">
+							<i data-lucide="mail" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Emails</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Design system</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="#offcanvas-nav-sub-components" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="true" aria-controls="offcanvas-nav-sub-components" data-bs-toggle="collapse">
+								<i data-lucide="layout-grid" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Components</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="offcanvas-nav-sub-components" class="collapse show app-sidebar-nav-sublist">
+								<li><a href="/pages/components/" class="app-sidebar-nav-sublink">Overview</a></li>
+								<li><a href="/pages/components/buttons/" class="app-sidebar-nav-sublink">Buttons</a></li>
+								<li><a href="/pages/components/badges/" class="app-sidebar-nav-sublink">Badges</a></li>
+								<li><a href="/pages/components/modals/" class="app-sidebar-nav-sublink">Modals</a></li>
+								<li><a href="/pages/components/alerts/" class="app-sidebar-nav-sublink">Alerts</a></li>
+								<li><a href="/pages/components/tooltips/" class="app-sidebar-nav-sublink">Tooltips</a></li>
+								<li><a href="/pages/components/toasts/" class="app-sidebar-nav-sublink">Toasts</a></li>
+								<li><a href="/pages/components/callout-banners/" class="app-sidebar-nav-sublink" aria-current="page">Callout banners</a></li>
+								<li><a href="/pages/components/stepper/" class="app-sidebar-nav-sublink">Stepper</a></li>
+								<li><a href="/pages/components/floating-nav/" class="app-sidebar-nav-sublink">Floating nav</a></li>
+								<li><a href="/pages/components/forms/" class="app-sidebar-nav-sublink">Forms</a></li>
+								<li><a href="/pages/components/description-lists/" class="app-sidebar-nav-sublink">Description lists</a></li>
+								<li><a href="/pages/components/checkout/" class="app-sidebar-nav-sublink">Checkout</a></li>
+								<li><a href="/pages/components/tables/" class="app-sidebar-nav-sublink">Tables</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="/pages/checkout/checkout.html" class="app-sidebar-nav-link">
+								<i data-lucide="credit-card" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Checkout</span>
+							</a>
+						</li>
+						<li>
+							<a href="/iconology.html" class="app-sidebar-nav-link">
+								<i data-lucide="shapes" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Iconology</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				</nav>
+			</div>
+			<footer class="app-sidebar-footer">
+				<div class="app-sidebar-user">
+					<div class="app-sidebar-user-avatar" aria-hidden="true">AC</div>
+					<div class="app-sidebar-user-meta">
+						<span class="app-sidebar-user-name">Account</span>
+						<span class="app-sidebar-user-email">account@example.com</span>
+					</div>
+				</div>
+				<div class="dropup app-sidebar-user-dropdown">
+					<button type="button" class="btn btn-sm app-sidebar-user-menu" data-bs-toggle="dropdown"
+						data-bs-display="static" aria-expanded="false" aria-label="Account menu">
+						<i data-lucide="ellipsis" class="app-sidebar-user-menu-icon" aria-hidden="true"></i>
+					</button>
+					<ul class="dropdown-menu dropdown-menu-end">
+						<li><a class="dropdown-item" href="#"><i data-lucide="user-round" aria-hidden="true"></i>Link</a></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="key-round" aria-hidden="true"></i>Link</a></li>
+						<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item" href="#"><i data-lucide="log-out" aria-hidden="true"></i>Link</a></li>
+					</ul>
+				</div>
+			</footer>
+		</div>
+	</div>
+
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+		crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+	<script src="/js/theme-init.js"></script>
+	<script src="/js/main.js"></script>
+</body>
+</html>

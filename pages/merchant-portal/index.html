@@ -342,6 +342,16 @@
 								<div class="col">
 									<div class="app-dashboard-stat component-card mb-0">
 										<div class="app-dashboard-stat-head">
+											<div class="app-dashboard-stat-label text-secondary">Sandbox balance</div>
+											<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary" aria-hidden="true"><i data-lucide="wallet"></i></span>
+										</div>
+										<div class="app-dashboard-stat-value">MWK 4,200,000</div>
+										<div class="app-dashboard-stat-meta text-tertiary">Merchant KH-8849201</div>
+									</div>
+								</div>
+								<div class="col">
+									<div class="app-dashboard-stat component-card mb-0">
+										<div class="app-dashboard-stat-head">
 											<div class="app-dashboard-stat-label text-secondary">Disbursements (30 days)</div>
 											<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary" aria-hidden="true"><i data-lucide="send"></i></span>
 										</div>
@@ -357,16 +367,6 @@
 										</div>
 										<div class="app-dashboard-stat-value">MWK 8,902,450</div>
 										<div class="app-dashboard-stat-meta text-tertiary">Request to Pay &amp; settled TANs</div>
-									</div>
-								</div>
-								<div class="col">
-									<div class="app-dashboard-stat component-card mb-0">
-										<div class="app-dashboard-stat-head">
-											<div class="app-dashboard-stat-label text-secondary">Sandbox balance</div>
-											<span class="app-dashboard-stat-icon app-dashboard-stat-icon-primary" aria-hidden="true"><i data-lucide="wallet"></i></span>
-										</div>
-										<div class="app-dashboard-stat-value">MWK 4,200,000</div>
-										<div class="app-dashboard-stat-meta text-tertiary">Merchant KH-8849201</div>
 									</div>
 								</div>
 							</div>
@@ -819,52 +819,60 @@
 							<div class="base-stepper-panel" data-step="3" hidden>
 								<h2 class="sandbox-welcome-panel-heading">Add a user to initiate and approve</h2>
 								<p class="text-secondary sandbox-welcome-panel-lede">
-									Invite a teammate who can initiate payments and approve them, or choose a profile that covers both (such as Finance Officer or Merchant Administrator).
+									Invite a teammate who can initiate payments and approve them, or choose Merchant Administrator for full access.
 								</p>
 								<form id="sandbox-welcome-user-form" class="sandbox-welcome-form" action="#" method="post" aria-label="Add team user">
 									<div class="form-group-row">
 										<div class="form-group form-group-row-item">
-											<label for="sandbox-welcome-user-first-name">First Name</label>
+											<label for="sandbox-welcome-user-first-name">First Name <span class="text-danger" aria-hidden="true">*</span></label>
 											<div class="form-group-input-wrapper">
 												<i data-lucide="user" aria-hidden="true"></i>
 												<input type="text" class="form-control" id="sandbox-welcome-user-first-name" name="firstName"
-													placeholder="Enter first name" autocomplete="given-name">
+													placeholder="Enter first name" autocomplete="given-name" required>
 											</div>
 										</div>
 										<div class="form-group form-group-row-item">
-											<label for="sandbox-welcome-user-last-name">Last Name</label>
+											<label for="sandbox-welcome-user-last-name">Last Name <span class="text-danger" aria-hidden="true">*</span></label>
 											<div class="form-group-input-wrapper">
 												<i data-lucide="user" aria-hidden="true"></i>
 												<input type="text" class="form-control" id="sandbox-welcome-user-last-name" name="lastName"
-													placeholder="Enter last name" autocomplete="family-name">
+													placeholder="Enter last name" autocomplete="family-name" required>
 											</div>
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="sandbox-welcome-user-phone">Phone Number</label>
+										<label for="sandbox-welcome-user-phone">Phone Number <span class="text-danger" aria-hidden="true">*</span></label>
 										<div class="form-group-input-wrapper">
 											<i data-lucide="phone" aria-hidden="true"></i>
-											<input type="tel" class="form-control" id="sandbox-welcome-user-phone" name="phone"
-												placeholder="Enter phone number" autocomplete="tel">
+											<input type="tel" class="form-control" id="sandbox-welcome-user-phone" name="phoneNumber"
+												placeholder="Enter phone number" autocomplete="tel" required>
 										</div>
 									</div>
 									<div class="form-group">
-										<label for="sandbox-welcome-user-email">Email Address</label>
+										<label for="sandbox-welcome-user-email">Email Address <span class="text-danger" aria-hidden="true">*</span></label>
 										<div class="form-group-input-wrapper">
 											<i data-lucide="mail" aria-hidden="true"></i>
-											<input type="email" class="form-control" id="sandbox-welcome-user-email" name="email"
-												placeholder="you@company.com" autocomplete="email">
+											<input type="email" class="form-control" id="sandbox-welcome-user-email" name="emailAddress"
+												placeholder="you@company.com" autocomplete="email" required>
 										</div>
 									</div>
 									<div class="form-group mb-0">
-										<label for="sandbox-welcome-user-profile">User Profile</label>
+										<label for="sandbox-welcome-user-role">
+											User Profile <span class="text-danger" aria-hidden="true">*</span>
+											<button type="button" class="form-label-help" data-bs-toggle="tooltip"
+												data-bs-custom-class="tooltip-khusa"
+												title="Merchant Administrator has full access. Merchant Operator handles day-to-day payments. Merchant Viewer is read-only."
+												aria-label="More about user profile">
+												<i data-lucide="circle-help" aria-hidden="true"></i>
+											</button>
+										</label>
 										<div class="form-group-input-wrapper">
 											<i data-lucide="shield" aria-hidden="true"></i>
-											<select class="form-control with-icon-right" id="sandbox-welcome-user-profile" name="userProfile">
+											<select class="form-control with-icon-right" id="sandbox-welcome-user-role" name="roleId" required>
 												<option value="" disabled selected>Select user profile</option>
-												<option value="merchant-administrator">Merchant Administrator</option>
-												<option value="finance-officer">Finance Officer</option>
-												<option value="viewer">Viewer</option>
+												<option value="MERC_ADMIN">Merchant Administrator</option>
+												<option value="MERC_OPR">Merchant Operator</option>
+												<option value="MERC_VIEW">Merchant Viewer</option>
 											</select>
 											<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
 										</div>

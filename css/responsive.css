@@ -27,7 +27,13 @@
 
 	.form-group-row {
 		grid-template-columns: 1fr;
+		grid-template-rows: none;
 		gap: var(--space-lg);
+	}
+
+	.form-group-row .form-group-row-item {
+		display: block;
+		grid-row: auto;
 	}
 }
 

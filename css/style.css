@@ -1106,8 +1106,23 @@ mark {
 .form-group-row {
 	display: grid;
 	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: var(--space-md);
+	column-gap: var(--space-md);
+	row-gap: 0;
 	margin-bottom: var(--space-lg);
+	align-items: start;
+}
+
+@supports (grid-template-rows: subgrid) {
+	.form-group-row {
+		grid-template-rows: auto auto;
+	}
+
+	.form-group-row .form-group-row-item {
+		display: grid;
+		grid-template-rows: subgrid;
+		grid-row: span 2;
+		align-content: start;
+	}
 }
 
 .form-group-row .form-group-row-item {
@@ -1128,6 +1143,8 @@ mark {
 	align-items: center;
 	justify-content: center;
 	flex-shrink: 0;
+	width: 1em;
+	height: 1em;
 	padding: 0;
 	border: 0;
 	background: transparent;

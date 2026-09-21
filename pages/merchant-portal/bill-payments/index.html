@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Connectors</title>
+	<title>Bill payments</title>
 
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
 		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -110,7 +110,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="../bill-payments/" class="app-sidebar-nav-link">
+							<a href="./" class="app-sidebar-nav-link" aria-current="page">
 								<i data-lucide="receipt-text" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 								<span class="app-sidebar-nav-link-label">Bill payments</span>
 							</a>
@@ -135,7 +135,7 @@
 							</ul>
 						</li>
 						<li>
-							<a href="./" class="app-sidebar-nav-link" aria-current="page">
+							<a href="../connectors/" class="app-sidebar-nav-link">
 								<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 								<span class="app-sidebar-nav-link-label">Connectors</span>
 							</a>
@@ -190,7 +190,7 @@
 					<nav class="app-main-nav-breadcrumb" aria-label="Breadcrumb">
 						<ol class="app-main-nav-breadcrumb-list">
 							<li><a href="../index.html">Dashboard</a></li>
-							<li><span aria-current="page">Connectors</span></li>
+							<li><span aria-current="page">Bill payments</span></li>
 						</ol>
 					</nav>
 				</div>
@@ -321,254 +321,66 @@
 			</nav>
 			<div class="app-content">
 				<div class="app-content-inner container-fluid">
-					<section class="page-intro" aria-labelledby="connectors-intro-heading">
+					<section class="page-intro" aria-labelledby="bill-payments-intro-heading">
 						<div class="page-intro-inner">
 							<div class="page-intro-text">
-								<h1 id="connectors-intro-heading" class="page-intro-heading">Connectors</h1>
-								<p class="page-intro-lede">Integrate with over 10 connectors with less effort to process payments.</p>
+								<h1 id="bill-payments-intro-heading" class="page-intro-heading">Bill payments</h1>
+								<p class="page-intro-lede">Pay utility and service bills from your merchant account balance. Bill types vary by service provider.</p>
 							</div>
 						</div>
 					</section>
-					<div class="table-responsive">
-						<table class="table table-bordered mb-0">
-							<thead>
-								<tr>
-									<th scope="col">Institution</th>
-									<th scope="col"><i data-lucide="loader" aria-hidden="true"></i> Status</th>
-									<th scope="col">Disbursement</th>
-									<th scope="col">Collection</th>
-									<th scope="col"><i data-lucide="mouse-pointer-click" aria-hidden="true"></i> Action</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<span class="label-with-avatar">
-											<span class="avatar avatar-sm">
-												<img src="../../../img/brand-logo/tnm-mpamba-brand-logo.svg" alt="TNM Mpamba" width="32"
-													height="32">
-											</span>
-											<span class="label-with-avatar-text">TNM Mpamba</span>
-										</span>
-									</td>
-									<td><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td>
-										<button type="button" class="button button-sm button-primary" data-bs-toggle="offcanvas"
-											data-bs-target="#offcanvasConnectorDetails" aria-controls="offcanvasConnectorDetails">
-											<i data-lucide="eye" aria-hidden="true"></i> View
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<span class="label-with-avatar">
-											<span class="avatar avatar-sm">
-												<img src="../../../img/brand-logo/airtel-money-brand-logo.svg" alt="Airtel Money" width="32"
-													height="32">
-											</span>
-											<span class="label-with-avatar-text">Airtel Money</span>
-										</span>
-									</td>
-									<td><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td>
-										<button type="button" class="button button-sm button-primary" data-bs-toggle="offcanvas"
-											data-bs-target="#offcanvasConnectorDetails" aria-controls="offcanvasConnectorDetails">
-											<i data-lucide="eye" aria-hidden="true"></i> View
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<span class="label-with-avatar">
-											<span class="avatar avatar-sm">
-												<img src="../../../img/brand-logo/national-bank-brand-logo.svg" alt="National Bank of Malawi"
-													width="32" height="32">
-											</span>
-											<span class="label-with-avatar-text">National Bank of Malawi</span>
-										</span>
-									</td>
-									<td><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td>
-										<button type="button" class="button button-sm button-primary" data-bs-toggle="offcanvas"
-											data-bs-target="#offcanvasConnectorDetails" aria-controls="offcanvasConnectorDetails">
-											<i data-lucide="eye" aria-hidden="true"></i> View
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<span class="label-with-avatar">
-											<span class="avatar avatar-sm">
-												<img src="../../../img/brand-logo/national-bank-brand-logo.svg" alt="FDH Bank" width="32"
-													height="32">
-											</span>
-											<span class="label-with-avatar-text">FDH Bank</span>
-										</span>
-									</td>
-									<td><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td><span class="text-danger" role="img" aria-label="Not supported"><i data-lucide="x" aria-hidden="true"></i></span></td>
-									<td>
-										<button type="button" class="button button-sm button-primary" data-bs-toggle="offcanvas"
-											data-bs-target="#offcanvasConnectorDetails" aria-controls="offcanvasConnectorDetails">
-											<i data-lucide="eye" aria-hidden="true"></i> View
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<span class="label-with-avatar">
-											<span class="avatar avatar-sm">
-												<img src="../../../img/brand-logo/standard-bank-brand-logo.svg" alt="Standard Bank Malawi"
-													width="32" height="32">
-											</span>
-											<span class="label-with-avatar-text">Standard Bank Malawi</span>
-										</span>
-									</td>
-									<td><span class="badge badge-md"><i data-lucide="zap-off" aria-hidden="true"></i> Inactive</span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td>
-										<button type="button" class="button button-sm button-primary" data-bs-toggle="offcanvas"
-											data-bs-target="#offcanvasConnectorDetails" aria-controls="offcanvasConnectorDetails">
-											<i data-lucide="eye" aria-hidden="true"></i> View
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<span class="label-with-avatar">
-											<span class="avatar avatar-sm">
-												<img src="../../../img/brand-logo/standard-bank-brand-logo.svg" alt="MyBucks" width="32"
-													height="32">
-											</span>
-											<span class="label-with-avatar-text">MyBucks</span>
-										</span>
-									</td>
-									<td><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></td>
-									<td><span class="text-danger" role="img" aria-label="Not supported"><i data-lucide="x" aria-hidden="true"></i></span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td>
-										<button type="button" class="button button-sm button-primary" data-bs-toggle="offcanvas"
-											data-bs-target="#offcanvasConnectorDetails" aria-controls="offcanvasConnectorDetails">
-											<i data-lucide="eye" aria-hidden="true"></i> View
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<span class="label-with-avatar">
-											<span class="avatar avatar-sm">
-												<img src="../../../img/brand-logo/tnm-mpamba-brand-logo.svg" alt="Ecobank Malawi" width="32"
-													height="32">
-											</span>
-											<span class="label-with-avatar-text">Ecobank Malawi</span>
-										</span>
-									</td>
-									<td><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td>
-										<button type="button" class="button button-sm button-primary" data-bs-toggle="offcanvas"
-											data-bs-target="#offcanvasConnectorDetails" aria-controls="offcanvasConnectorDetails">
-											<i data-lucide="eye" aria-hidden="true"></i> View
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<span class="label-with-avatar">
-											<span class="avatar avatar-sm">
-												<img src="../../../img/brand-logo/airtel-money-brand-logo.svg" alt="NBS Bank" width="32"
-													height="32">
-											</span>
-											<span class="label-with-avatar-text">NBS Bank</span>
-										</span>
-									</td>
-									<td><span class="badge badge-md"><i data-lucide="zap-off" aria-hidden="true"></i> Inactive</span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td><span class="text-danger" role="img" aria-label="Not supported"><i data-lucide="x" aria-hidden="true"></i></span></td>
-									<td>
-										<button type="button" class="button button-sm button-primary" data-bs-toggle="offcanvas"
-											data-bs-target="#offcanvasConnectorDetails" aria-controls="offcanvasConnectorDetails">
-											<i data-lucide="eye" aria-hidden="true"></i> View
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<span class="label-with-avatar">
-											<span class="avatar avatar-sm">
-												<img src="../../../img/brand-logo/airtel-money-brand-logo.svg" alt="First Capital Bank"
-													width="32" height="32">
-											</span>
-											<span class="label-with-avatar-text">First Capital Bank</span>
-										</span>
-									</td>
-									<td><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></td>
-									<td><span class="text-danger" role="img" aria-label="Not supported"><i data-lucide="x" aria-hidden="true"></i></span></td>
-									<td><span class="text-danger" role="img" aria-label="Not supported"><i data-lucide="x" aria-hidden="true"></i></span></td>
-									<td>
-										<button type="button" class="button button-sm button-primary" data-bs-toggle="offcanvas"
-											data-bs-target="#offcanvasConnectorDetails" aria-controls="offcanvasConnectorDetails">
-											<i data-lucide="eye" aria-hidden="true"></i> View
-										</button>
-									</td>
-								</tr>
-								<tr>
-									<td>
-										<span class="label-with-avatar">
-											<span class="avatar avatar-sm">
-												<img src="../../../img/brand-logo/tnm-mpamba-brand-logo.svg" alt="Centenary Bank" width="32"
-													height="32">
-											</span>
-											<span class="label-with-avatar-text">Centenary Bank</span>
-										</span>
-									</td>
-									<td><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></td>
-									<td><span class="text-success" role="img" aria-label="Supported"><i data-lucide="check" aria-hidden="true"></i></span></td>
-									<td><span class="text-danger" role="img" aria-label="Not supported"><i data-lucide="x" aria-hidden="true"></i></span></td>
-									<td>
-										<button type="button" class="button button-sm button-primary" data-bs-toggle="offcanvas"
-											data-bs-target="#offcanvasConnectorDetails" aria-controls="offcanvasConnectorDetails">
-											<i data-lucide="eye" aria-hidden="true"></i> View
-										</button>
-									</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td colspan="5">
-										<div class="table-footer d-flex flex-wrap justify-content-between align-items-center gap-2">
-											<p class="table-footer-text mb-0">Showing 1 to 10 of 10</p>
-											<nav aria-label="Connectors table pagination">
-												<ul class="pagination mb-0">
-													<li class="page-item disabled">
-														<a class="page-link button button-xs" href="#" tabindex="-1" aria-disabled="true"><i
-																data-lucide="chevron-left" aria-hidden="true"></i>Prev</a>
-													</li>
-													<li class="page-item active">
-														<a class="page-link button button-xs" href="#" aria-current="page">1</a>
-													</li>
-													<li class="page-item disabled">
-														<a class="page-link button button-xs" href="#" tabindex="-1"
-															aria-disabled="true">Next<i data-lucide="chevron-right"
-																aria-hidden="true"></i></a>
-													</li>
-												</ul>
-											</nav>
+					<section class="component-card p-4 mb-4" aria-labelledby="bill-payments-onboarding-heading">
+						<div class="d-flex flex-column gap-3">
+							<div>
+								<h2 id="bill-payments-onboarding-heading" class="h4 mb-2">Pay bills from your merchant balance</h2>
+								<p class="mb-0 text-secondary">Bill payments is an add-on for electricity, water, TV, and similar bills. It generally does not incur transaction fees. Completed payments appear under Disbursements → Single Transactions.</p>
+							</div>
+							<div class="row g-3">
+								<div class="col-12 col-lg-4">
+									<article class="guide-card h-100">
+										<div class="guide-card-body">
+											<span class="entity-card-icon" aria-hidden="true"><i data-lucide="receipt-text"></i></span>
+											<h3 class="guide-card-title">What you can pay</h3>
+											<p class="guide-card-text mb-0">Electricity, water, TV, and more. Offerings vary by service provider. Example: ESCOM Prepaid uses service code <code class="app-dashboard-code">101</code>.</p>
 										</div>
-									</td>
-								</tr>
-							</tfoot>
-						</table>
-					</div>
+									</article>
+								</div>
+								<div class="col-12 col-lg-4">
+									<article class="guide-card h-100">
+										<div class="guide-card-body">
+											<span class="entity-card-icon" aria-hidden="true"><i data-lucide="list-ordered"></i></span>
+											<h3 class="guide-card-title">How it works</h3>
+											<ol class="guide-card-list mb-0">
+												<li>Choose the service code</li>
+												<li>Enter the service account number</li>
+												<li>Provide transaction details</li>
+												<li>Review the provider response</li>
+											</ol>
+										</div>
+									</article>
+								</div>
+								<div class="col-12 col-lg-4">
+									<article class="guide-card h-100">
+										<div class="guide-card-body">
+											<span class="entity-card-icon" aria-hidden="true"><i data-lucide="send"></i></span>
+											<h3 class="guide-card-title">After you pay</h3>
+											<p class="guide-card-text mb-0">A disbursement row appears under Disbursements → Single Transactions, labelled as a bill payment (for example ESCOM bill payment).</p>
+										</div>
+									</article>
+								</div>
+							</div>
+							<div class="d-flex flex-wrap gap-2">
+								<button type="button" class="button button-primary button-md" data-bs-toggle="offcanvas"
+									data-bs-target="#offcanvasPayBill" aria-controls="offcanvasPayBill">
+									<i data-lucide="receipt-text" aria-hidden="true"></i> Pay a bill
+								</button>
+								<button type="button" class="button button-outline button-md" data-bs-toggle="modal"
+									data-bs-target="#modalBillPaymentsGetStarted" aria-controls="modalBillPaymentsGetStarted">
+									<i data-lucide="list-checks" aria-hidden="true"></i> Learn what to prepare
+								</button>
+							</div>
+						</div>
+					</section>
 				</div>
 			</div>
 		</main>
@@ -775,7 +587,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="../bill-payments/" class="app-sidebar-nav-link">
+								<a href="./" class="app-sidebar-nav-link" aria-current="page">
 									<i data-lucide="receipt-text" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 									<span class="app-sidebar-nav-link-label">Bill payments</span>
 								</a>
@@ -800,7 +612,7 @@
 								</ul>
 							</li>
 							<li>
-								<a href="./" class="app-sidebar-nav-link" aria-current="page">
+								<a href="../connectors/" class="app-sidebar-nav-link">
 									<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 									<span class="app-sidebar-nav-link-label">Connectors</span>
 								</a>
@@ -848,55 +660,147 @@
 		</div>
 	</div>
 
-	<div class="offcanvas offcanvas-end fade" id="offcanvasConnectorDetails" tabindex="-1"
-		aria-labelledby="offcanvasConnectorDetailsTitle">
+	<div class="modal fade" id="modalBillPaymentsGetStarted" tabindex="-1" role="dialog"
+		aria-labelledby="modalBillPaymentsGetStartedLabel" aria-describedby="modalBillPaymentsGetStartedDescription"
+		aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-size-md">
+			<div class="modal-content">
+				<div class="modal-header">
+					<div class="modal-header-leading modal-header-leading--stacked">
+						<span class="modal-leading-icon" aria-hidden="true">
+							<span class="modal-leading-icon-main">
+								<i data-lucide="receipt-text"></i>
+							</span>
+						</span>
+						<h1 class="modal-title" id="modalBillPaymentsGetStartedLabel">What to prepare</h1>
+					</div>
+				</div>
+				<div class="modal-body">
+					<p id="modalBillPaymentsGetStartedDescription" class="text-secondary">Gather these before you pay a bill from your merchant account balance. Bill payments generally do not incur transaction fees.</p>
+					<ul class="app-dashboard-checklist list-unstyled mb-0">
+						<li>
+							<span class="app-dashboard-checklist-icon text-primary" aria-hidden="true"><i data-lucide="square-check"></i></span>
+							<span class="app-dashboard-checklist-body">
+								<span class="app-dashboard-checklist-title">Sufficient balance in the merchant account</span>
+							</span>
+						</li>
+						<li>
+							<span class="app-dashboard-checklist-icon text-primary" aria-hidden="true"><i data-lucide="square-check"></i></span>
+							<span class="app-dashboard-checklist-body">
+								<span class="app-dashboard-checklist-title">Service code for the provider (example: <code class="app-dashboard-code">101</code> for ESCOM Prepaid)</span>
+							</span>
+						</li>
+						<li>
+							<span class="app-dashboard-checklist-icon text-primary" aria-hidden="true"><i data-lucide="square-check"></i></span>
+							<span class="app-dashboard-checklist-body">
+								<span class="app-dashboard-checklist-title">Service account number (example: meter number for ESCOM Prepaid)</span>
+							</span>
+						</li>
+						<li>
+							<span class="app-dashboard-checklist-icon text-primary" aria-hidden="true"><i data-lucide="square-check"></i></span>
+							<span class="app-dashboard-checklist-body">
+								<span class="app-dashboard-checklist-title">Transaction details needed to complete the payment</span>
+							</span>
+						</li>
+						<li>
+							<span class="app-dashboard-checklist-icon text-primary" aria-hidden="true"><i data-lucide="square-check"></i></span>
+							<span class="app-dashboard-checklist-body">
+								<span class="app-dashboard-checklist-title">After success, find the row under Disbursements → Single Transactions (labelled as a bill payment, for example ESCOM bill payment)</span>
+							</span>
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="button button-primary button-md" data-bs-dismiss="modal">
+						<i data-lucide="thumbs-up" aria-hidden="true"></i> Got it
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="offcanvas offcanvas-end fade offcanvas-single-add" id="offcanvasPayBill" tabindex="-1"
+		data-bs-focus="false" aria-labelledby="offcanvasPayBillTitle">
 		<div class="offcanvas-header">
-			<h2 class="offcanvas-title" id="offcanvasConnectorDetailsTitle">Connector details</h2>
+			<h2 class="offcanvas-title" id="offcanvasPayBillTitle">Pay a bill</h2>
 			<button type="button" data-bs-dismiss="offcanvas" aria-label="Close">
 				<i data-lucide="x" aria-hidden="true"></i>
 			</button>
 		</div>
 		<div class="offcanvas-body offcanvas-body--sections">
-			<section class="offcanvas-section" aria-labelledby="offcanvas-connector-summary-heading">
-				<div class="offcanvas-section-row">
-					<div class="label-with-avatar min-w-0 flex-grow-1">
-						<span class="avatar avatar-lg">
-							<img src="../../../img/brand-logo/national-bank-brand-logo.svg" alt="National Bank of Malawi" width="48"
-								height="48">
+			<form id="offcanvas-pay-bill-form" class="offcanvas-single-add-form" action="#" method="post"
+				aria-label="Pay a bill">
+				<section class="offcanvas-section" aria-labelledby="offcanvas-pay-bill-merchant-heading">
+					<h3 class="offcanvas-section-title" id="offcanvas-pay-bill-merchant-heading">Merchant</h3>
+					<p class="offcanvas-section-lede">Merchant account balance used for this bill payment</p>
+					<div class="drawer-account">
+						<span class="app-main-nav-merchant-avatar" aria-hidden="true">
+							<i data-lucide="store" class="app-main-nav-merchant-icon"></i>
 						</span>
-						<h3 class="offcanvas-section-title mb-0" id="offcanvas-connector-summary-heading">National Bank of Malawi</h3>
+						<span class="drawer-account-meta">
+							<span class="drawer-account-name">MERCHANT SANDBOX</span>
+							<span class="drawer-account-detail">Account number: <code
+									class="app-dashboard-code">73734964</code></span>
+						</span>
 					</div>
-					<span class="badge badge-md badge-success flex-shrink-0"><i data-lucide="zap" aria-hidden="true"></i> Active</span>
-				</div>
-			</section>
-			<section class="offcanvas-section" aria-labelledby="offcanvas-connector-details-heading">
-				<h3 class="visually-hidden" id="offcanvas-connector-details-heading">Connector information</h3>
-				<p class="offcanvas-section-lede">Bank connector for disbursements and collections through the National Bank of Malawi network.</p>
-				<dl class="description-list mb-0">
-					<div class="description-list-row">
-						<dt><i data-lucide="hash" aria-hidden="true"></i> Connector ID</dt>
-						<dd>CONN-00124</dd>
+				</section>
+				<section class="offcanvas-section" aria-labelledby="offcanvas-pay-bill-service-heading">
+					<h3 class="offcanvas-section-title" id="offcanvas-pay-bill-service-heading">Service</h3>
+					<p class="offcanvas-section-lede">Provider and account for this bill</p>
+					<div class="form-group">
+						<label for="offcanvas-pay-bill-service-code">Service provider</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="receipt-text" aria-hidden="true"></i>
+							<select class="form-control with-icon-right" id="offcanvas-pay-bill-service-code"
+								name="service-code" required>
+								<option value="" selected disabled>Select service provider</option>
+								<option value="101">ESCOM Prepaid (101)</option>
+							</select>
+							<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
+						</div>
 					</div>
-					<div class="description-list-row">
-						<dt><i data-lucide="rectangle-ellipsis" aria-hidden="true"></i> Connector code</dt>
-						<dd><code class="app-dashboard-code">nbm</code></dd>
+					<div class="form-group mb-0">
+						<label for="offcanvas-pay-bill-service-account">Service account number</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="hash" aria-hidden="true"></i>
+							<input type="text" class="form-control" id="offcanvas-pay-bill-service-account"
+								name="service-account" placeholder="Enter meter or account number" autocomplete="off"
+								required>
+						</div>
 					</div>
-					<div class="description-list-row">
-						<dt><i data-lucide="landmark" aria-hidden="true"></i> Channel</dt>
-						<dd>Bank</dd>
+				</section>
+				<section class="offcanvas-section" aria-labelledby="offcanvas-pay-bill-payment-heading">
+					<h3 class="offcanvas-section-title" id="offcanvas-pay-bill-payment-heading">Payment</h3>
+					<p class="offcanvas-section-lede">Amount and references for this bill payment</p>
+					<div class="form-group">
+						<label for="offcanvas-pay-bill-amount">Transaction amount (MWK)</label>
+						<div class="form-group-input-wrapper">
+							<i data-lucide="coins" aria-hidden="true"></i>
+							<input type="text" class="form-control" id="offcanvas-pay-bill-amount" name="amount"
+								placeholder="0.00" inputmode="decimal" autocomplete="off" required>
+						</div>
 					</div>
-					<div class="description-list-row">
-						<dt><i data-lucide="credit-card" aria-hidden="true"></i> Is collection supported?</dt>
-						<dd>Yes</dd>
+					<div class="form-group">
+						<label for="offcanvas-pay-bill-source-reference">Source reference number</label>
+						<input type="text" class="form-control" id="offcanvas-pay-bill-source-reference"
+							name="source-reference" placeholder="Enter source reference" autocomplete="off" required>
 					</div>
-					<div class="description-list-row">
-						<dt><i data-lucide="send" aria-hidden="true"></i> Is disbursement supported?</dt>
-						<dd>Yes</dd>
+					<div class="form-group mb-0">
+						<label for="offcanvas-pay-bill-transaction-reference">Transaction reference number</label>
+						<input type="text" class="form-control" id="offcanvas-pay-bill-transaction-reference"
+							name="transaction-reference" placeholder="Enter transaction reference"
+							autocomplete="off">
 					</div>
-				</dl>
-			</section>
+				</section>
+			</form>
+		</div>
+		<div class="offcanvas-footer d-flex justify-content-end align-items-center">
+			<button type="submit" class="button button-primary button-md" form="offcanvas-pay-bill-form">
+				Pay bill
+			</button>
 		</div>
 	</div>
+
 	<div class="offcanvas offcanvas-end fade" id="offcanvasProfile" tabindex="-1" aria-labelledby="offcanvasProfileTitle">
 		<div class="offcanvas-header">
 			<h2 class="offcanvas-title" id="offcanvasProfileTitle">Account details</h2>

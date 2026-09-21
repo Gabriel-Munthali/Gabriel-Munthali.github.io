@@ -186,6 +186,20 @@ function initSandboxWelcomeModal() {
 	bootstrap.Modal.getOrCreateInstance(modalEl).show();
 }
 
+/* Bill payments pay-bill offcanvas (prototype stub submit) */
+function initBillPaymentsPayBill() {
+	var form = document.getElementById('offcanvas-pay-bill-form');
+	var offcanvasEl = document.getElementById('offcanvasPayBill');
+	if (!form || !offcanvasEl || typeof bootstrap === 'undefined') {
+		return;
+	}
+
+	form.addEventListener('submit', function (event) {
+		event.preventDefault();
+		bootstrap.Offcanvas.getOrCreateInstance(offcanvasEl).hide();
+	});
+}
+
 /* Theme */
 function initThemeSwitcher() {
 	var $themeSwitcher = $('#bd-theme');
@@ -1623,6 +1637,7 @@ $(function () {
 	initIntlTelInputFields();
 	initBaseStepper();
 	initSandboxWelcomeModal();
+	initBillPaymentsPayBill();
 	initMainNavNotifications();
 	initMainNavEnvSync();
 	initFundsTransfer();

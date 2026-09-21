@@ -3826,7 +3826,7 @@ span.modal-icon--warning {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-md) var(--space-lg);
+    padding: var(--space-xs) var(--space-lg);
     min-height: 48px;
     gap: var(--space-md);
 }

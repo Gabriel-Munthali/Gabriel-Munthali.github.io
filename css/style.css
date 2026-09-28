@@ -3553,7 +3553,7 @@ span.modal-icon--warning {
     display: flex;
     align-items: center;
     gap: var(--space-md);
-    padding: var(--space-sm) var(--space-md);
+    padding: var(--space-xs) var(--space-md);
     font-size: var(--fz-sm);
     line-height: var(--lg-md);
     color: var(--text-gray-900);

@@ -76,6 +76,7 @@
 
     --app-main-nav-paired-size: var(--space-8xl);
     --app-main-nav-env-toggle-height: var(--space-6xl);
+    --app-main-nav-height: 4.125rem; /* 66px */
 
     --app-sidebar-width: 280px;
     --app-sidebar-collapsed-width: 4.5rem;
@@ -3302,12 +3303,15 @@ span.modal-icon--warning {
 
 /* Sidebar brand */
 .app-sidebar-brand {
-    padding: var(--space-lg);
+    box-sizing: border-box;
+    min-height: var(--app-main-nav-height);
+    padding: 0 var(--space-lg);
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: var(--space-sm);
     flex-shrink: 0;
+    border-bottom: 1px solid var(--text-gray-200);
 }
 
 .app-sidebar-brand-link {
@@ -3791,7 +3795,6 @@ span.modal-icon--warning {
     flex-direction: column;
 }
 
-/* Keep dashboard scroll inside .app-content without clipping other shells that omit it. */
 .app-main:has(> .app-content) {
     min-height: 0;
     height: 100vh;
@@ -3820,6 +3823,7 @@ span.modal-icon--warning {
 
 /* Main nav */
 .app-main-nav {
+    box-sizing: border-box;
     background-color: var(--color-white);
     flex-shrink: 0;
     border-bottom: 1px solid var(--text-gray-200);
@@ -3827,7 +3831,7 @@ span.modal-icon--warning {
     align-items: center;
     justify-content: space-between;
     padding: var(--space-xs) var(--space-lg);
-    min-height: 48px;
+    min-height: var(--app-main-nav-height);
     gap: var(--space-md);
 }
 
@@ -4524,7 +4528,9 @@ span.modal-icon--warning {
     margin: 0;
     flex: 1;
     min-width: 0;
+    min-height: 0;
     align-self: center;
+    border-bottom: none;
 }
 
 .app-sidebar-offcanvas-context {

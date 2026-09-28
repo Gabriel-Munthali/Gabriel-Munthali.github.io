@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Transfer submitted</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions</title>
 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-	<link rel="stylesheet" href="../../../css/style.css">
-	<link rel="stylesheet" href="../../../css/responsive.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="../../../css/style.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.css">
 </head>
 <body>
 	<div class="app-shell">
@@ -57,18 +58,18 @@
 						</li>
 												<li>
 							<a href="#sidebar-nav-sub-reports" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
-								aria-expanded="false" aria-controls="sidebar-nav-sub-reports" data-bs-toggle="collapse">
+								aria-expanded="true" aria-controls="sidebar-nav-sub-reports" data-bs-toggle="collapse">
 								<i data-lucide="file-chart-column" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 								<span class="app-sidebar-nav-link-label">Reports</span>
 								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
 							</a>
-							<ul id="sidebar-nav-sub-reports" class="collapse app-sidebar-nav-sublist">
-								<li><a href="../reports/transactions.html" class="app-sidebar-nav-sublink">Transactions</a></li>
+							<ul id="sidebar-nav-sub-reports" class="collapse show app-sidebar-nav-sublist">
+								<li><a href="transactions.html" class="app-sidebar-nav-sublink" aria-current="page">Transactions</a></li>
 							</ul>
 						</li>
 <li>
 							<a href="../users/" class="app-sidebar-nav-link">
-								<i data-lucide="users" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+					<i data-lucide="users" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 								<span class="app-sidebar-nav-link-label">Users</span>
 							</a>
 						</li>
@@ -97,15 +98,15 @@
 						</li>
 						<li>
 							<a href="#sidebar-nav-sub-disbursements" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
-								aria-expanded="true" aria-controls="sidebar-nav-sub-disbursements" data-bs-toggle="collapse">
+								aria-expanded="false" aria-controls="sidebar-nav-sub-disbursements" data-bs-toggle="collapse">
 								<i data-lucide="send" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 								<span class="app-sidebar-nav-link-label">Disbursements</span>
 								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
 							</a>
-							<ul id="sidebar-nav-sub-disbursements" class="collapse show app-sidebar-nav-sublist">
-								<li><a href="batch.html" class="app-sidebar-nav-sublink">Batch Operations</a></li>
-								<li><a href="single.html" class="app-sidebar-nav-sublink">Single Transactions</a></li>
-								<li><a href="funds-transfer.html" class="app-sidebar-nav-sublink">Funds Transfer</a></li>
+							<ul id="sidebar-nav-sub-disbursements" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../disbursements/batch.html" class="app-sidebar-nav-sublink">Batch Operations</a></li>
+								<li><a href="../disbursements/single.html" class="app-sidebar-nav-sublink">Single Transactions</a></li>
+								<li><a href="../disbursements/funds-transfer.html" class="app-sidebar-nav-sublink">Funds Transfer</a></li>
 							</ul>
 						</li>
 						<li>
@@ -201,8 +202,8 @@
 					<nav class="app-main-nav-breadcrumb" aria-label="Breadcrumb">
 						<ol class="app-main-nav-breadcrumb-list">
 							<li><a href="../index.html">Dashboard</a></li>
-							<li><a href="./single.html">Disbursements</a></li>
-							<li><span aria-current="page">Transfer submitted</span></li>
+							<li><span>Reports</span></li>
+							<li><span aria-current="page">Transactions</span></li>
 						</ol>
 					</nav>
 				</div>
@@ -235,6 +236,20 @@
 									<span class="app-main-nav-notification-title">Payout completed</span>
 									<span class="app-main-nav-notification-meta">2 minutes ago</span>
 									<span class="app-main-nav-notification-body">Your batch disbursement was processed successfully.</span>
+								</button>
+							</li>
+							<li class="app-main-nav-notification-entry">
+								<button type="button" class="dropdown-item app-main-nav-notification-item">
+									<span class="app-main-nav-notification-title">KYC update required</span>
+									<span class="app-main-nav-notification-meta">1 hour ago</span>
+									<span class="app-main-nav-notification-body">Additional documents are needed to finish verification.</span>
+								</button>
+							</li>
+							<li class="app-main-nav-notification-entry">
+								<button type="button" class="dropdown-item app-main-nav-notification-item">
+									<span class="app-main-nav-notification-title">New API key created</span>
+									<span class="app-main-nav-notification-meta">Yesterday</span>
+									<span class="app-main-nav-notification-body">A new production API key was added to your workspace.</span>
 								</button>
 							</li>
 							<li>
@@ -282,75 +297,95 @@
 									</span>
 								</button>
 							</li>
+							<li>
+								<button type="button" class="dropdown-item app-main-nav-merchant-option">
+									<span class="app-main-nav-merchant-option-text">
+										<span class="app-main-nav-merchant-option-row">
+											<span class="app-main-nav-merchant-option-name">Riverside Imports</span>
+											<span class="badge badge-sm"><i data-lucide="zap-off" aria-hidden="true"></i> Inactive</span>
+										</span>
+										<span class="app-main-nav-merchant-option-account">KH-2299400</span>
+									</span>
+								</button>
+							</li>
+							<li>
+								<button type="button" class="dropdown-item app-main-nav-merchant-option">
+									<span class="app-main-nav-merchant-option-text">
+										<span class="app-main-nav-merchant-option-row">
+											<span class="app-main-nav-merchant-option-name">Apex Holdings</span>
+											<span class="badge badge-sm"><i data-lucide="zap-off" aria-hidden="true"></i> Inactive</span>
+										</span>
+										<span class="app-main-nav-merchant-option-account">KH-1100299</span>
+									</span>
+								</button>
+							</li>
+							<li>
+								<hr class="dropdown-divider app-main-nav-merchant-divider">
+							</li>
+							<li class="app-main-nav-merchant-footer-add-wrap">
+								<a class="dropdown-item app-main-nav-merchant-footer-link-add" href="#">
+									<i data-lucide="plus" aria-hidden="true"></i>
+									Add merchant account
+								</a>
+							</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 			<div class="app-content">
-				<div class="app-content-inner container-fluid" id="sendSuccessPage">
-					<section class="page-intro" aria-labelledby="send-success-heading">
-						<div class="d-flex flex-column gap-3 page-intro-inner">
+				<div class="app-content-inner container-fluid">
+					<section class="page-intro"
+						aria-labelledby="reports-transactions-intro-heading">
+						<div class="page-intro-inner">
 							<div class="page-intro-text">
-								<h1 id="send-success-heading" class="page-intro-heading">Transfer submitted</h1>
-								<p class="page-intro-lede">Your transfer request is recorded. Review this transaction before you continue.</p>
+								<h1 id="reports-transactions-intro-heading"
+									class="page-intro-heading">Transactions</h1>
+								<p class="page-intro-lede">View and filter transaction reports</p>
 							</div>
 						</div>
 					</section>
-
-					<section class="component-card p-4 mb-4" aria-label="Transfer summary">
-						<div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-							<h2 class="h5 mb-0">Transaction summary</h2>
-							<span class="badge badge-md badge-success"><i data-lucide="check-circle-2" aria-hidden="true"></i> Submitted</span>
+					<form class="table-toolbar" method="get" action="#" aria-label="Filter transactions">
+						<div class="table-toolbar-search">
+							<label for="reports-filter-search" class="visually-hidden">Search</label>
+							<div class="form-group-input-wrapper">
+								<i data-lucide="search" aria-hidden="true"></i>
+								<input type="search" class="form-control" id="reports-filter-search" name="q"
+									placeholder="Enter search text" autocomplete="off">
+							</div>
 						</div>
-						<dl class="description-list mb-0">
-							<div class="description-list-row">
-								<dt><i data-lucide="send" aria-hidden="true"></i> Operation</dt>
-								<dd data-send-success-field="operation">Disbursement</dd>
+						<div class="table-toolbar-filters">
+							<div class="dropdown table-toolbar-filter table-toolbar-filter-chip">
+								<button type="button" class="dropdown-toggle" data-bs-toggle="dropdown"
+									aria-expanded="false" aria-label="Filter by">
+									<i data-lucide="sliders-horizontal" aria-hidden="true"></i>
+									Transaction reference number
+									<i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="#">Transaction reference number</a></li>
+									<li><a class="dropdown-item" href="#">Source reference number</a></li>
+									<li><a class="dropdown-item" href="#">Source customer number</a></li>
+									<li><a class="dropdown-item" href="#">Source account number</a></li>
+									<li><a class="dropdown-item" href="#">Institution name</a></li>
+								</ul>
 							</div>
-							<div class="description-list-row">
-								<dt><i data-lucide="user" aria-hidden="true"></i> Beneficiary</dt>
-								<dd data-send-success-field="beneficiary">-</dd>
+							<div class="table-toolbar-filter table-toolbar-filter-chip">
+								<label for="reports-filter-date" class="visually-hidden">Date</label>
+								<div class="form-group-input-wrapper">
+									<i data-lucide="calendar" aria-hidden="true"></i>
+									<input type="text" class="form-control air-datepicker-field air-datepicker-end"
+										id="reports-filter-date" name="date" placeholder="Select a date"
+										autocomplete="off" readonly>
+									<i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
+								</div>
 							</div>
-							<div class="description-list-row">
-								<dt><i data-lucide="banknote" aria-hidden="true"></i> Amount</dt>
-								<dd data-send-success-field="amount">-</dd>
-							</div>
-							<div class="description-list-row">
-								<dt><i data-lucide="hash" aria-hidden="true"></i> Transaction reference</dt>
-								<dd data-send-success-field="reference">-</dd>
-							</div>
-							<div class="description-list-row">
-								<dt><i data-lucide="calendar" aria-hidden="true"></i> Submitted at</dt>
-								<dd data-send-success-field="timestamp">-</dd>
-							</div>
-						</dl>
-					</section>
-
-					<section class="component-card p-4 mb-4" aria-labelledby="send-success-dispute-heading">
-						<h2 id="send-success-dispute-heading" class="h5 mb-2">Did anything look wrong with this transaction?</h2>
-						<p class="mb-3 text-secondary">If details are incorrect, funds were not expected, or the recipient was wrong, report it now so operations can review quickly.</p>
-						<div class="d-flex flex-wrap gap-2 mb-3">
-							<a href="./single.html" class="button button-outline button-md" data-send-success-back>
-								<i data-lucide="arrow-left" aria-hidden="true"></i> No issue
-							</a>
-							<button type="button" class="button button-primary button-md" data-bs-toggle="offcanvas"
-								data-bs-target="#offcanvasOpenDispute" aria-controls="offcanvasOpenDispute" id="sendSuccessReportIssueBtn">
-								<i data-lucide="message-square-plus" aria-hidden="true"></i> Report issue
-							</button>
 						</div>
-						<div class="alert alert-info mb-0" role="note">
-							<strong>Before you report:</strong> if the transaction is still pending, allow settlement time first. Report now when the transaction details are clearly wrong or unauthorized.
-						</div>
-					</section>
-
-					<section class="component-card p-4" aria-labelledby="send-success-next-heading">
-						<h2 id="send-success-next-heading" class="h6 mb-2">What happens next</h2>
-						<p class="mb-0 text-secondary">Dispute updates appear in your disputes list with statuses like Open, Under review, and Resolved.</p>
-					</section>
+					</form>
 				</div>
 			</div>
 		</main>
 	</div>
+
 	<div class="offcanvas offcanvas-start app-sidebar-offcanvas" tabindex="-1" id="appSidebarMenu"
 		aria-label="Sidebar">
 		<div class="offcanvas-header">
@@ -394,6 +429,56 @@
 										</span>
 										<i data-lucide="chevrons-up-down" class="app-main-nav-merchant-chevron" aria-hidden="true"></i>
 									</button>
+									<ul class="dropdown-menu app-main-nav-merchant-menu" aria-labelledby="offcanvasMainNavMerchantMenu">
+										<li class="app-main-nav-merchant-header-wrap">
+											<div class="app-main-nav-merchant-header-inner">
+												<h6 class="app-main-nav-merchant-header">Merchant accounts</h6>
+												<a class="app-main-nav-merchant-view-more" href="../merchants/">View more</a>
+											</div>
+										</li>
+										<li>
+											<button type="button" class="dropdown-item app-main-nav-merchant-option" aria-current="true">
+												<span class="app-main-nav-merchant-option-text">
+													<span class="app-main-nav-merchant-option-row">
+														<span class="app-main-nav-merchant-option-name">Gabriel Munthali LTD</span>
+														<span class="badge badge-sm badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span>
+													</span>
+													<span class="app-main-nav-merchant-option-account">KH-8849201</span>
+												</span>
+											</button>
+										</li>
+										<li>
+											<button type="button" class="dropdown-item app-main-nav-merchant-option">
+												<span class="app-main-nav-merchant-option-text">
+													<span class="app-main-nav-merchant-option-row">
+														<span class="app-main-nav-merchant-option-name">Riverside Imports</span>
+														<span class="badge badge-sm"><i data-lucide="zap-off" aria-hidden="true"></i> Inactive</span>
+													</span>
+													<span class="app-main-nav-merchant-option-account">KH-2299400</span>
+												</span>
+											</button>
+										</li>
+										<li>
+											<button type="button" class="dropdown-item app-main-nav-merchant-option">
+												<span class="app-main-nav-merchant-option-text">
+													<span class="app-main-nav-merchant-option-row">
+														<span class="app-main-nav-merchant-option-name">Apex Holdings</span>
+														<span class="badge badge-sm"><i data-lucide="zap-off" aria-hidden="true"></i> Inactive</span>
+													</span>
+													<span class="app-main-nav-merchant-option-account">KH-1100299</span>
+												</span>
+											</button>
+										</li>
+										<li>
+											<hr class="dropdown-divider app-main-nav-merchant-divider">
+										</li>
+										<li class="app-main-nav-merchant-footer-add-wrap">
+											<a class="dropdown-item app-main-nav-merchant-footer-link-add" href="#">
+												<i data-lucide="plus" aria-hidden="true"></i>
+												Add merchant account
+											</a>
+										</li>
+									</ul>
 								</div>
 							</div>
 							<div class="app-sidebar-offcanvas-field">
@@ -412,102 +497,152 @@
 					</section>
 				</div>
 				<nav class="app-sidebar-nav app-sidebar-offcanvas-nav" aria-label="Sidebar navigation">
+				<ul class="app-sidebar-nav-list">
+					<li>
+						<a href="../../../" class="app-sidebar-nav-link">
+							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+							<span class="app-sidebar-nav-link-label">Home</span>
+						</a>
+					</li>
+				</ul>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Management and Insights</h2>
 					<ul class="app-sidebar-nav-list">
 						<li>
-							<a href="../../../" class="app-sidebar-nav-link">
-								<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
-								<span class="app-sidebar-nav-link-label">Home</span>
+							<a href="#offcanvas-nav-sub-applications" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="offcanvas-nav-sub-applications" data-bs-toggle="collapse">
+								<i data-lucide="files" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Applications</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
 							</a>
+							<ul id="offcanvas-nav-sub-applications" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../applications/kyc.html" class="app-sidebar-nav-sublink">Submit KYC</a></li>
+								<li><a href="../applications/" class="app-sidebar-nav-sublink">Track Progress</a></li>
+							</ul>
 						</li>
-					</ul>
-					<section class="app-sidebar-nav-section">
-						<h2 class="app-sidebar-nav-section-title">Management and Insights</h2>
-						<ul class="app-sidebar-nav-list">
-							<li>
-								<a href="#offcanvas-nav-sub-applications" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
-									aria-expanded="false" aria-controls="offcanvas-nav-sub-applications" data-bs-toggle="collapse">
-									<i data-lucide="files" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
-									<span class="app-sidebar-nav-link-label">Applications</span>
-									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
-								</a>
-								<ul id="offcanvas-nav-sub-applications" class="collapse app-sidebar-nav-sublist">
-									<li><a href="../applications/kyc.html" class="app-sidebar-nav-sublink">Submit KYC</a></li>
-									<li><a href="../applications/" class="app-sidebar-nav-sublink">Track Progress</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="#offcanvas-nav-sub-analytics" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
-									aria-expanded="false" aria-controls="offcanvas-nav-sub-analytics" data-bs-toggle="collapse">
-									<i data-lucide="bar-chart-3" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
-									<span class="app-sidebar-nav-link-label">Analytics</span>
-									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
-								</a>
-								<ul id="offcanvas-nav-sub-analytics" class="collapse app-sidebar-nav-sublist">
-									<li><a href="../analytics/disbursements.html" class="app-sidebar-nav-sublink">Disbursements</a></li>
-									<li><a href="../analytics/collections.html" class="app-sidebar-nav-sublink">Collections</a></li>
-								</ul>
-							</li>
-													<li>
+						<li>
+							<a href="#offcanvas-nav-sub-analytics" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="offcanvas-nav-sub-analytics" data-bs-toggle="collapse">
+								<i data-lucide="bar-chart-3" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Analytics</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="offcanvas-nav-sub-analytics" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../analytics/disbursements.html" class="app-sidebar-nav-sublink">Disbursements</a></li>
+								<li><a href="../analytics/collections.html" class="app-sidebar-nav-sublink">Collections</a></li>
+							</ul>
+						</li>
+												<li>
 							<a href="#offcanvas-nav-sub-reports" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
-								aria-expanded="false" aria-controls="offcanvas-nav-sub-reports" data-bs-toggle="collapse">
+								aria-expanded="true" aria-controls="offcanvas-nav-sub-reports" data-bs-toggle="collapse">
 								<i data-lucide="file-chart-column" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 								<span class="app-sidebar-nav-link-label">Reports</span>
 								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
 							</a>
-							<ul id="offcanvas-nav-sub-reports" class="collapse app-sidebar-nav-sublist">
-								<li><a href="../reports/transactions.html" class="app-sidebar-nav-sublink">Transactions</a></li>
+							<ul id="offcanvas-nav-sub-reports" class="collapse show app-sidebar-nav-sublist">
+								<li><a href="transactions.html" class="app-sidebar-nav-sublink" aria-current="page">Transactions</a></li>
 							</ul>
 						</li>
 <li>
-								<a href="../users/" class="app-sidebar-nav-link">
-									<i data-lucide="users" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
-									<span class="app-sidebar-nav-link-label">Users</span>
-								</a>
-							</li>
-							<li>
-								<a href="#offcanvas-nav-sub-disputes" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
-									aria-expanded="false" aria-controls="offcanvas-nav-sub-disputes" data-bs-toggle="collapse">
-									<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
-									<span class="app-sidebar-nav-link-label">Disputes</span>
-									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
-								</a>
-								<ul id="offcanvas-nav-sub-disputes" class="collapse app-sidebar-nav-sublist">
-									<li><a href="../disputes/index.html" class="app-sidebar-nav-sublink">Getting started</a></li>
-									<li><a href="../disputes/disputes.html" class="app-sidebar-nav-sublink">All disputes</a></li>
-								</ul>
-							</li>
-						</ul>
-					</section>
-					<section class="app-sidebar-nav-section">
-						<h2 class="app-sidebar-nav-section-title">Core Business</h2>
-						<ul class="app-sidebar-nav-list">
-							<li>
-								<a href="../merchants/" class="app-sidebar-nav-link">
-									<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
-									<span class="app-sidebar-nav-link-label">Merchants</span>
-								</a>
-							</li>
-							<li>
-								<a href="#offcanvas-nav-sub-disbursements" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
-									aria-expanded="true" aria-controls="offcanvas-nav-sub-disbursements" data-bs-toggle="collapse">
-									<i data-lucide="send" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
-									<span class="app-sidebar-nav-link-label">Disbursements</span>
-									<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
-								</a>
-								<ul id="offcanvas-nav-sub-disbursements" class="collapse show app-sidebar-nav-sublist">
-									<li><a href="batch.html" class="app-sidebar-nav-sublink">Batch Operations</a></li>
-									<li><a href="single.html" class="app-sidebar-nav-sublink">Single Transactions</a></li>
-									<li><a href="funds-transfer.html" class="app-sidebar-nav-sublink">Funds Transfer</a></li>
-								</ul>
-							</li>
-							<li>
-								<a href="../bill-payments/" class="app-sidebar-nav-link">
-									<i data-lucide="receipt-text" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
-									<span class="app-sidebar-nav-link-label">Bill payments</span>
-								</a>
-							</li>
-						</ul>
-					</section>
+							<a href="../users/" class="app-sidebar-nav-link">
+					<i data-lucide="users" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Users</span>
+							</a>
+						</li>
+						<li>
+							<a href="#offcanvas-nav-sub-disputes" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="offcanvas-nav-sub-disputes" data-bs-toggle="collapse">
+								<i data-lucide="message-square-warning" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Disputes</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="offcanvas-nav-sub-disputes" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../disputes/index.html" class="app-sidebar-nav-sublink">Getting started</a></li>
+								<li><a href="../disputes/disputes.html" class="app-sidebar-nav-sublink">All disputes</a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">Core Business</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="../merchants/" class="app-sidebar-nav-link">
+								<i data-lucide="store" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Merchants</span>
+							</a>
+						</li>
+						<li>
+							<a href="#offcanvas-nav-sub-disbursements" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="offcanvas-nav-sub-disbursements" data-bs-toggle="collapse">
+								<i data-lucide="send" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Disbursements</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="offcanvas-nav-sub-disbursements" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../disbursements/batch.html" class="app-sidebar-nav-sublink">Batch Operations</a></li>
+								<li><a href="../disbursements/single.html" class="app-sidebar-nav-sublink">Single Transactions</a></li>
+								<li><a href="../disbursements/funds-transfer.html" class="app-sidebar-nav-sublink">Funds Transfer</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#offcanvas-nav-sub-collections" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="offcanvas-nav-sub-collections" data-bs-toggle="collapse">
+								<i data-lucide="credit-card" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Collections</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="offcanvas-nav-sub-collections" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../collections/received.html" class="app-sidebar-nav-sublink">Received Payments</a></li>
+								<li><a href="../collections/rtp.html" class="app-sidebar-nav-sublink">Request to Pay</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../bill-payments/" class="app-sidebar-nav-link">
+								<i data-lucide="receipt-text" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Bill payments</span>
+							</a>
+						</li>
+					</ul>
+				</section>
+				<section class="app-sidebar-nav-section">
+					<h2 class="app-sidebar-nav-section-title">System and Integration</h2>
+					<ul class="app-sidebar-nav-list">
+						<li>
+							<a href="#offcanvas-nav-sub-developers" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="offcanvas-nav-sub-developers" data-bs-toggle="collapse">
+								<i data-lucide="code-2" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Developers</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="offcanvas-nav-sub-developers" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../apikeys/" class="app-sidebar-nav-sublink">API Keys</a></li>
+								<li><a href="../webhooks/" class="app-sidebar-nav-sublink">Webhooks</a></li>
+								<li><a href="../webhooks/notifications.html" class="app-sidebar-nav-sublink">Webhook Notifications</a></li>
+								<li><a href="https://docs.onekhusa.com/api-reference" class="app-sidebar-nav-sublink" target="_blank" rel="noopener noreferrer">API References</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="../connectors/" class="app-sidebar-nav-link">
+								<i data-lucide="plug" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Connectors</span>
+							</a>
+						</li>
+						<li>
+							<a href="#offcanvas-nav-sub-fake-data" class="app-sidebar-nav-link app-sidebar-nav-parent" role="button"
+								aria-expanded="false" aria-controls="offcanvas-nav-sub-fake-data" data-bs-toggle="collapse">
+								<i data-lucide="database" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
+								<span class="app-sidebar-nav-link-label">Fake Data</span>
+								<i data-lucide="chevron-down" class="app-sidebar-nav-chevron" aria-hidden="true"></i>
+							</a>
+							<ul id="offcanvas-nav-sub-fake-data" class="collapse app-sidebar-nav-sublist">
+								<li><a href="../fakedata/accept-pay.html" class="app-sidebar-nav-sublink">Simulate Accept Pay</a></li>
+								<li><a href="../fakedata/accept-rtp.html" class="app-sidebar-nav-sublink">Simulate Accept Request-To-Pay</a></li>
+								<li><a href="../fakedata/sample-disbursement.html" class="app-sidebar-nav-sublink">Download Sample Disbursements</a></li>
+							</ul>
+						</li>
+					</ul>
+				</section>
 				</nav>
 			</div>
 			<footer class="app-sidebar-footer">
@@ -564,69 +699,46 @@
 						<dt><i data-lucide="mail" aria-hidden="true"></i> Email address</dt>
 						<dd>gabriel.munthali@angledimension.com</dd>
 					</div>
+					<div class="description-list-row">
+						<dt><i data-lucide="phone" aria-hidden="true"></i> Phone number</dt>
+						<dd>+265 993 996 717</dd>
+					</div>
 				</dl>
 			</section>
-		</div>
-	</div>
-
-	<div class="offcanvas offcanvas-end fade" id="offcanvasOpenDispute" tabindex="-1"
-		aria-labelledby="offcanvasOpenDisputeTitle">
-		<div class="offcanvas-header">
-			<h2 class="offcanvas-title" id="offcanvasOpenDisputeTitle">Open dispute</h2>
-			<button type="button" data-bs-dismiss="offcanvas" aria-label="Close">
-				<i data-lucide="x" aria-hidden="true"></i>
-			</button>
-		</div>
-		<div class="offcanvas-body offcanvas-body--sections">
-			<section class="offcanvas-section" aria-labelledby="offcanvas-dispute-subject-heading">
-				<h3 class="offcanvas-section-title" id="offcanvas-dispute-subject-heading">Subject and comment</h3>
-				<p class="offcanvas-section-lede">Share what happened so the operations team can review your case.</p>
-				<div class="form-group">
-					<label for="open-dispute-subject">Subject of event</label>
-					<input type="text" class="form-control" id="open-dispute-subject" name="disputeSubject"
-						placeholder="Input subject of event here" autocomplete="off">
-				</div>
-				<div class="form-group mb-0">
-					<label for="open-dispute-comment">Comment</label>
-					<textarea class="form-control" id="open-dispute-comment" name="disputeComment" rows="4"
-						placeholder="Enter a comment..."></textarea>
-				</div>
-			</section>
-			<section class="offcanvas-section" aria-labelledby="offcanvas-dispute-transaction-heading">
-				<h3 class="offcanvas-section-title" id="offcanvas-dispute-transaction-heading">Linked transaction</h3>
+			<section class="offcanvas-section">
+				<h3 class="offcanvas-section-title">User role details</h3>
+				<p class="offcanvas-section-lede">Your access level in this portal.</p>
 				<dl class="description-list mb-0">
 					<div class="description-list-row">
-						<dt><i data-lucide="hash" aria-hidden="true"></i> Reference</dt>
-						<dd data-send-success-field="reference">-</dd>
+						<dt><i data-lucide="shield" aria-hidden="true"></i> Role</dt>
+						<dd>Administrator</dd>
 					</div>
 					<div class="description-list-row">
-						<dt><i data-lucide="user" aria-hidden="true"></i> Beneficiary</dt>
-						<dd data-send-success-field="beneficiary">-</dd>
-					</div>
-					<div class="description-list-row">
-						<dt><i data-lucide="banknote" aria-hidden="true"></i> Amount</dt>
-						<dd data-send-success-field="amount">-</dd>
+						<dt><i data-lucide="zap" aria-hidden="true"></i> Status</dt>
+						<dd><span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span></dd>
 					</div>
 				</dl>
 			</section>
 		</div>
-		<div class="offcanvas-footer d-flex justify-content-end align-items-center">
-			<a href="../disputes/disputes.html" class="button button-primary button-md">
-				Submit dispute
-			</a>
-		</div>
 	</div>
 
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
-		integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-		integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-		integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
-	<script src="../../../js/theme-init.js"></script>
-	<script src="../../../js/main.js"></script>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.561.0/dist/umd/lucide.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/air-datepicker@3.5.3/air-datepicker.min.js"></script>
+    <script src="../../../js/theme-init.js"></script>
+    <script src="../../../js/main.js"></script>
 </body>
 </html>

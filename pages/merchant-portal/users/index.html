@@ -23,7 +23,7 @@
 			<nav class="app-sidebar-nav" aria-label="Sidebar navigation">
 				<ul class="app-sidebar-nav-list">
 					<li>
-						<a href="../../../" class="app-sidebar-nav-link">
+						<a href="../" class="app-sidebar-nav-link">
 							<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 							<span class="app-sidebar-nav-link-label">Home</span>
 						</a>
@@ -350,205 +350,205 @@
 						</div>
 					</section>
 					<form class="table-toolbar" method="get" action="#" aria-label="Filter users">
-						<div class="table-toolbar-search">
-							<label for="users-toolbar-search" class="visually-hidden">Search users</label>
-							<div class="form-group-input-wrapper">
-								<i data-lucide="search" aria-hidden="true"></i>
-								<input type="search" class="form-control" id="users-toolbar-search" name="q"
-									placeholder="Search users" autocomplete="off">
+								<div class="table-toolbar-search">
+									<label for="users-toolbar-search" class="visually-hidden">Search users</label>
+									<div class="form-group-input-wrapper">
+										<i data-lucide="search" aria-hidden="true"></i>
+										<input type="search" class="form-control" id="users-toolbar-search" name="q"
+											placeholder="Search users" autocomplete="off">
+									</div>
+								</div>
+								<div class="table-toolbar-filters">
+									<div class="dropdown table-toolbar-filter table-toolbar-filter-chip">
+										<button type="button" class="dropdown-toggle" data-bs-toggle="dropdown"
+											aria-expanded="false" aria-label="User profile">
+											<i data-lucide="shield" aria-hidden="true"></i>
+											User Profile
+											<i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
+										</button>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="#">All profiles</a></li>
+											<li><a class="dropdown-item" href="#">Merchant Administrator</a></li>
+											<li><a class="dropdown-item" href="#">Merchant Operator</a></li>
+											<li><a class="dropdown-item" href="#">Merchant Viewer</a></li>
+										</ul>
+									</div>
+									<div class="dropdown table-toolbar-filter table-toolbar-filter-chip">
+										<button type="button" class="dropdown-toggle" data-bs-toggle="dropdown"
+											aria-expanded="false" aria-label="Status">
+											<i data-lucide="loader" aria-hidden="true"></i>
+											Status
+											<i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
+										</button>
+										<ul class="dropdown-menu">
+											<li><a class="dropdown-item" href="#">All statuses</a></li>
+											<li><a class="dropdown-item" href="#">Active</a></li>
+											<li><a class="dropdown-item" href="#">Inactive</a></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+							<div class="table-responsive">
+								<table class="table table-bordered mb-0">
+									<thead>
+										<tr>
+											<th scope="col"><i data-lucide="a-large-small" aria-hidden="true"></i> Full Name</th>
+											<th scope="col">Email Address</th>
+											<th scope="col">User Profile</th>
+											<th scope="col"><i data-lucide="loader" aria-hidden="true"></i> Status</th>
+											<th scope="col"><i data-lucide="mouse-pointer-click" aria-hidden="true"></i> Actions</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>GABRIEL MUNTHALI</td>
+											<td>gabriel.munthali@angledimension.com</td>
+											<td>Merchant Administrator</td>
+											<td>
+												<span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span>
+											</td>
+											<td>
+												<div class="btn-group" role="group" aria-label="Manage user Gabriel Munthali"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<button type="button" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
+													<button type="button" class="button button-sm button-primary"><i data-lucide="chevron-down"
+															aria-hidden="true"></i></button>
+													<ul class="dropdown-menu">
+														<li>
+															<button type="button" class="dropdown-item" data-bs-toggle="offcanvas"
+																data-bs-target="#offcanvasUserDetails" aria-controls="offcanvasUserDetails">
+																<i data-lucide="eye" aria-hidden="true"></i> View
+															</button>
+														</li>
+														<li>
+															<button type="button" class="dropdown-item" data-bs-toggle="modal"
+																data-bs-target="#modalEditUserAccount" aria-haspopup="dialog">
+																<i data-lucide="pencil" aria-hidden="true"></i> Edit
+															</button>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>GRACE PHIRI</td>
+											<td>grace.phiri@angledimension.com</td>
+											<td>Merchant Operator</td>
+											<td>
+												<span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span>
+											</td>
+											<td>
+												<div class="btn-group" role="group" aria-label="Manage user Grace Phiri"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<button type="button" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
+													<button type="button" class="button button-sm button-primary"><i data-lucide="chevron-down"
+															aria-hidden="true"></i></button>
+													<ul class="dropdown-menu">
+														<li>
+															<button type="button" class="dropdown-item" data-bs-toggle="offcanvas"
+																data-bs-target="#offcanvasUserDetails" aria-controls="offcanvasUserDetails">
+																<i data-lucide="eye" aria-hidden="true"></i> View
+															</button>
+														</li>
+														<li>
+															<button type="button" class="dropdown-item" data-bs-toggle="modal"
+																data-bs-target="#modalEditUserAccount" aria-haspopup="dialog">
+																<i data-lucide="pencil" aria-hidden="true"></i> Edit
+															</button>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>JAMES BANDA</td>
+											<td>james.banda@angledimension.com</td>
+											<td>Merchant Viewer</td>
+											<td>
+												<span class="badge badge-md badge-secondary"><i data-lucide="zap-off"
+														aria-hidden="true"></i> Inactive</span>
+											</td>
+											<td>
+												<div class="btn-group" role="group" aria-label="Manage user James Banda"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<button type="button" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
+													<button type="button" class="button button-sm button-primary"><i data-lucide="chevron-down"
+															aria-hidden="true"></i></button>
+													<ul class="dropdown-menu">
+														<li>
+															<button type="button" class="dropdown-item" data-bs-toggle="offcanvas"
+																data-bs-target="#offcanvasUserDetails" aria-controls="offcanvasUserDetails">
+																<i data-lucide="eye" aria-hidden="true"></i> View
+															</button>
+														</li>
+														<li>
+															<button type="button" class="dropdown-item" data-bs-toggle="modal"
+																data-bs-target="#modalEditUserAccount" aria-haspopup="dialog">
+																<i data-lucide="pencil" aria-hidden="true"></i> Edit
+															</button>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>MARIA KACHALI</td>
+											<td>maria.kachali@angledimension.com</td>
+											<td>Merchant Administrator</td>
+											<td>
+												<span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span>
+											</td>
+											<td>
+												<div class="btn-group" role="group" aria-label="Manage user Maria Kachali"
+													data-bs-toggle="dropdown" aria-expanded="false">
+													<button type="button" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
+													<button type="button" class="button button-sm button-primary"><i data-lucide="chevron-down"
+															aria-hidden="true"></i></button>
+													<ul class="dropdown-menu">
+														<li>
+															<button type="button" class="dropdown-item" data-bs-toggle="offcanvas"
+																data-bs-target="#offcanvasUserDetails" aria-controls="offcanvasUserDetails">
+																<i data-lucide="eye" aria-hidden="true"></i> View
+															</button>
+														</li>
+														<li>
+															<button type="button" class="dropdown-item" data-bs-toggle="modal"
+																data-bs-target="#modalEditUserAccount" aria-haspopup="dialog">
+																<i data-lucide="pencil" aria-hidden="true"></i> Edit
+															</button>
+														</li>
+													</ul>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<td colspan="5">
+												<div class="table-footer d-flex flex-wrap justify-content-between align-items-center gap-2">
+													<p class="table-footer-text mb-0">Showing 1 to 4 of 4</p>
+													<nav aria-label="Users table pagination">
+														<ul class="pagination mb-0">
+															<li class="page-item disabled">
+																<a class="page-link button button-xs" href="#" tabindex="-1" aria-disabled="true"><i
+																		data-lucide="chevron-left" aria-hidden="true"></i>Prev</a>
+															</li>
+															<li class="page-item active">
+																<a class="page-link button button-xs" href="#" aria-current="page">1</a>
+															</li>
+															<li class="page-item disabled">
+																<a class="page-link button button-xs" href="#" tabindex="-1"
+																	aria-disabled="true">Next<i data-lucide="chevron-right"
+																		aria-hidden="true"></i></a>
+															</li>
+														</ul>
+													</nav>
+												</div>
+											</td>
+										</tr>
+									</tfoot>
+								</table>
 							</div>
-						</div>
-						<div class="table-toolbar-filters">
-							<div class="dropdown table-toolbar-filter table-toolbar-filter-chip">
-								<button type="button" class="dropdown-toggle" data-bs-toggle="dropdown"
-									aria-expanded="false" aria-label="User profile">
-									<i data-lucide="shield" aria-hidden="true"></i>
-									User Profile
-									<i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">All profiles</a></li>
-									<li><a class="dropdown-item" href="#">Merchant Administrator</a></li>
-									<li><a class="dropdown-item" href="#">Finance Officer</a></li>
-									<li><a class="dropdown-item" href="#">Viewer</a></li>
-								</ul>
-							</div>
-							<div class="dropdown table-toolbar-filter table-toolbar-filter-chip">
-								<button type="button" class="dropdown-toggle" data-bs-toggle="dropdown"
-									aria-expanded="false" aria-label="Status">
-									<i data-lucide="loader" aria-hidden="true"></i>
-									Status
-									<i data-lucide="chevron-down" class="icon-right icon-right-sm" aria-hidden="true"></i>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="#">All statuses</a></li>
-									<li><a class="dropdown-item" href="#">Active</a></li>
-									<li><a class="dropdown-item" href="#">Inactive</a></li>
-								</ul>
-							</div>
-						</div>
-					</form>
-					<div class="table-responsive">
-						<table class="table table-bordered mb-0">
-							<thead>
-								<tr>
-									<th scope="col"><i data-lucide="a-large-small" aria-hidden="true"></i> Full Name</th>
-									<th scope="col">Email Address</th>
-									<th scope="col">User Profile</th>
-									<th scope="col"><i data-lucide="loader" aria-hidden="true"></i> Status</th>
-									<th scope="col"><i data-lucide="mouse-pointer-click" aria-hidden="true"></i> Actions</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>GABRIEL MUNTHALI</td>
-									<td>gabriel.munthali@angledimension.com</td>
-									<td>Merchant Administrator</td>
-									<td>
-										<span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span>
-									</td>
-									<td>
-										<div class="btn-group" role="group" aria-label="Manage user Gabriel Munthali"
-											data-bs-toggle="dropdown" aria-expanded="false">
-											<button type="button" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
-											<button type="button" class="button button-sm button-primary"><i data-lucide="chevron-down"
-													aria-hidden="true"></i></button>
-											<ul class="dropdown-menu">
-												<li>
-													<button type="button" class="dropdown-item" data-bs-toggle="offcanvas"
-														data-bs-target="#offcanvasUserDetails" aria-controls="offcanvasUserDetails">
-														<i data-lucide="eye" aria-hidden="true"></i> View
-													</button>
-												</li>
-												<li>
-													<button type="button" class="dropdown-item" data-bs-toggle="modal"
-														data-bs-target="#modalEditUserAccount" aria-haspopup="dialog">
-														<i data-lucide="pencil" aria-hidden="true"></i> Edit
-													</button>
-												</li>
-											</ul>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>GRACE PHIRI</td>
-									<td>grace.phiri@angledimension.com</td>
-									<td>Finance Officer</td>
-									<td>
-										<span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span>
-									</td>
-									<td>
-										<div class="btn-group" role="group" aria-label="Manage user Grace Phiri"
-											data-bs-toggle="dropdown" aria-expanded="false">
-											<button type="button" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
-											<button type="button" class="button button-sm button-primary"><i data-lucide="chevron-down"
-													aria-hidden="true"></i></button>
-											<ul class="dropdown-menu">
-												<li>
-													<button type="button" class="dropdown-item" data-bs-toggle="offcanvas"
-														data-bs-target="#offcanvasUserDetails" aria-controls="offcanvasUserDetails">
-														<i data-lucide="eye" aria-hidden="true"></i> View
-													</button>
-												</li>
-												<li>
-													<button type="button" class="dropdown-item" data-bs-toggle="modal"
-														data-bs-target="#modalEditUserAccount" aria-haspopup="dialog">
-														<i data-lucide="pencil" aria-hidden="true"></i> Edit
-													</button>
-												</li>
-											</ul>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>JAMES BANDA</td>
-									<td>james.banda@angledimension.com</td>
-									<td>Viewer</td>
-									<td>
-										<span class="badge badge-md badge-secondary"><i data-lucide="zap-off"
-												aria-hidden="true"></i> Inactive</span>
-									</td>
-									<td>
-										<div class="btn-group" role="group" aria-label="Manage user James Banda"
-											data-bs-toggle="dropdown" aria-expanded="false">
-											<button type="button" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
-											<button type="button" class="button button-sm button-primary"><i data-lucide="chevron-down"
-													aria-hidden="true"></i></button>
-											<ul class="dropdown-menu">
-												<li>
-													<button type="button" class="dropdown-item" data-bs-toggle="offcanvas"
-														data-bs-target="#offcanvasUserDetails" aria-controls="offcanvasUserDetails">
-														<i data-lucide="eye" aria-hidden="true"></i> View
-													</button>
-												</li>
-												<li>
-													<button type="button" class="dropdown-item" data-bs-toggle="modal"
-														data-bs-target="#modalEditUserAccount" aria-haspopup="dialog">
-														<i data-lucide="pencil" aria-hidden="true"></i> Edit
-													</button>
-												</li>
-											</ul>
-										</div>
-									</td>
-								</tr>
-								<tr>
-									<td>MARIA KACHALI</td>
-									<td>maria.kachali@angledimension.com</td>
-									<td>Merchant Administrator</td>
-									<td>
-										<span class="badge badge-md badge-success"><i data-lucide="zap" aria-hidden="true"></i> Active</span>
-									</td>
-									<td>
-										<div class="btn-group" role="group" aria-label="Manage user Maria Kachali"
-											data-bs-toggle="dropdown" aria-expanded="false">
-											<button type="button" class="button button-sm button-primary"><i data-lucide="settings-2" aria-hidden="true"></i> Manage</button>
-											<button type="button" class="button button-sm button-primary"><i data-lucide="chevron-down"
-													aria-hidden="true"></i></button>
-											<ul class="dropdown-menu">
-												<li>
-													<button type="button" class="dropdown-item" data-bs-toggle="offcanvas"
-														data-bs-target="#offcanvasUserDetails" aria-controls="offcanvasUserDetails">
-														<i data-lucide="eye" aria-hidden="true"></i> View
-													</button>
-												</li>
-												<li>
-													<button type="button" class="dropdown-item" data-bs-toggle="modal"
-														data-bs-target="#modalEditUserAccount" aria-haspopup="dialog">
-														<i data-lucide="pencil" aria-hidden="true"></i> Edit
-													</button>
-												</li>
-											</ul>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-							<tfoot>
-								<tr>
-									<td colspan="5">
-										<div class="table-footer d-flex flex-wrap justify-content-between align-items-center gap-2">
-											<p class="table-footer-text mb-0">Showing 1 to 4 of 4</p>
-											<nav aria-label="Users table pagination">
-												<ul class="pagination mb-0">
-													<li class="page-item disabled">
-														<a class="page-link button button-xs" href="#" tabindex="-1" aria-disabled="true"><i
-																data-lucide="chevron-left" aria-hidden="true"></i>Prev</a>
-													</li>
-													<li class="page-item active">
-														<a class="page-link button button-xs" href="#" aria-current="page">1</a>
-													</li>
-													<li class="page-item disabled">
-														<a class="page-link button button-xs" href="#" tabindex="-1"
-															aria-disabled="true">Next<i data-lucide="chevron-right"
-																aria-hidden="true"></i></a>
-													</li>
-												</ul>
-											</nav>
-										</div>
-									</td>
-								</tr>
-							</tfoot>
-						</table>
-					</div>
 				</div>
 			</div>
 		</main>
@@ -667,7 +667,7 @@
 				<nav class="app-sidebar-nav app-sidebar-offcanvas-nav" aria-label="Sidebar navigation">
 					<ul class="app-sidebar-nav-list">
 						<li>
-							<a href="../../../" class="app-sidebar-nav-link">
+							<a href="../" class="app-sidebar-nav-link">
 								<i data-lucide="home" class="app-sidebar-nav-link-icon" aria-hidden="true"></i>
 								<span class="app-sidebar-nav-link-label">Home</span>
 							</a>
@@ -896,9 +896,9 @@
 							<i data-lucide="shield" aria-hidden="true"></i>
 							<select class="form-control with-icon-right" id="new-user-profile" name="userProfile">
 								<option value="" disabled selected>Select user profile</option>
-								<option value="merchant-administrator">Merchant Administrator</option>
-								<option value="finance-officer">Finance Officer</option>
-								<option value="viewer">Viewer</option>
+								<option value="MERC_ADMIN">Merchant Administrator</option>
+								<option value="MERC_OPR">Merchant Operator</option>
+								<option value="MERC_VIEW">Merchant Viewer</option>
 							</select>
 							<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
 						</div>
@@ -968,9 +968,9 @@
 						<div class="form-group-input-wrapper">
 							<i data-lucide="shield" aria-hidden="true"></i>
 							<select class="form-control with-icon-right" id="edit-user-profile" name="userProfile">
-								<option value="merchant-administrator" selected>Merchant Administrator</option>
-								<option value="finance-officer">Finance Officer</option>
-								<option value="viewer">Viewer</option>
+								<option value="MERC_ADMIN" selected>Merchant Administrator</option>
+								<option value="MERC_OPR">Merchant Operator</option>
+								<option value="MERC_VIEW">Merchant Viewer</option>
 							</select>
 							<i data-lucide="chevron-down" class="icon-right" aria-hidden="true"></i>
 						</div>
@@ -1070,6 +1070,23 @@
 					<div class="description-list-row">
 						<dt><i data-lucide="phone" aria-hidden="true"></i> Phone number</dt>
 						<dd>+265 993 996 717</dd>
+					</div>
+				</dl>
+			</section>
+			<section class="offcanvas-section">
+				<h3 class="offcanvas-section-title">Organisation</h3>
+				<p class="offcanvas-section-lede">Required for API requests with your keys.</p>
+				<dl class="description-list mb-0">
+					<div class="description-list-row">
+						<dt><i data-lucide="hash" aria-hidden="true"></i> Organisation ID</dt>
+						<dd>
+							<code class="app-dashboard-code">6NGNUG9HVT7W</code>
+							<button type="button" class="button button-copy button-sm"
+								aria-label="Copy Organisation ID 6NGNUG9HVT7W">
+								<i data-lucide="copy" aria-hidden="true"></i>
+								Copy
+							</button>
+						</dd>
 					</div>
 				</dl>
 			</section>

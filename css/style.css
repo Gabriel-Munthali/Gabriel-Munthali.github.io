@@ -2631,6 +2631,22 @@ span.modal-icon--warning {
     overflow-wrap: anywhere;
 }
 
+.description-list-row:has(.button-copy) {
+	align-items: center;
+}
+
+.description-list-row dd:has(.button-copy) {
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: var(--space-sm);
+	flex-wrap: nowrap;
+}
+
+.description-list-row dd:has(.button-copy) .app-dashboard-code {
+	line-height: 1;
+}
+
 .description-list.description-list-bordered {
     border: 1px solid var(--text-gray-200);
     border-radius: var(--br-md);

@@ -143,7 +143,7 @@
 				<div class="app-content-inner container-fluid">
 					<header class="page-intro">
 								<h1 class="page-intro-heading">Callout banners</h1>
-								<p class="page-intro-lede">Full-width notices for feature onboarding and contextual information. Dismissible banners remember your choice per id.</p>
+								<p class="page-intro-lede">Full-width notices for feature onboarding and contextual information. Dismissible banners remember your choice per id. For in-flow help with a title and prose (tips, notes), use content callouts below.</p>
 							</header>
 
 							<section class="component-docs-section" aria-labelledby="preview-heading">
@@ -197,6 +197,58 @@
 								</div>
 							</section>
 
+							<section class="component-docs-section" aria-labelledby="content-callouts-heading">
+								<h2 id="content-callouts-heading" class="component-docs-section-title">Content callouts</h2>
+								<div class="component-card">
+									<div class="d-flex flex-column gap-3">
+										<aside class="callout-aside callout-aside-tip" role="note" aria-label="Tip">
+											<span class="callout-aside-icon" aria-hidden="true">
+												<i data-lucide="lightbulb"></i>
+											</span>
+											<div class="callout-aside-content">
+												<p class="callout-aside-title">Tip</p>
+												<div class="callout-aside-body">
+													<p>If your server is behind a restrictive firewall, verify it can reach Cloudflare on port <code class="app-dashboard-code">7844</code> before proceeding. Refer to <a href="#">Connection errors</a>.</p>
+												</div>
+											</div>
+										</aside>
+										<aside class="callout-aside callout-aside-info" role="note" aria-label="Note">
+											<span class="callout-aside-icon" aria-hidden="true">
+												<i data-lucide="info"></i>
+											</span>
+											<div class="callout-aside-content">
+												<p class="callout-aside-title">Note</p>
+												<div class="callout-aside-body">
+													<p>Organisation ID is required with your API keys for access tokens and SDK setup. Also available in Account details (Profile).</p>
+												</div>
+											</div>
+										</aside>
+										<aside class="callout-aside callout-aside-warning" role="note" aria-label="Warning">
+											<span class="callout-aside-icon" aria-hidden="true">
+												<i data-lucide="alert-triangle"></i>
+											</span>
+											<div class="callout-aside-content">
+												<p class="callout-aside-title">Warning</p>
+												<div class="callout-aside-body">
+													<p>Never share your OneKhusa PIN or one-time codes. We will never ask you for this information.</p>
+												</div>
+											</div>
+										</aside>
+										<aside class="callout-aside callout-aside-info" role="note" aria-label="Organisation ID">
+											<span class="callout-aside-icon" aria-hidden="true">
+												<i data-lucide="info"></i>
+											</span>
+											<div class="callout-aside-content">
+												<p class="callout-aside-title">Organisation ID</p>
+												<div class="callout-aside-body">
+													<p>Your organisation ID is <code class="app-dashboard-code app-dashboard-code-copy" role="button" tabindex="0" aria-label="Copy Organisation ID 6NGNUG9HVT7W">6NGNUG9HVT7W</code>. Required with your API keys for access tokens and SDK setup. Also in Account details (Profile).</p>
+												</div>
+											</div>
+										</aside>
+									</div>
+								</div>
+							</section>
+
 							<section class="component-docs-section" aria-labelledby="usage-heading">
 								<h2 id="usage-heading" class="component-docs-section-title">Usage</h2>
 								<ul class="component-docs-classes">
@@ -205,6 +257,11 @@
 									<li><code>.callout-banner-inner / .callout-banner-icon / .callout-banner-text</code></li>
 									<li><code>.callout-banner-close / .callout-banner-action</code></li>
 									<li><code>data-callout-banner-id</code></li>
+									<li><code>.callout-aside</code></li>
+									<li><code>.callout-aside-tip / .callout-aside-info / .callout-aside-warning / .callout-aside-danger</code></li>
+									<li><code>.callout-aside-icon / .callout-aside-content / .callout-aside-title / .callout-aside-body</code></li>
+									<li><code>.callout-aside-actions / .callout-aside-action</code></li>
+									<li><code>.app-dashboard-code.app-dashboard-code-copy</code></li>
 								</ul>
 							</section>
 
@@ -212,11 +269,16 @@
 								<h2 id="agent-heading" class="component-docs-section-title">Agent instruction</h2>
 								<div class="component-docs-agent">
 									<ul>
-										<li>Use for page-level onboarding or persistent context, not for form field errors.</li>
+										<li>Use <code>.callout-banner</code> for page-level onboarding or persistent context bars, not for form field errors.</li>
+										<li>Use <code>.callout-aside</code> for in-flow help: tip, note, warning, or danger with a title and prose (links, <code>code</code>).</li>
 										<li>Dismissible banners must include a unique <code>data-callout-banner-id</code>.</li>
 										<li>Close icon is <code>circle-x</code> on <code>.callout-banner-close</code>.</li>
-										<li>Optional CTA uses <code>.callout-banner-action</code> with a project button class.</li>
-										<li>Variants: <code>callout-banner-info</code>, <code>callout-banner-primary</code>, <code>callout-banner-warning</code>.</li>
+										<li>Optional banner CTA uses <code>.callout-banner-action</code> with a project button class. Primary onboarding CTAs stay on banners, not asides.</li>
+										<li>Banner variants: <code>callout-banner-info</code>, <code>callout-banner-primary</code>, <code>callout-banner-warning</code>.</li>
+										<li>Aside Tip uses title Tip and Lucide <code>lightbulb</code>. Info uses <code>info</code>. Warning and danger use <code>alert-triangle</code>.</li>
+										<li>Optional aside actions only via <code>.callout-aside-actions</code> / <code>.callout-aside-action</code>.</li>
+										<li>Copyable inline values use <code>.app-dashboard-code.app-dashboard-code-copy</code> with <code>role="button"</code>, <code>tabindex="0"</code>, and an <code>aria-label</code>. Click or Enter/Space copies the text.</li>
+										<li>Aside root: <code>&lt;aside role="note" aria-label="…"&gt;</code> with label matching the visible title.</li>
 									</ul>
 								</div>
 							</section>

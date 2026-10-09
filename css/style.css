@@ -745,6 +745,111 @@ mark {
     border-bottom-color: color-mix(in srgb, var(--color-warning) 24%, transparent);
 }
 
+/* Content callouts */
+.callout-aside {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-md);
+	width: 100%;
+	padding: var(--space-md) var(--space-lg);
+	border-radius: var(--br-md);
+	font-size: var(--fz-sm);
+	line-height: var(--lg-md);
+}
+
+.callout-aside-icon {
+	display: flex;
+	flex-shrink: 0;
+	align-items: center;
+	height: 1.375em;
+	line-height: 1;
+}
+
+.callout-aside-icon .lucide {
+	width: 1em;
+	height: 1em;
+}
+
+.callout-aside-content {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	gap: var(--space-xs);
+	min-width: 0;
+}
+
+.callout-aside-title {
+	margin: 0;
+	font-size: var(--fz-md);
+	font-weight: var(--fw-lg);
+	line-height: var(--lg-sm);
+}
+
+.callout-aside-body {
+	font-size: var(--fz-sm);
+	line-height: var(--lg-md);
+}
+
+.callout-aside-body p {
+	margin: 0;
+}
+
+.callout-aside-body p + p {
+	margin-top: var(--space-sm);
+}
+
+.callout-aside a:not(.button) {
+	color: inherit;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+	font-weight: var(--fw-lg);
+}
+
+.callout-aside-actions {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: var(--space-sm);
+	margin-top: var(--space-sm);
+}
+
+.callout-aside-action {
+	flex-shrink: 0;
+}
+
+.callout-aside-tip {
+	color: var(--color-success);
+	background-color: var(--bg-success);
+}
+
+.callout-aside-info {
+	color: var(--color-info);
+	background-color: var(--bg-info);
+}
+
+.callout-aside-warning {
+	color: var(--color-warning);
+	background-color: var(--bg-warning);
+}
+
+.callout-aside-danger {
+	color: var(--color-danger);
+	background-color: var(--bg-danger);
+}
+
+.callout-aside .app-dashboard-code {
+	color: inherit;
+	background-color: color-mix(in srgb, currentColor 16%, transparent);
+}
+
+.callout-aside .app-dashboard-code-copy:hover {
+	background-color: color-mix(in srgb, currentColor 28%, transparent);
+}
+
+.callout-aside .app-dashboard-code-copy:focus-visible {
+	outline-color: currentColor;
+}
+
 /* Toasts */
 .toast-container {
     position: fixed;
@@ -3280,6 +3385,19 @@ span.modal-icon--warning {
 	letter-spacing: 0.04em;
 }
 
+.app-dashboard-code-copy {
+	cursor: pointer;
+}
+
+.app-dashboard-code-copy:hover {
+	background-color: var(--text-gray-200);
+}
+
+.app-dashboard-code-copy:focus-visible {
+	outline: 2px solid var(--color-primary);
+	outline-offset: 2px;
+}
+
 /* App shell */
 .app-shell {
     display: flex;
@@ -5176,7 +5294,7 @@ span.modal-icon--warning {
 	border-radius: var(--br-md);
 }
 
-.checkout-card .callout-banner {
+.checkout-card .callout-aside {
 	margin-top: 0;
 }
 

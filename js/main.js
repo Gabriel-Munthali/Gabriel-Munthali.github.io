@@ -307,6 +307,84 @@ function showEnvSwitchToast(environment) {
 	bootstrap.Toast.getOrCreateInstance($toast[0]).show();
 }
 
+function showCopyToast(label) {
+	if (typeof bootstrap === 'undefined') {
+		return;
+	}
+	var $container = $('.toast-container').first();
+	if (!$container.length) {
+		$container = $('<div class="toast-container" aria-live="polite" aria-atomic="true"></div>').appendTo('body');
+	}
+	$('#copy-toast').remove();
+	var message = label ? 'Copied <mark>' + label + '</mark>' : 'Copied';
+	var $toast = $(
+		'<div id="copy-toast" class="toast toast-success hide" role="alert" aria-live="assertive" ' +
+			'aria-atomic="true" data-bs-autohide="true" data-bs-delay="2500">' +
+			'<div class="toast-body">' +
+				'<i data-lucide="check-circle-2" class="toast-icon" aria-hidden="true"></i>' +
+				'<span class="toast-message">' + message + '</span>' +
+				'<button type="button" class="button-close" data-bs-dismiss="toast" aria-label="Close">' +
+					'<i data-lucide="x" aria-hidden="true"></i>' +
+				'</button>' +
+			'</div>' +
+		'</div>'
+	).appendTo($container);
+	if (typeof lucide !== 'undefined') {
+		lucide.createIcons();
+	}
+	bootstrap.Toast.getOrCreateInstance($toast[0]).show();
+}
+
+function copyTextToClipboard(text) {
+	if (navigator.clipboard && navigator.clipboard.writeText) {
+		return navigator.clipboard.writeText(text);
+	}
+	return new Promise(function (resolve, reject) {
+		var textarea = document.createElement('textarea');
+		textarea.value = text;
+		textarea.setAttribute('readonly', '');
+		textarea.style.position = 'fixed';
+		textarea.style.left = '-9999px';
+		document.body.appendChild(textarea);
+		textarea.select();
+		try {
+			if (!document.execCommand('copy')) {
+				reject(new Error('Copy failed'));
+				return;
+			}
+			resolve();
+		} catch (err) {
+			reject(err);
+		} finally {
+			document.body.removeChild(textarea);
+		}
+	});
+}
+
+function initCopyableCode() {
+	$(document).on('click', '.app-dashboard-code-copy', function (event) {
+		event.preventDefault();
+		var $code = $(this);
+		var text = ($code.attr('data-copy') || $code.text() || '').trim();
+		if (!text) {
+			return;
+		}
+		copyTextToClipboard(text).then(function () {
+			showCopyToast(text);
+		}).catch(function () {
+			/* Ignore clipboard errors in lab prototypes */
+		});
+	});
+
+	$(document).on('keydown', '.app-dashboard-code-copy', function (event) {
+		if (event.key !== 'Enter' && event.key !== ' ') {
+			return;
+		}
+		event.preventDefault();
+		$(this).trigger('click');
+	});
+}
+
 function initMainNavEnvSync() {
 	if (!document.getElementById('main-nav-env-sandbox') || !document.getElementById('offcanvas-main-nav-env-sandbox')) {
 		return;
@@ -1619,6 +1697,53 @@ function initPasswordStrengthMeters() {
 	});
 }
 
+function initCalloutBanners() {
+	var storageKey = 'callout-banner-dismissed';
+
+	function readDismissed() {
+		try {
+			var raw = localStorage.getItem(storageKey);
+			var ids = raw ? JSON.parse(raw) : [];
+			return Array.isArray(ids) ? ids : [];
+		} catch (err) {
+			return [];
+		}
+	}
+
+	function writeDismissed(ids) {
+		try {
+			localStorage.setItem(storageKey, JSON.stringify(ids));
+		} catch (err) {
+			/* Ignore storage errors in lab prototypes */
+		}
+	}
+
+	var dismissed = readDismissed();
+	document.querySelectorAll('[data-callout-banner-id]').forEach(function (banner) {
+		var id = banner.getAttribute('data-callout-banner-id');
+		if (id && dismissed.indexOf(id) !== -1) {
+			banner.classList.add('is-dismissed');
+		}
+	});
+
+	$(document).on('click', '.callout-banner-close', function () {
+		var banner = this.closest('.callout-banner');
+		if (!banner) {
+			return;
+		}
+		banner.classList.add('is-dismissed');
+		var id = banner.getAttribute('data-callout-banner-id');
+		if (!id) {
+			return;
+		}
+		var ids = readDismissed();
+		if (ids.indexOf(id) === -1) {
+			ids.push(id);
+			writeDismissed(ids);
+		}
+	});
+}
+
 $(function () {
 	initThemeSwitcher();
 	window.applyBrandLogoTheme(
@@ -1633,6 +1758,7 @@ $(function () {
 		lucide.createIcons();
 	}
 
+	initCalloutBanners();
 	initAirDatepickerFields();
 	initIntlTelInputFields();
 	initBaseStepper();
@@ -1657,6 +1783,7 @@ $(function () {
 	initMerchantCollectionsAnalyticsChart();
 	initChartThemeRefresh();
 	initBootstrapToastTriggers();
+	initCopyableCode();
 	initProcessingButtons();
 	initCloseDisputeRefundToggle();
 	initConnectorLogoPreview();
